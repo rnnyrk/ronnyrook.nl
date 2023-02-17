@@ -19,18 +19,8 @@ const getAge = () => {
 const Home = () => {
   return (
     <section>
-      <List.Container className="mb-10">
-        <List.Item>React</List.Item>
-        <List.Item>React Query</List.Item>
-        <List.Item>Styled Components</List.Item>
-        <List.Item>NextJS</List.Item>
-        <List.Item>React Native</List.Item>
-        <List.Item>Reanimated</List.Item>
-        <List.Item>React Testing Library</List.Item>
-        <List.Item>Typescript</List.Item>
-        <List.Item>Serverless</List.Item>
-      </List.Container>
       <article>
+        <h1 className="mb-2 text-2xl font-bold">Ronny Rook</h1>
         <p className="mb-4">
           Hey, I'm Ronny. An {getAge()} year old <strong>Javascript developer</strong> from
           Amsterdam, The Netherlands.
@@ -68,6 +58,24 @@ const Home = () => {
           I'm your sportive tech nerd who loves being outside.
         </p>
       </article>
+
+      <h2 className="mt-10 text-xl font-bold">Techniques I like to use</h2>
+      <List.Container className="mt-2 mb-10">
+        <List.Item>React</List.Item>
+        <List.Item>React Query</List.Item>
+        <List.Item>Styled Components</List.Item>
+        <List.Item>NextJS</List.Item>
+        <List.Item>React Native</List.Item>
+        <List.Item>React Navigation</List.Item>
+        <List.Item>Reanimated</List.Item>
+        <List.Item>React Testing Library</List.Item>
+        <List.Item>Typescript</List.Item>
+        <List.Item>Serverless</List.Item>
+        <List.Item>AWS</List.Item>
+        <List.Item>SupaBase</List.Item>
+        <List.Item>Tailwind</List.Item>
+        <List.Item>Three.JS (React Three Fiber)</List.Item>
+      </List.Container>
 
       <footer>
         <p className="text-slate-600 text-xs italic">
