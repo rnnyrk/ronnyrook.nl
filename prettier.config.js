@@ -4,6 +4,7 @@ module.exports = {
   arrowParens: 'always',
   singleQuote: true,
   printWidth: 100,
+  singleAttributePerLine: true,
   importOrder: [
     '^types$',
     '^(react|react-dom)$',

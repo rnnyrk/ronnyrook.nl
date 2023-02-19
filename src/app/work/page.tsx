@@ -6,9 +6,9 @@ export const metadata = {
 
 const Work = () => {
   return (
-    <article>
+    <section>
       <h1>Work</h1>
-    </article>
+    </section>
   );
 };
 
