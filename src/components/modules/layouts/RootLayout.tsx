@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <body className="min-h-full min-w-full">
+    <body className="min-h-full min-w-full overflow-x-hidden">
       <ul className="w-full flex justify-center py-8 mb-10">
         <li className="mx-2">
           <Link href="/">About</Link>

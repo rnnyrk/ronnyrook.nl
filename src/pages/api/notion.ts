@@ -6,7 +6,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const type = req.query.type;
 
   if (type !== 'twitter-saves') {
-    res.status(400).json({ error: 'Invalid type provided' });
+    return res.status(400).json({ error: 'Invalid type provided' });
   }
 
   try {
@@ -27,10 +27,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       };
     });
 
-    res.status(200).json(pages);
+    return res.status(200).json(pages);
   } catch (error) {
-    console.log(error);
-    res.status(500).json({ error });
+    console.error(error);
+    return res.status(500).json({ error });
   }
 };
 
