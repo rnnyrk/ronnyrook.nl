@@ -11,9 +11,6 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <Link href="/resources">Resources</Link>
         </li>
         <li className="mx-2">
-          <Link href="/work">Work</Link>
-        </li>
-        <li className="mx-2">
           <Link href="/cv">Cv</Link>
         </li>
       </ul>

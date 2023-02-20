@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 
-export const WorkExperience = ({ date, description, title, src }: WorkExperienceProps) => {
+export const Experience = ({ date, description, title, src }: ExperienceProps) => {
   return (
     <div className="flex items-start mb-8 relative">
       <figure className="m-0 p-2 bg-slate-100">
@@ -20,7 +20,7 @@ export const WorkExperience = ({ date, description, title, src }: WorkExperience
   );
 };
 
-type WorkExperienceProps = {
+type ExperienceProps = {
   date: string;
   description: string;
   title: string;
