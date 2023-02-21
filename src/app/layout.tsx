@@ -4,7 +4,8 @@ import clsx from 'clsx';
 
 import { Inter } from '@next/font/google';
 
-import { RootLayout } from 'modules/layouts';
+import { Menu } from 'modules/layouts';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -55,7 +56,10 @@ const Layout = ({ children }: Props) => {
       className={clsx('text-black bg-white dark:text-white dark:bg-[#111111]', inter.className)}
     >
       <head />
-      <RootLayout>{children}</RootLayout>
+      <body className="min-h-full min-w-full overflow-x-hidden">
+        <Menu />
+        <main>{children}</main>
+      </body>
     </html>
   );
 };

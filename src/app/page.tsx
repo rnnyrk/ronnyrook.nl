@@ -1,6 +1,6 @@
 'use client';
 
-import { List } from 'common/layout';
+import { Container, List } from 'common/layout';
 
 const getAge = () => {
   const today = new Date();
@@ -18,7 +18,7 @@ const getAge = () => {
 
 const Home = () => {
   return (
-    <section>
+    <Container>
       <article>
         <h1 className="mb-2 text-2xl font-bold">Ronny Rook</h1>
         <p className="mb-4">
@@ -83,7 +83,7 @@ const Home = () => {
           Motion and TypeScript
         </p>
       </footer>
-    </section>
+    </Container>
   );
 };
 
