@@ -1,6 +1,7 @@
 'use client';
 
-import { Container, List } from 'common/layout';
+import { Container } from 'common/layout';
+import { Skills } from 'modules/home/Skills';
 
 const getAge = () => {
   const today = new Date();
@@ -60,22 +61,7 @@ const Home = () => {
       </article>
 
       <h2 className="mt-10 text-xl font-bold">Techniques I like to use</h2>
-      <List.Container className="mt-2 mb-10">
-        <List.Item>React</List.Item>
-        <List.Item>React Query</List.Item>
-        <List.Item>Styled Components</List.Item>
-        <List.Item>NextJS</List.Item>
-        <List.Item>React Native</List.Item>
-        <List.Item>React Navigation</List.Item>
-        <List.Item>Reanimated</List.Item>
-        <List.Item>React Testing Library</List.Item>
-        <List.Item>Typescript</List.Item>
-        <List.Item>Serverless</List.Item>
-        <List.Item>AWS</List.Item>
-        <List.Item>SupaBase</List.Item>
-        <List.Item>Tailwind</List.Item>
-        <List.Item>Three.JS (React Three Fiber)</List.Item>
-      </List.Container>
+      <Skills />
 
       <footer>
         <p className="text-slate-600 text-xs italic">
