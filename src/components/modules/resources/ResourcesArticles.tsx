@@ -1,7 +1,8 @@
 import * as i from 'types';
 
-import { Button } from 'common/interaction';
-import { Card } from 'common/layout';
+import { Slider } from '../../common/interaction/Slider';
+import { Button } from '../../common/interaction/Button';
+import { Card } from '../../common/layout/Card';
 
 export const ResourcesArticles = async () => {
   let resources: null | i.Resource[] = null;
@@ -21,15 +22,25 @@ export const ResourcesArticles = async () => {
   }
 
   return (
-    <div className="flex">
+    <Slider
+      amountOfElements={resources?.length || 0}
+      className="mb-10"
+    >
       {resources &&
         resources.map((resource) => (
           <Card
             key={resource.id}
             title={resource.title}
             tags={resource.tags?.map((tag) => tag.name)}
-          />
+          >
+            <Button
+              href={resource.link}
+              type="link"
+            >
+              Read article
+            </Button>
+          </Card>
         ))}
-    </div>
+    </Slider>
   );
 };

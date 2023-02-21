@@ -22,7 +22,10 @@ export const ResourcesTweets = async () => {
   }
 
   return (
-    <Slider>
+    <Slider
+      amountOfElements={resources?.length || 0}
+      className="mb-10"
+    >
       {resources &&
         resources.map((resource) => (
           <Card
