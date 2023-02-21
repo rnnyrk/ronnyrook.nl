@@ -26,7 +26,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     // Format the data
-    // if (type === 'twitter-saves') {
     const pages = response.results.map((page: any) => {
       return {
         id: page.id,
@@ -37,13 +36,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     return res.status(200).json(pages);
-    // }
-
-    // console.log({
-    //   results: response.results[0]?.properties,
-    // });
-
-    // return res.status(200).json(response.results);
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error });

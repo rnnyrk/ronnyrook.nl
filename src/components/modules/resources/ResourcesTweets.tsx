@@ -1,7 +1,8 @@
 import * as i from 'types';
 
-import { Button } from 'common/interaction';
-import { Card } from 'common/layout';
+import { Slider } from '../../common/interaction/Slider';
+import { Button } from '../../common/interaction/Button';
+import { Card } from '../../common/layout/Card';
 
 export const ResourcesTweets = async () => {
   let resources: null | i.Resource[] = null;
@@ -21,7 +22,7 @@ export const ResourcesTweets = async () => {
   }
 
   return (
-    <div className="flex">
+    <Slider>
       {resources &&
         resources.map((resource) => (
           <Card
@@ -37,6 +38,6 @@ export const ResourcesTweets = async () => {
             </Button>
           </Card>
         ))}
-    </div>
+    </Slider>
   );
 };

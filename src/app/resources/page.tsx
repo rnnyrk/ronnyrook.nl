@@ -1,8 +1,9 @@
-import { Container } from 'common/layout';
-import { ResourcesArticles, ResourcesTweets, ResourcesSandboxes } from 'modules/resources';
 import { Suspense } from 'react';
 
-// import LoadingSvg from 'vectors/loading.svg';
+import { Container } from '../../components/common/layout/Container';
+import { ResourcesTweets } from '../../components/modules/resources/ResourcesTweets';
+import { ResourcesArticles } from '../../components/modules/resources/ResourcesArticles';
+import { ResourcesSandboxes } from '../../components/modules/resources/ResourcesSandboxes';
 
 const Resources = () => {
   return (
@@ -15,7 +16,6 @@ const Resources = () => {
 
         <h2 className="mb-2 text-lg font-bold">Tweets</h2>
       </Container>
-
       <Suspense fallback="loading...">
         {/* @ts-expect-error Server Component */}
         <ResourcesTweets />
