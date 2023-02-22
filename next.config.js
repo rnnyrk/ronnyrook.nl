@@ -37,6 +37,7 @@ const config = (phase, config) => {
     },
     experimental: {
       appDir: true,
+      fontLoaders: [{ loader: '@next/font/google', options: { subsets: ['latin'] } }],
     },
     headers() {
       return [
