@@ -1,4 +1,4 @@
-import './global.css';
+import './global.scss';
 import type * as i from 'types';
 import clsx from 'clsx';
 
