@@ -2,7 +2,7 @@
 
 import { motion, Variants } from 'framer-motion';
 
-import { List } from 'common/layout';
+import { List } from 'common/layout/List';
 
 const skills = [
   'React',

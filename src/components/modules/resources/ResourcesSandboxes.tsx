@@ -1,8 +1,8 @@
 import * as i from 'types';
 
-import { Slider } from '../../common/interaction/Slider';
-import { Button } from '../../common/interaction/Button';
-import { Card } from '../../common/layout/Card';
+import { Slider } from 'common/interaction/Slider';
+import { Button } from 'common/interaction/Button';
+import { Card } from 'common/layout/Card';
 
 export const ResourcesSandboxes = async () => {
   let resources: null | i.Resource[] = null;

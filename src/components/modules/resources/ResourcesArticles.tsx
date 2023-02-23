@@ -1,14 +1,17 @@
 import * as i from 'types';
 
-import { Slider } from '../../common/interaction/Slider';
-import { Button } from '../../common/interaction/Button';
-import { Card } from '../../common/layout/Card';
+import { Slider } from 'common/interaction/Slider';
+import { Button } from 'common/interaction/Button';
+import { Card } from 'common/layout/Card';
 
 export const ResourcesArticles = async () => {
   let resources: null | i.Resource[] = null;
 
   try {
     const res = await fetch('http://localhost:3000/api/notion?type=articles', {
+      next: {
+        revalidate: 60,
+      },
       headers: {
         'Content-Type': 'application/json',
       },

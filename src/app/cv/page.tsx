@@ -1,4 +1,4 @@
-import { Experience } from 'common/layout';
+import { Experience } from 'common/layout/Experience';
 import LabelaImg from 'images/labela-logo.png';
 import JrwdImg from 'images/jrwd.png';
 import BitImg from 'images/bit-logo.png';

@@ -1,6 +1,6 @@
 'use client';
 
-import { Container } from 'common/layout';
+import { Container } from 'common/layout/Container';
 import { Skills } from 'modules/home/Skills';
 
 const getAge = () => {

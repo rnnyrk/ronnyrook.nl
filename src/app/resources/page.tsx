@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 
-import { Container } from '../../components/common/layout/Container';
-import { ResourcesTweets } from '../../components/modules/resources/ResourcesTweets';
-import { ResourcesArticles } from '../../components/modules/resources/ResourcesArticles';
-import { ResourcesSandboxes } from '../../components/modules/resources/ResourcesSandboxes';
+import { Container } from 'common/layout/Container';
+import { ResourcesTweets } from 'modules/resources/ResourcesTweets';
+import { ResourcesArticles } from 'modules/resources/ResourcesArticles';
+import { ResourcesSandboxes } from 'modules/resources/ResourcesSandboxes';
 
 const Resources = () => {
   return (
