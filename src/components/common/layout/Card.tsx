@@ -16,10 +16,8 @@ export const Card = ({ children, isInView, tags, title }: CardProps) => {
   const [isHovered, setHovered] = useState(false);
 
   const cardRef = useRef<HTMLDivElement>(null);
-
   const mouseX = useMotionValue(typeof window !== 'undefined' ? window.innerWidth / 2 : 0);
   const mouseY = useMotionValue(typeof window !== 'undefined' ? window.innerHeight / 2 : 0);
-
   const dampen = 20;
 
   const rotateX = useTransform<number, number>(mouseY, (newMouseY) => {
@@ -52,21 +50,17 @@ export const Card = ({ children, isInView, tags, title }: CardProps) => {
     rgba(255 255 255 / ${sheenOpacity}) ${sheenPosition}%,
     transparent)`;
 
-  // handle mouse move on document
+  // mouse movement
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      // animate mouse x and y
+    const onMouseMove = (e: MouseEvent) => {
       animate(mouseX, e.clientX);
       animate(mouseY, e.clientY);
     };
 
     if (typeof window === 'undefined') return;
-
-    // recalculate grid on resize
-    window.addEventListener('mousemove', handleMouseMove);
-    // cleanup
+    window.addEventListener('mousemove', onMouseMove);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousemove', onMouseMove);
     };
   }, []);
 

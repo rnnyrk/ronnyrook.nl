@@ -1,10 +1,11 @@
+import * as i from 'types';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import notionClient from 'services/notion';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const type = req.query.type as string;
-  const type_options = ['articles', 'twitter-saves', 'sandboxes'];
+  const type = req.query.type as i.ResourcesKeys;
+  const type_options: i.ResourcesKeys[] = ['articles', 'tweets', 'sandboxes'];
 
   if (!type || !type_options.includes(type)) {
     return res.status(400).json({ error: 'Invalid type provided' });

@@ -15,6 +15,7 @@ export const ResourcesGrid = ({ buttonText, data, type }: ResourcesGridProps) =>
 
   useEffect(() => {
     if (!data) return;
+
     setResources({
       [type]: data,
     });
