@@ -1,64 +1,79 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { animate, motion, useMotionTemplate, useMotionValue, useTransform } from 'framer-motion';
 
-const getRelativeCoordinates = (event, refElement) => {
-  const position = {
-    x: event.pageX,
-    y: event.pageY,
-  };
-
-  const offset = {
-    left: refElement.offsetLeft,
-    top: refElement.offsetTop,
-  };
-
-  let reference = refElement.offsetParent;
-
-  while (reference) {
-    offset.left += reference.offsetLeft;
-    offset.top += reference.offsetTop;
-    reference = reference.offsetParent;
-  }
-
-  return {
-    x: position.x - offset.left,
-    y: position.y - offset.top,
-  };
-};
-
+// Source: https://codesandbox.io/s/shiny-3d-card-nyfg0h
 export const Card = ({ children, tags, title }: CardProps) => {
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
+  const [isHovered, setHovered] = useState(false);
+
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const mouseX = useMotionValue(typeof window !== 'undefined' ? window.innerWidth / 2 : 0);
+  const mouseY = useMotionValue(typeof window !== 'undefined' ? window.innerHeight / 2 : 0);
+
+  const dampen = 40;
+
+  const rotateX = useTransform<number, number>(mouseY, (newMouseY) => {
+    if (!cardRef.current) return 0;
+    const rect = cardRef.current.getBoundingClientRect();
+    const newRotateX = newMouseY - rect.top - rect.height / 2;
+    return -newRotateX / dampen;
   });
 
-  const boxRef = useRef<HTMLDivElement | null>(null);
+  const rotateY = useTransform(mouseX, (newMouseX) => {
+    if (!cardRef.current) return 0;
+    const rect = cardRef.current.getBoundingClientRect();
+    const newRotateY = newMouseX - rect.left - rect.width / 2;
+    return newRotateY / dampen;
+  });
 
-  const onMoveMove = (event) => {
-    setMousePosition(getRelativeCoordinates(event, boxRef.current));
-  };
+  // sheen
+  const diagonalMovement = useTransform<number, number>(
+    [rotateX, rotateY],
+    ([newRotateX, newRotateY]) => {
+      const position: number = newRotateX + newRotateY;
+      return position;
+    },
+  );
+  const sheenPosition = useTransform(diagonalMovement, [-5, 5], [-100, 200]);
+  const sheenOpacity = useTransform(sheenPosition, [-250, 50, 250], [0, 0.05, 0]);
+  const sheenGradient = useMotionTemplate`linear-gradient(
+    55deg,
+    transparent,
+    rgba(255 255 255 / ${sheenOpacity}) ${sheenPosition}%,
+    transparent)`;
 
-  console.log(mousePosition.x, mousePosition.y);
+  // handle mouse move on document
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      // animate mouse x and y
+      animate(mouseX, e.clientX);
+      animate(mouseY, e.clientY);
+    };
+
+    if (typeof window === 'undefined') return;
+
+    // recalculate grid on resize
+    window.addEventListener('mousemove', handleMouseMove);
+    // cleanup
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
   return (
-    <div
-      ref={boxRef}
-      className="min-w-[425px] max-w-[425px] flex flex-col justify-items-stretch p-8 mb-4 mr-4 bg-slate-700 rounded-lg shadow-lg relative"
-      onMouseMove={onMoveMove}
+    <motion.div
+      ref={cardRef}
+      className="motion-card relative min-w-[425px] max-w-[425px] flex flex-col p-8 mb-4 mr-4 rounded-lg shadow-lg bg-slate-800"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        backgroundImage: sheenGradient,
+        rotateX: isHovered ? rotateX : 0,
+        rotateY: isHovered ? rotateY : 0,
+      }}
     >
-      <motion.div
-        className="motion-card"
-        animate={{
-          opacity: 1,
-          maskImage: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgb(255, 255, 255) 0%, rgba(255, 255, 255) 100%)`,
-          WebkitMaskImage: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgb(255, 255, 255) 0%, rgba(0, 0, 0) 100%)`,
-        }}
-        transition={{
-          duration: 0.0,
-        }}
-      />
       <div className="relative z-10">
         <div>
           {tags?.map((tag) => (
@@ -70,10 +85,10 @@ export const Card = ({ children, tags, title }: CardProps) => {
             </span>
           ))}
         </div>
-        <h1 className="grow-[2] text-xl my-4">{title}</h1>
+        <h1 className="grow-[2] text-xl my-4 flex-1">{title}</h1>
         {children}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

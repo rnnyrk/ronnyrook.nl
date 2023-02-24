@@ -1,6 +1,5 @@
 import * as i from 'types';
 
-import { Slider } from 'common/interaction/Slider';
 import { Button } from 'common/interaction/Button';
 import { Card } from 'common/layout/Card';
 
@@ -19,16 +18,16 @@ export const ResourcesArticles = async () => {
     });
 
     const data = await res.json();
-    resources = data;
+
+    // Pick 9 random resources
+    const shuffleData = data.sort(() => 0.5 - Math.random());
+    resources = shuffleData.slice(0, 9);
   } catch (error) {
     console.error(error);
   }
 
   return (
-    <Slider
-      amountOfElements={resources?.length || 0}
-      className="mb-10"
-    >
+    <div className="min-h-screen min-w-full flex flex-wrap justify-center items-stretch content-start px-8">
       {resources &&
         resources.map((resource) => (
           <Card
@@ -44,6 +43,6 @@ export const ResourcesArticles = async () => {
             </Button>
           </Card>
         ))}
-    </Slider>
+    </div>
   );
 };
