@@ -38,6 +38,7 @@ export const ResourcesArticles = async () => {
             <Button
               href={resource.link}
               type="link"
+              variant="secondary"
             >
               Read article
             </Button>

@@ -9,6 +9,19 @@ export type Resource = {
 
 export type Tag = {
   id: string;
-  name: string;
+  name: i.TagCategories;
   color: string;
 };
+
+export type TagCategories =
+  | 'React'
+  | 'React Native'
+  | 'Next.js'
+  | 'TypeScript'
+  | 'JavaScript'
+  | 'CSS'
+  | 'HTML'
+  | 'Git'
+  | 'Performance'
+  | 'Framer Motion'
+  | 'Animations';

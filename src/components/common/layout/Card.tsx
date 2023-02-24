@@ -1,7 +1,8 @@
 'use client';
-
+import * as i from 'types';
 import { useEffect, useRef, useState } from 'react';
 import { animate, motion, useMotionTemplate, useMotionValue, useTransform } from 'framer-motion';
+import { Tag } from './Tag';
 
 // Source: https://codesandbox.io/s/shiny-3d-card-nyfg0h
 export const Card = ({ children, tags, title }: CardProps) => {
@@ -74,26 +75,22 @@ export const Card = ({ children, tags, title }: CardProps) => {
         rotateY: isHovered ? rotateY : 0,
       }}
     >
-      <div className="relative z-10">
-        <div>
-          {tags?.map((tag) => (
-            <span
-              key={tag}
-              className="text-sm bg-slate-500 rounded-full px-2 py-1 mr-2 whitespace-nowrap"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <h1 className="grow-[2] text-xl my-4 flex-1">{title}</h1>
-        {children}
+      <div>
+        {tags?.map((tag) => (
+          <Tag
+            key={tag}
+            title={tag}
+          />
+        ))}
       </div>
+      <h1 className="grow-[2] text-xl my-4 flex-[2]">{title}</h1>
+      {children}
     </motion.div>
   );
 };
 
 type CardProps = {
   children?: React.ReactNode;
-  tags: string[];
+  tags: i.TagCategories[];
   title: string;
 };

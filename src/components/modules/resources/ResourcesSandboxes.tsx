@@ -35,6 +35,7 @@ export const ResourcesSandboxes = async () => {
             <Button
               href={resource.link}
               type="link"
+              variant="secondary"
             >
               View example
             </Button>

@@ -35,6 +35,7 @@ export const ResourcesTweets = async () => {
             <Button
               href={resource.link}
               type="link"
+              variant="secondary"
             >
               Open on Twitter
             </Button>
