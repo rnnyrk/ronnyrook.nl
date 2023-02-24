@@ -3,6 +3,8 @@ import LabelaImg from 'images/labela-logo.png';
 import JrwdImg from 'images/jrwd.png';
 import BitImg from 'images/bit-logo.png';
 import IqMediaImg from 'images/iqmedia-logo.png';
+import { Container } from 'common/layout/Container';
+import { Heading } from 'common/typography/Heading';
 
 export const metadata = {
   title: {
@@ -12,8 +14,9 @@ export const metadata = {
 
 const Cv = () => {
   return (
-    <section>
-      <h1 className="mb-4 text-2xl font-bold">Experience</h1>
+    <Container>
+      <Heading>Experience</Heading>
+      <p className="mt-8 mb-20 text-lg">Work experience and projects I've been working on.</p>
 
       <Experience
         src={LabelaImg}
@@ -42,7 +45,7 @@ const Cv = () => {
         date="February 2013 - July 2014"
         description="Full stack intern and employee. Mainly working with Javascript/jQuery and PHP"
       />
-    </section>
+    </Container>
   );
 };
 
