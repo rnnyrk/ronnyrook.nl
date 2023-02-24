@@ -1,6 +1,7 @@
 'use client';
 
 import { Container } from 'common/layout/Container';
+import { Heading } from 'common/typography/Heading';
 import { Skills } from 'modules/home/Skills';
 
 const getAge = () => {
@@ -21,19 +22,22 @@ const Home = () => {
   return (
     <Container>
       <article>
-        <h1 className="mb-2 text-2xl font-bold">Ronny Rook</h1>
-        <p className="mb-4">
+        <Heading>Ronny Rook</Heading>
+        <h2 className="mt-2 text-lg uppercase font-semibold text-slate-600">
+          Technically a creative
+        </h2>
+        <p className="mt-10 mb-4 text-lg">
           Hey, I'm Ronny. An {getAge()} year old <strong>Javascript developer</strong> from
           Amsterdam, The Netherlands.
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 text-lg">
           On a daily basis I'm working for a digital agency Label A. Mainly working on all kind of
           React and React Native based projects as well as leading the innovation team; pushing the
           frontend craft, engineers and tech stack to the next level.
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 text-lg">
           Furthermore I'm working as a freelance developer and - consultants. This contains various
           projects from settings up CI/CD pipelines to building React (Native) applications. For
           example{' '}
@@ -47,26 +51,25 @@ const Home = () => {
           is a React Native application.
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 text-lg">
           I love building for the web. From simple pages, to native applications, all the way to
           large Next.js applications. <strong>The web and Javascript are incredible</strong>. It
           gives everyone the freedom to just start creating.
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 text-lg">
           Outside of work you can find me in the water kitesurfing, still trying to run a marathon,
           bouldering, riding my motorbike or spending time with friends and/or in nature. So I guess
           I'm your sportive tech nerd who loves being outside.
         </p>
       </article>
 
-      <h2 className="mt-10 text-xl font-bold">Techniques I like to use</h2>
+      <h2 className="mt-20 mb-2 text-xl">Creating the web using</h2>
       <Skills />
 
-      <footer>
+      <footer className="mb-8">
         <p className="text-slate-600 text-xs italic">
-          This website is build with React / NextJS 13 (app dir, @next/font), PNPM, Tailwind, Framer
-          Motion and TypeScript
+          Build with NextJS 13, PNPM, Tailwind, Framer Motion and TypeScript
         </p>
       </footer>
     </Container>
