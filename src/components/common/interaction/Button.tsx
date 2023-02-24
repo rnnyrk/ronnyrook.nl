@@ -11,17 +11,14 @@ export const Button = ({
   size = 'default',
   ...otherProps
 }: ButtonProps | ButtonLinkProps) => {
-  const classes = clsx(
-    `flex items-center justify-center relative text-white font-semibold`,
-    className,
-    {
-      'bg-slate-300 text-slate-700': variant === 'primary',
-      'bg-transparent border-2 border-slate-700 text-slate-700': variant === 'secondary',
-      'bg-slate-400	cursor-not-allowed': 'disabled' in otherProps && otherProps?.disabled,
-      'h-12 px-8 rounded text-base min-w-[200px]': size === 'default',
-      'h-8 px-4 rounded-lg text-sm min-w-[100px]': size === 'small',
-    },
-  );
+  const classes = clsx(`flex items-center justify-center text-white font-semibold`, className, {
+    relative: !className?.includes('absolute') && !className?.includes('fixed'),
+    'bg-rnny text-slate-700': variant === 'primary',
+    'bg-transparent border-2 border-slate-700 text-slate-700': variant === 'secondary',
+    'bg-slate-400	cursor-not-allowed': 'disabled' in otherProps && otherProps?.disabled,
+    'h-12 px-8 rounded text-base min-w-[200px]': size === 'default',
+    'h-8 px-4 rounded-lg text-sm min-w-[100px]': size === 'small',
+  });
 
   if (type === 'link' && 'href' in otherProps && otherProps.href) {
     const href = otherProps.href;

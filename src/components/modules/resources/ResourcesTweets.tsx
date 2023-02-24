@@ -1,7 +1,6 @@
 import * as i from 'types';
 
-import { Button } from 'common/interaction/Button';
-import { Card } from 'common/layout/Card';
+import { ResourcesGrid } from './ResourcesGrid';
 
 export const ResourcesTweets = async () => {
   let resources: null | i.Resource[] = null;
@@ -15,32 +14,18 @@ export const ResourcesTweets = async () => {
     });
 
     const data = await res.json();
-
-    // Pick 9 random resources
-    const shuffleData = data.sort(() => 0.5 - Math.random());
-    resources = shuffleData.slice(0, 9);
+    resources = data;
   } catch (error) {
     console.error(error);
   }
 
   return (
-    <div className="min-h-screen min-w-full flex flex-wrap justify-center items-stretch content-start px-8">
-      {resources &&
-        resources.map((resource) => (
-          <Card
-            key={resource.id}
-            title={resource.title}
-            tags={resource.tags?.map((tag) => tag.name)}
-          >
-            <Button
-              href={resource.link}
-              type="link"
-              variant="secondary"
-            >
-              Open on Twitter
-            </Button>
-          </Card>
-        ))}
+    <div className="min-h-screen min-w-full">
+      <ResourcesGrid
+        data={resources || []}
+        buttonText="Open on Twitter"
+        type="tweets"
+      />
     </div>
   );
 };

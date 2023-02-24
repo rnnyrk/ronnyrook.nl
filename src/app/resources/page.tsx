@@ -5,10 +5,12 @@ import { ResourcesTweets } from 'modules/resources/ResourcesTweets';
 import { ResourcesArticles } from 'modules/resources/ResourcesArticles';
 import { ResourcesSandboxes } from 'modules/resources/ResourcesSandboxes';
 import { Heading } from 'common/typography/Heading';
+import { RefreshResources } from 'modules/resources/RefreshResources';
 
 const Resources = () => {
   return (
     <>
+      <RefreshResources />
       <Container className="px-8 my-64">
         <Heading>Notion</Heading>
         <p className="my-8 text-lg">

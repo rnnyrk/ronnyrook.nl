@@ -1,5 +1,13 @@
 import * as i from 'types';
 
+export type ResourcesList = {
+  articles: i.Resource[] | null;
+  sandboxes: i.Resource[] | null;
+  tweets: i.Resource[] | null;
+};
+
+export type ResourcesKeys = keyof ResourcesList;
+
 export type Resource = {
   id: string;
   title: string;

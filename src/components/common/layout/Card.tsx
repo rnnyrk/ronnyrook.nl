@@ -1,11 +1,18 @@
 'use client';
 import * as i from 'types';
 import { useEffect, useRef, useState } from 'react';
-import { animate, motion, useMotionTemplate, useMotionValue, useTransform } from 'framer-motion';
+import {
+  animate,
+  AnimatePresence,
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useTransform,
+} from 'framer-motion';
 import { Tag } from './Tag';
 
 // Source: https://codesandbox.io/s/shiny-3d-card-nyfg0h
-export const Card = ({ children, tags, title }: CardProps) => {
+export const Card = ({ children, isInView, tags, title }: CardProps) => {
   const [isHovered, setHovered] = useState(false);
 
   const cardRef = useRef<HTMLDivElement>(null);
@@ -13,7 +20,7 @@ export const Card = ({ children, tags, title }: CardProps) => {
   const mouseX = useMotionValue(typeof window !== 'undefined' ? window.innerWidth / 2 : 0);
   const mouseY = useMotionValue(typeof window !== 'undefined' ? window.innerHeight / 2 : 0);
 
-  const dampen = 40;
+  const dampen = 20;
 
   const rotateX = useTransform<number, number>(mouseY, (newMouseY) => {
     if (!cardRef.current) return 0;
@@ -64,33 +71,55 @@ export const Card = ({ children, tags, title }: CardProps) => {
   }, []);
 
   return (
-    <motion.div
-      ref={cardRef}
-      className="motion-card relative min-w-[425px] max-w-[425px] flex flex-col p-8 mb-4 mr-4 rounded-lg shadow-lg bg-slate-800"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        backgroundImage: sheenGradient,
-        rotateX: isHovered ? rotateX : 0,
-        rotateY: isHovered ? rotateY : 0,
-      }}
-    >
-      <div>
-        {tags?.map((tag) => (
-          <Tag
-            key={tag}
-            title={tag}
-          />
-        ))}
-      </div>
-      <h1 className="grow-[2] text-xl my-4 flex-[2]">{title}</h1>
-      {children}
-    </motion.div>
+    <AnimatePresence>
+      {isInView && (
+        <motion.div
+          ref={cardRef}
+          exit={{ rotateY: 180 }}
+          initial={{ rotateY: 180 }}
+          animate={{ rotateY: 0 }}
+          transition={{
+            duration: 1,
+          }}
+          className="relative min-w-[425px] max-w-[425px] mb-4 mr-4 rounded-xl shadow-lg bg-slate-800"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          style={{
+            backgroundImage: sheenGradient,
+            rotateX: isHovered ? rotateX : 0,
+            rotateY: isHovered ? rotateY : 0,
+          }}
+        >
+          <motion.div
+            className="w-full h-full flex flex-col p-8"
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 1,
+              duration: 1,
+            }}
+          >
+            <div>
+              {tags?.map((tag) => (
+                <Tag
+                  key={tag}
+                  title={tag}
+                />
+              ))}
+            </div>
+            <h1 className="grow-[2] text-xl my-4 flex-[2]">{title}</h1>
+            {children}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
 type CardProps = {
   children?: React.ReactNode;
+  isInView: boolean;
   tags: i.TagCategories[];
   title: string;
 };
