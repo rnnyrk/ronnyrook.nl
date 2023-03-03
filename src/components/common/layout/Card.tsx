@@ -69,12 +69,22 @@ export const Card = ({ children, isInView, tags, title }: CardProps) => {
       {isInView && (
         <motion.div
           ref={cardRef}
-          exit={{ rotateY: 180 }}
-          initial={{ rotateY: 180 }}
-          animate={{ rotateY: 0 }}
-          transition={{
-            duration: 1,
+          exit={{
+            rotateY: 180,
+            transition: {
+              duration: 3,
+            },
           }}
+          initial={{
+            rotateY: 180,
+          }}
+          animate={{
+            rotateY: 0,
+          }}
+          transition={(index) => ({
+            duration: 2,
+            // delay: index * 0.1,
+          })}
           className="relative min-w-[425px] max-w-[425px] mb-4 mr-4 rounded-xl shadow-lg bg-slate-800"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}

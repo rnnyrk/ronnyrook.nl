@@ -21,7 +21,7 @@ const skills = [
   'Three.JS (React Three Fiber)',
 ];
 
-const SkillItemVariant: Variants = {
+const skillVariants: Variants = {
   visible: (index) => ({
     opacity: 1,
     x: 0,
@@ -51,7 +51,7 @@ export const Skills = () => {
           initial="hidden"
           animate="visible"
           custom={index}
-          variants={SkillItemVariant}
+          variants={skillVariants}
         >
           <List.Item>{skill}</List.Item>
         </motion.div>
