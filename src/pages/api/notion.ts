@@ -24,6 +24,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     // Query all pages in the database
     const response = await notionClient.databases.query({
       database_id,
+      page_size: 100,
     });
 
     // Format the data

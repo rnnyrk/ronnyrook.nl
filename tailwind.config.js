@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         rnny: '#6FAEF7',
       },
+      maxWidth: {
+        '8xl': '90rem',
+      },
       fontFamily: {
         serif: ['var(--font-inter)'],
       },

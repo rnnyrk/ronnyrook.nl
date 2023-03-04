@@ -24,7 +24,7 @@ export const ResourcesGrid = ({ buttonText, data, type }: ResourcesGridProps) =>
   return (
     <div
       ref={ref}
-      className="w-full flex flex-wrap justify-center items-stretch  content-start px-8"
+      className="w-full max-w-8xl flex flex-wrap justify-center items-stretch content-start px-8"
     >
       {resources &&
         resources[type]?.slice(0, 9).map((resource) => (

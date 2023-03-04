@@ -9,15 +9,18 @@ import {
   useMotionValue,
   useTransform,
 } from 'framer-motion';
+
+import { isServer } from 'services';
+
 import { Tag } from './Tag';
 
-// Source: https://codesandbox.io/s/shiny-3d-card-nyfg0h
+// Inspired on: https://codesandbox.io/s/shiny-3d-card-nyfg0h
 export const Card = ({ children, isInView, tags, title }: CardProps) => {
   const [isHovered, setHovered] = useState(false);
 
   const cardRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(typeof window !== 'undefined' ? window.innerWidth / 2 : 0);
-  const mouseY = useMotionValue(typeof window !== 'undefined' ? window.innerHeight / 2 : 0);
+  const mouseX = useMotionValue(!isServer ? window.innerWidth / 2 : 0);
+  const mouseY = useMotionValue(!isServer ? window.innerHeight / 2 : 0);
   const dampen = 20;
 
   const rotateX = useTransform<number, number>(mouseY, (newMouseY) => {
