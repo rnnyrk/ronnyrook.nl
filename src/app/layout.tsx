@@ -1,8 +1,7 @@
 import './global.scss';
 import type * as i from 'types';
 import clsx from 'clsx';
-
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 
 import { Menu } from 'modules/layouts';
 

@@ -1,6 +1,5 @@
 import clsx from 'clsx';
-
-import { IBM_Plex_Serif } from '@next/font/google';
+import { IBM_Plex_Serif } from 'next/font/google';
 
 const plexSerif = IBM_Plex_Serif({ weight: ['400'], subsets: ['latin'] });
 
