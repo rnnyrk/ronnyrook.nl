@@ -1,6 +1,5 @@
 import { Experience } from 'common/layout/Experience';
 import { Container } from 'common/layout/Container';
-import { Heading } from 'common/typography/Heading';
 
 export const metadata = {
   title: {
@@ -11,7 +10,6 @@ export const metadata = {
 const Cv = () => {
   return (
     <Container>
-      <Heading>Experience</Heading>
       <p className="mt-8 mb-20 text-lg">Work experience and projects I've been working on.</p>
 
       <Experience

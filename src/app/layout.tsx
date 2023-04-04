@@ -3,7 +3,7 @@ import type * as i from 'types';
 import clsx from 'clsx';
 import { Inter } from 'next/font/google';
 
-import { Menu } from 'modules/layouts';
+import { Menu } from 'modules/layouts/Menu';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -55,7 +55,7 @@ const Layout = ({ children }: Props) => {
       className={clsx('text-black bg-white dark:text-white dark:bg-[#111111]', inter.className)}
     >
       <head />
-      <body className="min-h-full min-w-full overflow-x-hidden">
+      <body className="min-h-full min-w-full overflow-x-hidden pt-32">
         <Menu />
         <main>{children}</main>
       </body>
