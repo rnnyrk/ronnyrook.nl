@@ -1,8 +1,8 @@
 export const getApiUrl = () => {
   if (process.env.NEXT_PUBLIC_APP_ENV === 'production') {
-    return 'http://localhost:3000/api';
+    return 'https://ronnyrook-nl.vercel.app/api';
   } else if (process.env.NEXT_PUBLIC_APP_ENV === 'development') {
-    return 'http://localhost:3000/api';
+    return 'https://ronnyrook-nl.vercel.app/api';
   }
 
   return 'http://localhost:3000/api';
