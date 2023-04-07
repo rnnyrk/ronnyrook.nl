@@ -25,7 +25,10 @@ const Resources = () => {
       </Container>
 
       <section className="min-h-screen py-40 bg-slate-900">
-        <ResourceHeading text="When you're in search for useful tips and tricks, tech Twitter is a perfect source.">
+        <ResourceHeading
+          icon="twitter"
+          text="When you're in search for useful tips and tricks, tech Twitter is a perfect source."
+        >
           <Heading>Tweets</Heading>
         </ResourceHeading>
         <Suspense fallback="loading...">
@@ -35,7 +38,10 @@ const Resources = () => {
       </section>
 
       <section className="min-h-screen py-40">
-        <ResourceHeading text="Varying from case studies to tutorials and in depth knowledge.">
+        <ResourceHeading
+          icon="brain"
+          text="Varying from case studies to tutorials and in depth knowledge."
+        >
           <Heading>Articles</Heading>
         </ResourceHeading>
 
@@ -46,7 +52,10 @@ const Resources = () => {
       </section>
 
       <section className="min-h-screen py-40 bg-slate-900">
-        <ResourceHeading text="People on the internet build the most incredible things.">
+        <ResourceHeading
+          icon="codepen"
+          text="People on the internet build the most incredible things."
+        >
           <Heading>CodePens/CodeSandboxes</Heading>
         </ResourceHeading>
         <Suspense fallback="loading...">
