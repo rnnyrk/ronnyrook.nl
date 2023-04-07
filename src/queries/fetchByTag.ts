@@ -3,13 +3,14 @@ import * as i from 'types';
 import { getApiUrl } from 'services';
 import { formatResourceByType } from './formatResourceByType';
 
-export const fetchNotion = async <T extends i.ResourcesKeys>(
+export const fetchByTag = async <T extends i.ResourcesKeys>(
   type: T,
+  tag: i.TagCategories,
 ): Promise<null | i.ResourceType<T>[]> => {
   let resources: null | i.ResourceType<T>[] = null;
 
   try {
-    const res = await fetch(`${getApiUrl()}/notion?type=${type}`, {
+    const res = await fetch(`${getApiUrl()}/notion?type=${type}&tag=${tag}`, {
       headers: {
         'Content-Type': 'application/json',
       },

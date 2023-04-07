@@ -1,10 +1,18 @@
 import * as i from 'types';
 
 export type ResourcesList = {
-  articles: i.Resource[] | null;
-  sandboxes: i.Resource[] | null;
-  tweets: i.Resource[] | null;
+  articles: i.Article[] | null;
+  sandboxes: i.Sandbox[] | null;
+  tweets: i.Tweet[] | null;
 };
+
+export type ResourceType<T> = T extends 'tweets'
+  ? i.Tweet
+  : T extends 'articles'
+  ? i.Article
+  : T extends 'sandboxes'
+  ? i.Sandbox
+  : never;
 
 export type ResourcesKeys = keyof ResourcesList;
 
@@ -13,6 +21,18 @@ export type Resource = {
   title: string;
   link: string;
   tags: i.Tag[];
+};
+
+export type Tweet = i.Resource & {
+  type: Extract<i.ResourcesKeys, 'tweets'>;
+};
+
+export type Article = i.Resource & {
+  type: Extract<i.ResourcesKeys, 'articles'>;
+};
+
+export type Sandbox = i.Resource & {
+  type: Extract<i.ResourcesKeys, 'sandboxes'>;
 };
 
 export type Tag = {
@@ -24,11 +44,12 @@ export type Tag = {
 export type TagCategories =
   | 'React'
   | 'React Native'
-  | 'Next.js'
-  | 'TypeScript'
-  | 'JavaScript'
-  | 'CSS'
-  | 'HTML'
+  | 'Nextjs'
+  | 'Typescript'
+  | 'Javascript'
+  | 'Css'
+  | 'Html'
+  | 'Svg'
   | 'Git'
   | 'Performance'
   | 'Framer Motion'

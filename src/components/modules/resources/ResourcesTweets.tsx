@@ -1,17 +1,14 @@
-import * as i from 'types';
-
 import { fetchNotion } from 'queries/fetchNotion';
 
-import { ResourcesGrid } from './ResourcesGrid';
+import { ResourceOverview } from './ResourceOverview';
 
 export const ResourcesTweets = async () => {
-  const resources: null | i.Resource[] = await fetchNotion('tweets');
+  const tweets = await fetchNotion('tweets');
 
   return (
     <div className="min-h-screen min-w-full">
-      <ResourcesGrid
-        data={resources || []}
-        buttonText="Open on Twitter"
+      <ResourceOverview
+        data={tweets || []}
         type="tweets"
       />
     </div>

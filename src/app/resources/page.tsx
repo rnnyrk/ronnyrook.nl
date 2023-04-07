@@ -6,6 +6,7 @@ import { ResourcesArticles } from 'modules/resources/ResourcesArticles';
 import { ResourcesSandboxes } from 'modules/resources/ResourcesSandboxes';
 import { Heading } from 'common/typography/Heading';
 import { RefreshResources } from 'modules/resources/RefreshResources';
+import { ResourceHeading } from 'modules/resources/ResourceHeading';
 
 const Resources = () => {
   return (
@@ -24,12 +25,9 @@ const Resources = () => {
       </Container>
 
       <section className="min-h-screen py-40 bg-slate-900">
-        <Container className="px-8">
+        <ResourceHeading text="When you're in search for useful tips and tricks, tech Twitter is a perfect source.">
           <Heading>Tweets</Heading>
-          <p className="mt-8 mb-16 text-lg">
-            When you're in search for useful tips and tricks, tech Twitter is a perfect source.
-          </p>
-        </Container>
+        </ResourceHeading>
         <Suspense fallback="loading...">
           {/* @ts-expect-error Server Component */}
           <ResourcesTweets />
@@ -37,12 +35,10 @@ const Resources = () => {
       </section>
 
       <section className="min-h-screen py-40">
-        <Container className="px-8">
+        <ResourceHeading text="Varying from case studies to tutorials and in depth knowledge.">
           <Heading>Articles</Heading>
-          <p className="mt-8 mb-16 text-lg">
-            Varying from case studies to tutorials and in depth knowledge.
-          </p>
-        </Container>
+        </ResourceHeading>
+
         <Suspense fallback="loading...">
           {/* @ts-expect-error Server Component */}
           <ResourcesArticles />
@@ -50,12 +46,9 @@ const Resources = () => {
       </section>
 
       <section className="min-h-screen py-40 bg-slate-900">
-        <Container className="px-8">
+        <ResourceHeading text="People on the internet build the most incredible things.">
           <Heading>CodePens/CodeSandboxes</Heading>
-          <p className="mt-8 mb-16 text-lg">
-            People on the internet build the most incredible things.
-          </p>
-        </Container>
+        </ResourceHeading>
         <Suspense fallback="loading...">
           {/* @ts-expect-error Server Component */}
           <ResourcesSandboxes />

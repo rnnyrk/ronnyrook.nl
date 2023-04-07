@@ -1,17 +1,14 @@
-import * as i from 'types';
-
 import { fetchNotion } from 'queries/fetchNotion';
 
-import { ResourcesGrid } from './ResourcesGrid';
+import { ResourceOverview } from './ResourceOverview';
 
 export const ResourcesArticles = async () => {
-  const resources: null | i.Resource[] = await fetchNotion('articles');
+  const articles = await fetchNotion('articles');
 
   return (
     <div className="min-h-screen min-w-full">
-      <ResourcesGrid
-        data={resources || []}
-        buttonText="Read article"
+      <ResourceOverview
+        data={articles || []}
         type="articles"
       />
     </div>

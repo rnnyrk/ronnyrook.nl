@@ -1,9 +1,12 @@
 import * as i from 'types';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints';
 
 import notionClient from 'services/notion';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  const tag = req.query.tag as i.TagCategories | undefined;
+
   const type = req.query.type as i.ResourcesKeys;
   const type_options: i.ResourcesKeys[] = ['articles', 'tweets', 'sandboxes'];
 
@@ -21,11 +24,22 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       database_id = '6db8d02697a345ddb20fdff8bd8f4c80';
     }
 
-    // Query all pages in the database
-    const response = await notionClient.databases.query({
+    const query: QueryDatabaseParameters = {
       database_id,
       page_size: 100,
-    });
+    };
+
+    if (tag) {
+      query.filter = {
+        property: 'Topics',
+        multi_select: {
+          contains: tag,
+        },
+      };
+    }
+
+    // Query all pages in the database
+    const response = await notionClient.databases.query(query);
 
     // Format the data
     const pages = response.results.map((page: any) => {
