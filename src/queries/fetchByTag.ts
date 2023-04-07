@@ -1,7 +1,6 @@
 import * as i from 'types';
 
-import { getApiUrl } from 'services';
-import { formatResourceByType } from './formatResourceByType';
+import { formatResourceByType, getApiUrl } from 'services';
 
 export const fetchByTag = async <T extends i.ResourcesKeys>(
   type: T,

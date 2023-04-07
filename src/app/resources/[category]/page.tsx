@@ -1,18 +1,13 @@
-import * as i from 'types';
-
+import { formatCategoryParamToTag } from 'services';
 import { Container } from 'common/layout/Container';
 import { Heading } from 'common/typography/Heading';
 import { fetchByTag } from 'queries/fetchByTag';
 import { ResourcesGrid } from 'modules/resources/ResourcesGrid';
 import { ResourceHeading } from 'modules/resources/ResourceHeading';
 
-export default async function ResourceCategory({
-  params,
-}: {
-  params: { category: i.TagCategories };
-}) {
+export default async function ResourceCategory({ params }: { params: { category: string } }) {
   const tag = params.category;
-  const title = (tag.charAt(0).toUpperCase() + tag.slice(1)) as i.TagCategories;
+  const title = formatCategoryParamToTag(tag);
 
   const tweets = await fetchByTag('tweets', title);
   const articles = await fetchByTag('articles', title);
