@@ -13,7 +13,13 @@ const items = {
 
 const MenuItem = ({ title, href }: MenuItemProps) => {
   const pathname = usePathname();
-  const isActive = pathname === href;
+
+  let isActive = false;
+  if (href === '/' && pathname === href) {
+    isActive = true;
+  } else if (href !== '/' && pathname?.includes(href)) {
+    isActive = true;
+  }
 
   return (
     <Link
