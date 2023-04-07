@@ -5,13 +5,15 @@ import { fetchByTag } from 'queries/fetchByTag';
 import { ResourcesGrid } from 'modules/resources/ResourcesGrid';
 import { ResourceHeading } from 'modules/resources/ResourceHeading';
 
-export default async function ResourceCategory({ params }: { params: { category: string } }) {
+export default async function ResourceCategory({ params }: ResourceCategoryProps) {
   const tag = params.category;
   const title = formatCategoryParamToTag(tag);
 
-  const tweets = await fetchByTag('tweets', title);
-  const articles = await fetchByTag('articles', title);
-  const sandboxes = await fetchByTag('sandboxes', title);
+  const [tweets, articles, sandboxes] = await Promise.all([
+    fetchByTag('tweets', title),
+    fetchByTag('articles', title),
+    fetchByTag('sandboxes', title),
+  ]);
 
   const data = [...(tweets || []), ...(articles || []), ...(sandboxes || [])];
 
@@ -30,3 +32,9 @@ export default async function ResourceCategory({ params }: { params: { category:
     </Container>
   );
 }
+
+type ResourceCategoryProps = {
+  params: {
+    category: string;
+  };
+};
