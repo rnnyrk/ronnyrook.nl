@@ -11,7 +11,7 @@ export const metadata = {
 const Cv = () => {
   return (
     <Container>
-      <Container className="md:px-8 mb-20">
+      <Container className="mb-20">
         <Heading>Experience</Heading>
         <p className="mt-8 mb-20 text-lg">Work experience and projects I've been working on.</p>
       </Container>
