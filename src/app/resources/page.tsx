@@ -12,7 +12,7 @@ const Resources = () => {
   return (
     <>
       <RefreshResources />
-      <Container className="px-8 mb-10">
+      <Container className="px-8 mb-20">
         <Heading>Notion</Heading>
         <p className="my-8 text-lg">
           I use Notion basically as my second brain. When I come across an interesting (code
