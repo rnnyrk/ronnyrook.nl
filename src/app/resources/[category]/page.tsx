@@ -1,9 +1,8 @@
 import { formatCategoryParamToTag } from 'services';
 import { Container } from 'common/layout/Container';
-import { Heading } from 'common/typography/Heading';
 import { fetchByTag } from 'queries/fetchByTag';
 import { ResourcesGrid } from 'modules/resources/ResourcesGrid';
-import { ResourceHeading } from 'modules/resources/ResourceHeading';
+import { ResourceCategoryHeading } from 'modules/resources/ResourceCategoryHeading';
 
 export default async function ResourceCategory({ params }: ResourceCategoryProps) {
   const tag = params.category;
@@ -19,9 +18,7 @@ export default async function ResourceCategory({ params }: ResourceCategoryProps
 
   return (
     <Container className="px-8 w-full min-h-screen min-w-full">
-      <ResourceHeading>
-        <Heading>{title}</Heading>
-      </ResourceHeading>
+      <ResourceCategoryHeading title={title} />
 
       <div className="w-full max-w-8xl mx-auto flex flex-wrap justify-center items-stretch content-start px-8">
         <ResourcesGrid
