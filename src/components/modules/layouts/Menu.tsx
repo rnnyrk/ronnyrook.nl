@@ -29,7 +29,7 @@ const MenuItem = ({ title, href }: MenuItemProps) => {
         'text-white': isActive,
       })}
     >
-      <span className="relative py-2 px-4">
+      <span className="relative inline-block py-2 px-4">
         {title}
         {isActive ? (
           <motion.span
