@@ -69,7 +69,7 @@ const Home = () => {
 
       <footer className="mb-8">
         <p className="text-slate-600 text-xs italic">
-          Build with NextJS 13, PNPM, Tailwind, Framer Motion and TypeScript
+          Build with NextJS 13 (app dir/RSC), PNPM, Tailwind, Framer Motion and TypeScript
         </p>
       </footer>
     </Container>
