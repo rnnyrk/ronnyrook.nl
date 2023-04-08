@@ -86,9 +86,8 @@ export const Card = ({ children, isInView, tags, title }: CardProps) => {
           }}
           transition={(index) => ({
             duration: 2,
-            // delay: index * 0.1,
           })}
-          className="relative min-w-[425px] max-w-[425px] mb-4 mr-4 rounded-xl shadow-lg bg-slate-800"
+          className="relative min-w-full md:min-w-[425px] md:max-w-[425px] mb-4 md:mr-4 rounded-xl shadow-lg bg-slate-800"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           style={{

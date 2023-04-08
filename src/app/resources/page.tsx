@@ -12,7 +12,7 @@ const Resources = () => {
   return (
     <>
       <RefreshResources />
-      <Container className="px-8 my-64">
+      <Container className="px-8 mb-20">
         <Heading>Notion</Heading>
         <p className="my-8 text-lg">
           I use Notion basically as my second brain. When I come across an interesting (code
@@ -56,7 +56,7 @@ const Resources = () => {
           icon="codepen"
           text="People on the internet build the most incredible things."
         >
-          <Heading>CodePens/CodeSandboxes</Heading>
+          <Heading className="break-all">CodePens/CodeSandboxes</Heading>
         </ResourceHeading>
         <Suspense fallback="loading...">
           {/* @ts-expect-error Server Component */}
