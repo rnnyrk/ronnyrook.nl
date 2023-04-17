@@ -55,7 +55,7 @@ const Layout = ({ children }: Props) => {
       className={clsx('text-black bg-rnny-light', inter.className)}
     >
       <head />
-      <body className="min-h-full min-w-full overflow-x-hidden pt-60">
+      <body className="min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60">
         <Menu />
         <main>{children}</main>
       </body>

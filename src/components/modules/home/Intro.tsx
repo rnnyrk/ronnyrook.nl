@@ -20,10 +20,10 @@ const getAge = () => {
 
 export const Intro = () => {
   return (
-    <Container>
+    <Container className="px-8">
       <article>
-        <header className="flex items-center mb-20">
-          <figure className="w-40 h-40 m-0 overflow-hidden rounded-full shadow-lg">
+        <header className="flex items-center mb-10 md:mb-20">
+          <figure className="w-20 h-20 md:w-40 md:h-40 m-0 overflow-hidden rounded-full shadow-lg">
             <Image
               src="/images/ronny-ai.jpg"
               alt="Ronny Rook"
@@ -31,7 +31,7 @@ export const Intro = () => {
               height={200}
             />
           </figure>
-          <div className="ml-8">
+          <div className="ml-4 md:ml-8">
             <Heading>Ronny Rook</Heading>
             <h2 className="mt-2 text-lg uppercase font-semibold text-slate-600">
               Technically a creative

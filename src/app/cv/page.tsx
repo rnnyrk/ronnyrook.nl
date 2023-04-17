@@ -11,7 +11,7 @@ export const metadata = {
 const Cv = () => {
   return (
     <>
-      <Container className="mb-10 pb-20">
+      <Container className="px-8 mb-6 pb-10 md:mb-10 md:pb-20">
         <Heading>Experience</Heading>
         <p className="mt-8 mb-20 text-lg">
           After (and during) studying Comminucations and Multimedia Design at the Hogeschool van
@@ -20,8 +20,8 @@ const Cv = () => {
         </p>
       </Container>
 
-      <section className="py-40 bg-white">
-        <Container>
+      <section className="py-20 md:py-40 bg-white">
+        <Container className="px-8">
           <Experience
             title="Label A"
             date="March 2016 - present"

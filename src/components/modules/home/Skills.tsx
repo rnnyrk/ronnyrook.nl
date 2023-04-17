@@ -52,11 +52,11 @@ export const Skills = () => {
 
   return (
     <div
-      className="w-screen relative py-40 mt-80 mb-10 bg-white"
+      className="w-screen relative px-4 py-20 mt-40 md:py-40 md:mt-80 mb-10 bg-white"
       ref={ref}
     >
       <Waves />
-      <Container className="flex items-center">
+      <Container className="flex flex-col items-center md:flex-row">
         <div className="min-w-[260px] mr-14">
           <h2 className="mt-2 text-xl font-semibold">Creating the web using</h2>
           <p className="mt-4">
@@ -65,7 +65,7 @@ export const Skills = () => {
             gives everyone the freedom to just start creating.
           </p>
         </div>
-        <List.Container className="mt-2 mb-10">
+        <List.Container className="mt-2 mb-10 -ml-2 md:ml-0">
           {skills.map((skill, index) => (
             <motion.div
               key={skill}
