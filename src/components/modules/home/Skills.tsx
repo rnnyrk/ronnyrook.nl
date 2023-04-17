@@ -1,8 +1,12 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView, Variants } from 'framer-motion';
 
 import { List } from 'common/layout/List';
+import { Container } from 'common/layout/Container';
+
+import { Waves } from './Waves';
 
 const skills = [
   'React',
@@ -43,19 +47,38 @@ const skillVariants: Variants = {
 };
 
 export const Skills = () => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref, { once: true });
+
   return (
-    <List.Container className="mt-2 mb-10">
-      {skills.map((skill, index) => (
-        <motion.div
-          key={skill}
-          initial="hidden"
-          animate="visible"
-          custom={index}
-          variants={skillVariants}
-        >
-          <List.Item>{skill}</List.Item>
-        </motion.div>
-      ))}
-    </List.Container>
+    <div
+      className="w-screen relative py-40 mt-80 mb-10 bg-white"
+      ref={ref}
+    >
+      <Waves />
+      <Container className="flex items-center">
+        <div className="min-w-[260px] mr-14">
+          <h2 className="mt-2 text-xl font-semibold">Creating the web using</h2>
+          <p className="mt-4">
+            I love building for the web. From simple pages, to native applications, all the way to
+            large Next.js applications. <strong>The web and Javascript are incredible</strong>. It
+            gives everyone the freedom to just start creating.
+          </p>
+        </div>
+        <List.Container className="mt-2 mb-10">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              custom={index}
+              variants={skillVariants}
+            >
+              <List.Item>{skill}</List.Item>
+            </motion.div>
+          ))}
+        </List.Container>
+      </Container>
+    </div>
   );
 };

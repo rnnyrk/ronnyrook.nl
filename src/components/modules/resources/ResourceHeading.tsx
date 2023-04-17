@@ -23,6 +23,7 @@ const toggleVariants = {
     pathOffset: 0,
     transition: {
       duration: 2,
+      delay: 1,
       ease: 'circOut',
     },
   },

@@ -6,17 +6,12 @@ type ListType = {
 };
 
 const ListContainer = ({ className, children }: ListType) => (
-  <ul className={clsx(`flex flex-wrap list-none p-0`, className)}>{children}</ul>
+  <ul className={clsx(`flex flex-wrap justify-end list-none p-0`, className)}>{children}</ul>
 );
 
 const ListItem = ({ className, children }: ListType) => {
   return (
-    <li
-      className={clsx(
-        `py-2 px-4 m-2 rounded-md border-2 border-slate-300 bg-slate-100 dark:bg-[#222222]`,
-        className,
-      )}
-    >
+    <li className={clsx(`p-4 m-2 rounded-md font-bold text-white bg-rnny-primary-tint`, className)}>
       {children}
     </li>
   );
