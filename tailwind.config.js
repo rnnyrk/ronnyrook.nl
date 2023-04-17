@@ -10,7 +10,7 @@ module.exports = {
         'rnny-secondary-tint': '#E5EDAA',
         'rnny-dark': '#111111',
         'rnny-light': '#F1F1F0',
-        'rnny-light-tint': '#E7E7E7',
+        'rnny-light-tint': '#F9F9F9',
         'rnny-gray': '#787878',
         'rnny-gray-tint': '#8F8D88',
       },

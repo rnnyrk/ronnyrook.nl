@@ -23,7 +23,7 @@ export const Intro = () => {
     <Container>
       <article>
         <header className="flex items-center mb-20">
-          <figure className="w-40 h-40 overflow-hidden rounded-full m-0">
+          <figure className="w-40 h-40 m-0 overflow-hidden rounded-full shadow-lg">
             <Image
               src="/images/ronny-ai.jpg"
               alt="Ronny Rook"

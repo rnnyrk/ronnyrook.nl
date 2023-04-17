@@ -1,3 +1,4 @@
+// Inspired by: https://www.cssscript.com/animated-waves-svg/
 export const Waves = () => {
   return (
     <svg

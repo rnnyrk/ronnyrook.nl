@@ -7,7 +7,7 @@ import { useInView } from 'framer-motion';
 import { useResourcesStore } from 'store/resources';
 import { ResourcesGrid } from './ResourcesGrid';
 
-export const ResourceOverview = ({ data, type }: ResourceOverviewProps) => {
+export const ResourceOverview = ({ data, type, variant }: ResourceOverviewProps) => {
   const { resources, setResources } = useResourcesStore();
 
   const ref = useRef<HTMLDivElement>(null);
@@ -29,6 +29,7 @@ export const ResourceOverview = ({ data, type }: ResourceOverviewProps) => {
       <ResourcesGrid
         data={(resources[type] as (i.Tweet | i.Article | i.Sandbox)[])?.slice(0, 9)}
         isInView={isInView}
+        variant={variant}
       />
     </div>
   );
@@ -37,4 +38,5 @@ export const ResourceOverview = ({ data, type }: ResourceOverviewProps) => {
 type ResourceOverviewProps = {
   data: (i.Tweet | i.Article | i.Sandbox)[];
   type: i.ResourcesKeys;
+  variant?: 'off';
 };

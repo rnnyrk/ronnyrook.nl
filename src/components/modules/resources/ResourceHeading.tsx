@@ -4,9 +4,10 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Container } from 'common/layout/Container';
 
+// SVGs from: https://glyphs.fyi
 const toggleVariants = {
   off: {
-    stroke: 'black',
+    stroke: 'rnny-secondary',
     opacity: 0,
     pathLength: 0,
     pathOffset: 0,
@@ -17,7 +18,7 @@ const toggleVariants = {
   },
 
   on: {
-    stroke: '#FFFFFF',
+    stroke: 'rnny-secondary',
     opacity: 1,
     pathLength: 1,
     pathOffset: 0,
@@ -34,7 +35,7 @@ const svgProps: React.SVGAttributes<SVGElement> = {
   fill: 'none',
   stroke: 'currentColor',
   className: 'h-10 w-10 mr-4',
-  strokeWidth: '1.5',
+  strokeWidth: '5',
   strokeLinecap: 'round',
   strokeLinejoin: 'round',
 };
@@ -54,12 +55,35 @@ export const ResourceHeading = ({ children, icon, text }: ResourceHeadingProps) 
             {icon === 'twitter' ? (
               <svg
                 {...svgProps}
-                viewBox="0 0 24 24"
+                viewBox="0 0 80 80"
               >
                 <motion.path
                   variants={toggleVariants}
                   animate={inView ? 'on' : 'off'}
-                  d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z"
+                  d="M19 20C19 19.4477 19.4477 19 20 19H53C53.5523 19 54 19.4477 54 20V66.0681C54 66.9066 53.0301 67.3727 52.3753 66.8489L37.1247 54.6484C36.7595 54.3563 36.2405 54.3563 35.8753 54.6484L20.6247 66.8489C19.9699 67.3727 19 66.9066 19 66.0681V20Z"
+                />
+                <motion.path
+                  variants={toggleVariants}
+                  animate={inView ? 'on' : 'off'}
+                  d="M26 19V13C26 12.4477 26.4477 12 27 12H60C60.5523 12 61 12.4477 61 13V59.0681C61 59.9066 60.0301 60.3727 59.3753 59.8489L54 55.5487"
+                />
+              </svg>
+            ) : null}
+
+            {icon === 'read' ? (
+              <svg
+                {...svgProps}
+                viewBox="0 0 80 80"
+              >
+                <motion.path
+                  variants={toggleVariants}
+                  animate={inView ? 'on' : 'off'}
+                  d="M8 59.3827V16.0987C9.41773 15.8072 10.8507 15.5842 12.2934 15.4316C18.5544 14.7692 24.9012 15.4385 30.8945 17.3987C34.0819 18.4412 37.1351 19.836 40 21.5516V64.8356C37.1351 63.12 34.0819 61.7252 30.8945 60.6827C24.9012 58.7225 18.5544 58.0532 12.2934 58.7156C10.8507 58.8682 9.41773 59.0912 8 59.3827Z"
+                />
+                <motion.path
+                  variants={toggleVariants}
+                  animate={inView ? 'on' : 'off'}
+                  d="M40 21.5516C42.8649 19.836 45.9181 18.4412 49.1055 17.3987C55.0988 15.4385 61.4456 14.7692 67.7066 15.4316C69.1493 15.5842 70.5823 15.8072 72 16.0987V59.3827C70.5823 59.0912 69.1493 58.8682 67.7066 58.7156C61.4456 58.0532 55.0988 58.7225 49.1055 60.6827C45.9181 61.7252 42.8649 63.12 40 64.8356"
                 />
               </svg>
             ) : null}
@@ -67,76 +91,22 @@ export const ResourceHeading = ({ children, icon, text }: ResourceHeadingProps) 
             {icon === 'codepen' ? (
               <svg
                 {...svgProps}
-                viewBox="0 0 24 24"
-              >
-                <motion.polygon
-                  variants={toggleVariants}
-                  animate={inView ? 'on' : 'off'}
-                  points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"
-                />
-                <motion.line
-                  variants={toggleVariants}
-                  animate={inView ? 'on' : 'off'}
-                  x1="12"
-                  y1="22"
-                  x2="12"
-                  y2="15.5"
-                />
-                <motion.polyline
-                  variants={toggleVariants}
-                  animate={inView ? 'on' : 'off'}
-                  points="22 8.5 12 15.5 2 8.5"
-                />
-                <motion.polyline
-                  variants={toggleVariants}
-                  animate={inView ? 'on' : 'off'}
-                  points="2 15.5 12 8.5 22 15.5"
-                />
-                <motion.line
-                  variants={toggleVariants}
-                  animate={inView ? 'on' : 'off'}
-                  x1="12"
-                  y1="2"
-                  x2="12"
-                  y2="8.5"
-                />
-              </svg>
-            ) : null}
-
-            {icon === 'brain' ? (
-              <svg
-                {...svgProps}
-                viewBox="0 0 24 24"
+                viewBox="0 0 80 80"
               >
                 <motion.path
                   variants={toggleVariants}
                   animate={inView ? 'on' : 'off'}
-                  d="M12 21V7C12 5.89543 12.8954 5 14 5H21.4C21.7314 5 22 5.26863 22 5.6V18.7143"
+                  d="M30 64.1641L50 16.1641"
                 />
                 <motion.path
                   variants={toggleVariants}
                   animate={inView ? 'on' : 'off'}
-                  d="M12 21V7C12 5.89543 11.1046 5 10 5H2.6C2.26863 5 2 5.26863 2 5.6V18.7143"
+                  d="M23 24.1641L5.84089 39.4167C5.39337 39.8144 5.39337 40.5137 5.84088 40.9115L23 56.1641"
                 />
                 <motion.path
                   variants={toggleVariants}
                   animate={inView ? 'on' : 'off'}
-                  d="M14 19L22 19"
-                />
-                <motion.path
-                  variants={toggleVariants}
-                  animate={inView ? 'on' : 'off'}
-                  d="M10 19L2 19"
-                />
-                <motion.path
-                  variants={toggleVariants}
-                  animate={inView ? 'on' : 'off'}
-                  d="M12 21C12 19.8954 12.8954 19 14 19"
-                />
-                <motion.path
-                  variants={toggleVariants}
-                  animate={inView ? 'on' : 'off'}
-                  d="M12 21C12 19.8954 11.1046 19 10 19"
+                  d="M57 24.1641L74.1592 39.4167C74.6067 39.8144 74.6067 40.5137 74.1592 40.9115L57 56.1641"
                 />
               </svg>
             ) : null}
@@ -151,6 +121,6 @@ export const ResourceHeading = ({ children, icon, text }: ResourceHeadingProps) 
 
 type ResourceHeadingProps = {
   children: React.ReactNode;
-  icon?: 'twitter' | 'github' | 'codepen' | 'brain';
+  icon?: 'twitter' | 'github' | 'codepen' | 'read';
   text?: string;
 };
