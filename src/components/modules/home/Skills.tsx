@@ -7,6 +7,7 @@ import { List } from 'common/layout/List';
 import { Container } from 'common/layout/Container';
 
 import { Waves } from './Waves';
+import { Heading } from 'common/typography/Heading';
 
 const skills = [
   'React',
@@ -52,13 +53,13 @@ export const Skills = () => {
 
   return (
     <div
-      className="w-screen relative px-4 py-20 mt-40 md:py-40 md:mt-80 mb-10 bg-white"
+      className="w-screen relative px-4 py-20 mt-40 md:py-40 md:mt-80 bg-white"
       ref={ref}
     >
       <Waves />
       <Container className="flex flex-col items-center md:flex-row">
         <div className="min-w-[260px] mr-14">
-          <h2 className="mt-2 text-xl font-semibold">Creating the web using</h2>
+          <Heading className="mt-2 text-2xl">Creating the web using</Heading>
           <p className="mt-4">
             I love building for the web. From simple pages, to native applications, all the way to
             large Next.js applications. <strong>The web and Javascript are incredible</strong>. It
@@ -69,9 +70,9 @@ export const Skills = () => {
           {skills.map((skill, index) => (
             <motion.div
               key={skill}
+              custom={index}
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}
-              custom={index}
               variants={skillVariants}
             >
               <List.Item>{skill}</List.Item>

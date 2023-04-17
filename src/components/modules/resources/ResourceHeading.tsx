@@ -12,7 +12,7 @@ const toggleVariants = {
     pathLength: 0,
     pathOffset: 0,
     transition: {
-      duration: 2,
+      duration: 1.5,
       ease: 'circOut',
     },
   },
@@ -23,8 +23,8 @@ const toggleVariants = {
     pathLength: 1,
     pathOffset: 0,
     transition: {
-      duration: 2,
-      delay: 1,
+      duration: 1.5,
+      delay: 0.5,
       ease: 'circOut',
     },
   },

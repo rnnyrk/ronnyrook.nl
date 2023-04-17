@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 
 import LoadingSvg from 'vectors/loading.svg';
 
@@ -14,11 +15,12 @@ export const Button = ({
   const classes = clsx(`flex items-center justify-center font-semibold`, className, {
     relative: !className?.includes('absolute') && !className?.includes('fixed'),
     'bg-rnny-primary text-white': variant === 'primary',
-    'bg-transparent border-2 border-rnny-dark text-rnny-dark transition-colors hover:bg-rnny-primary-tint hover:border-rnny-primary-tint hover:text-white':
+    'bg-transparent border-2 border-rnny-dark text-rnny-dark transition-colors hover:bg-rnny-secondary-tint hover:border-rnny-secondary-tint':
       variant === 'secondary',
     'bg-slate-400	cursor-not-allowed': 'disabled' in otherProps && otherProps?.disabled,
     'h-12 px-8 rounded text-base min-w-[200px]': size === 'default',
     'h-8 px-4 rounded-lg text-sm min-w-[100px]': size === 'small',
+    'min-w-0': otherProps?.animate,
   });
 
   if (type === 'link' && 'href' in otherProps && otherProps.href) {
@@ -39,7 +41,18 @@ export const Button = ({
     (type === 'button' || type === 'submit') &&
     ('disabled' in otherProps || 'onClick' in otherProps)
   ) {
-    const { disabled, onClick, isLoading } = otherProps;
+    const { disabled, onClick, isLoading, animate, initial, variants } = otherProps;
+
+    if (animate && initial && variants) {
+      return (
+        <motion.button
+          className={`button-loader ${classes}`}
+          {...{ animate, initial, variants, disabled, onClick, type }}
+        >
+          {isLoading ? <LoadingSvg /> : children}
+        </motion.button>
+      );
+    }
 
     return (
       <button
@@ -54,7 +67,13 @@ export const Button = ({
   return null;
 };
 
-type ButtonBaseProps = {
+type ButtonAnimationProps = {
+  initial?: string;
+  animate?: string;
+  variants?: Record<string, any>;
+};
+
+type ButtonBaseProps = ButtonAnimationProps & {
   className?: string;
   children: React.ReactNode;
   variant?: 'primary' | 'secondary';
