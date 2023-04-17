@@ -18,7 +18,7 @@ export const RefreshResources = () => {
     if (isShufflling) {
       setTimeout(() => {
         setShufflling(false);
-      }, 2000);
+      }, 1500);
     }
   }, [isShufflling]);
 
