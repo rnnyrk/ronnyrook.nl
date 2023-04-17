@@ -1,6 +1,8 @@
 'use client';
+
 import * as i from 'types';
 import { useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
 import {
   animate,
   AnimatePresence,
@@ -15,7 +17,7 @@ import { isServer } from 'services';
 import { Tag } from './Tag';
 
 // Inspired on: https://codesandbox.io/s/shiny-3d-card-nyfg0h
-export const Card = ({ children, isInView, tags, title }: CardProps) => {
+export const Card = ({ children, isInView, tags, title, variant }: CardProps) => {
   const [isHovered, setHovered] = useState(false);
 
   const cardRef = useRef<HTMLDivElement>(null);
@@ -67,6 +69,14 @@ export const Card = ({ children, isInView, tags, title }: CardProps) => {
     };
   }, []);
 
+  const classes = clsx(
+    'relative min-w-full md:min-w-[425px] md:max-w-[425px] mb-4 md:mr-4 rounded-xl shadow-md',
+    {
+      'bg-rnny-light-tint': !variant,
+      'bg-white': variant === 'off',
+    },
+  );
+
   return (
     <AnimatePresence>
       {isInView && (
@@ -84,10 +94,10 @@ export const Card = ({ children, isInView, tags, title }: CardProps) => {
           animate={{
             rotateY: 0,
           }}
-          transition={(index) => ({
+          transition={() => ({
             duration: 2,
           })}
-          className="relative min-w-full md:min-w-[425px] md:max-w-[425px] mb-4 md:mr-4 rounded-xl shadow-lg bg-slate-800"
+          className={classes}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           style={{
@@ -128,4 +138,5 @@ type CardProps = {
   isInView: boolean;
   tags: i.TagCategories[];
   title: string;
+  variant?: 'off';
 };

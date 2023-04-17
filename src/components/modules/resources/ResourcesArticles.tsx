@@ -10,6 +10,7 @@ export const ResourcesArticles = async () => {
       <ResourceOverview
         data={articles || []}
         type="articles"
+        variant="off"
       />
     </div>
   );

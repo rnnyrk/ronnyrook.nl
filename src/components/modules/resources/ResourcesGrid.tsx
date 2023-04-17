@@ -4,7 +4,7 @@ import * as i from 'types';
 import { Button } from 'common/interaction/Button';
 import { Card } from 'common/layout/Card';
 
-export const ResourcesGrid = ({ data, isInView }: ResourcesGridProps) => {
+export const ResourcesGrid = ({ data, isInView, variant }: ResourcesGridProps) => {
   return (
     <>
       {data &&
@@ -14,6 +14,7 @@ export const ResourcesGrid = ({ data, isInView }: ResourcesGridProps) => {
             title={resource.title}
             tags={resource.tags?.map((tag) => tag.name)}
             isInView={isInView}
+            variant={variant}
           >
             <Button
               href={resource.link}
@@ -33,4 +34,5 @@ export const ResourcesGrid = ({ data, isInView }: ResourcesGridProps) => {
 type ResourcesGridProps = {
   data: (i.Tweet | i.Article | i.Sandbox)[];
   isInView: boolean;
+  variant?: 'off';
 };

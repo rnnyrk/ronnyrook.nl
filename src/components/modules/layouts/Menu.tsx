@@ -33,7 +33,7 @@ const MenuItem = ({ title, href }: MenuItemProps) => {
         {title}
         {isActive ? (
           <motion.span
-            className="absolute inset-0 bg-slate-400 rounded-full z-[-1]"
+            className="absolute inset-0 rounded-full z-[-1] bg-rnny-primary"
             layoutId="sidebar"
             transition={{
               type: 'spring',
@@ -54,7 +54,7 @@ type MenuItemProps = {
 
 export const Menu = () => {
   return (
-    <nav className="absolute left-2/4 -translate-x-2/4 top-8 bg-slate-600 rounded-full">
+    <nav className="absolute left-2/4 -translate-x-2/4 top-8 rounded-full bg-rnny-primary-tint">
       <div className="relative w-full flex justify-center py-4 px-2">
         <LayoutGroup>
           {Object.entries(items).map(([path, label]) => {

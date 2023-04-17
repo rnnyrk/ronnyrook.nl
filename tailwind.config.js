@@ -4,7 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        rnny: '#6FAEF7',
+        'rnny-primary': '#6FAEF7',
+        'rnny-primary-tint': '#243C66',
+        'rnny-secondary': '#C6D76D',
+        'rnny-secondary-tint': '#E5EDAA',
+        'rnny-dark': '#111111',
+        'rnny-light': '#F1F1F0',
+        'rnny-light-tint': '#F9F9F9',
+        'rnny-gray': '#787878',
+        'rnny-gray-tint': '#8F8D88',
       },
       maxWidth: {
         '8xl': '90rem',

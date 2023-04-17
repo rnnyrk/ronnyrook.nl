@@ -23,7 +23,7 @@ export const Tag = ({ title }: TagProps) => {
     >
       <span
         className={clsx(
-          'text-xs uppercase font-bold bg-slate-500 rounded-full px-3 py-1 mr-2 whitespace-nowrap',
+          'text-xs uppercase font-bold bg-slate-500 text-white rounded-full px-3 py-1 mr-2 whitespace-nowrap',
           tagClass,
         )}
       >

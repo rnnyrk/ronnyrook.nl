@@ -12,7 +12,7 @@ const Resources = () => {
   return (
     <>
       <RefreshResources />
-      <Container className="px-8 mb-20">
+      <Container className="px-8 py-20 mb-20">
         <Heading>Notion</Heading>
         <p className="my-8 text-lg">
           I use Notion basically as my second brain. When I come across an interesting (code
@@ -24,7 +24,7 @@ const Resources = () => {
         </p>
       </Container>
 
-      <section className="min-h-screen py-40 bg-slate-900">
+      <section className="min-h-screen py-40 bg-white">
         <ResourceHeading
           icon="twitter"
           text="When you're in search for useful tips and tricks, tech Twitter is a perfect source."
@@ -39,7 +39,7 @@ const Resources = () => {
 
       <section className="min-h-screen py-40">
         <ResourceHeading
-          icon="brain"
+          icon="read"
           text="Varying from case studies to tutorials and in depth knowledge."
         >
           <Heading>Articles</Heading>
@@ -51,7 +51,7 @@ const Resources = () => {
         </Suspense>
       </section>
 
-      <section className="min-h-screen py-40 bg-slate-900">
+      <section className="min-h-screen py-40 bg-white">
         <ResourceHeading
           icon="codepen"
           text="People on the internet build the most incredible things."

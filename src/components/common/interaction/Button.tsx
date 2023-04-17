@@ -11,10 +11,11 @@ export const Button = ({
   size = 'default',
   ...otherProps
 }: ButtonProps | ButtonLinkProps) => {
-  const classes = clsx(`flex items-center justify-center text-white font-semibold`, className, {
+  const classes = clsx(`flex items-center justify-center font-semibold`, className, {
     relative: !className?.includes('absolute') && !className?.includes('fixed'),
-    'bg-rnny text-slate-700': variant === 'primary',
-    'bg-transparent border-2 border-slate-700 text-slate-700': variant === 'secondary',
+    'bg-rnny-primary text-white': variant === 'primary',
+    'bg-transparent border-2 border-rnny-dark text-rnny-dark transition-colors hover:bg-rnny-primary-tint hover:border-rnny-primary-tint hover:text-white':
+      variant === 'secondary',
     'bg-slate-400	cursor-not-allowed': 'disabled' in otherProps && otherProps?.disabled,
     'h-12 px-8 rounded text-base min-w-[200px]': size === 'default',
     'h-8 px-4 rounded-lg text-sm min-w-[100px]': size === 'small',
