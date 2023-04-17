@@ -53,7 +53,7 @@ export const Skills = () => {
 
   return (
     <div
-      className="w-screen relative px-4 py-20 mt-40 md:py-40 md:mt-80 mb-10 bg-white"
+      className="w-screen relative px-4 py-20 mt-40 md:py-40 md:mt-80 bg-white"
       ref={ref}
     >
       <Waves />
