@@ -17,7 +17,7 @@ export const Footer = () => {
             rel="noreferrer"
             className="no-underline mr-4"
           >
-            <GithubSvg className="w-6 h-6" />
+            <GithubSvg className="w-6 h-6 hover:fill-rnny-primary" />
           </a>
           <a
             href="http://twitter.com/rnnyrk"
@@ -25,7 +25,7 @@ export const Footer = () => {
             rel="noreferrer"
             className="no-underline"
           >
-            <TwitterSvg className="w-6 h-6" />
+            <TwitterSvg className="w-6 h-6 hover:fill-rnny-primary" />
           </a>
         </div>
       </footer>

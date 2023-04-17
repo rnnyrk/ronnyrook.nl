@@ -70,9 +70,9 @@ export const Skills = () => {
           {skills.map((skill, index) => (
             <motion.div
               key={skill}
+              custom={index}
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}
-              custom={index}
               variants={skillVariants}
             >
               <List.Item>{skill}</List.Item>
