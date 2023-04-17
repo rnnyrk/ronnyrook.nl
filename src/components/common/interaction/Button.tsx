@@ -14,7 +14,7 @@ export const Button = ({
   const classes = clsx(`flex items-center justify-center font-semibold`, className, {
     relative: !className?.includes('absolute') && !className?.includes('fixed'),
     'bg-rnny-primary text-white': variant === 'primary',
-    'bg-transparent border-2 border-rnny-dark text-rnny-dark transition-colors hover:bg-rnny-primary-tint hover:border-rnny-primary-tint hover:text-white':
+    'bg-transparent border-2 border-rnny-dark text-rnny-dark transition-colors hover:bg-rnny-secondary-tint hover:border-rnny-secondary-tint':
       variant === 'secondary',
     'bg-slate-400	cursor-not-allowed': 'disabled' in otherProps && otherProps?.disabled,
     'h-12 px-8 rounded text-base min-w-[200px]': size === 'default',
