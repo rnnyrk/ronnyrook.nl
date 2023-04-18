@@ -53,10 +53,10 @@ const Layout = ({ children }: Props) => {
   return (
     <html
       lang="en"
-      className={clsx('text-black bg-rnny-light', inter.className)}
+      className={clsx(inter.className)}
     >
       <head />
-      <body className="min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60">
+      <body className="min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60 text-black bg-rnny-light dark:bg-rnny-dark dark:text-white">
         <Menu />
         <main>{children}</main>
         <Footer />

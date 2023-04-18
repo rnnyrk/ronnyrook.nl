@@ -5,9 +5,9 @@ import { motion, useInView, Variants } from 'framer-motion';
 
 import { List } from 'common/layout/List';
 import { Container } from 'common/layout/Container';
+import { Heading } from 'common/typography/Heading';
 
 import { Waves } from './Waves';
-import { Heading } from 'common/typography/Heading';
 
 const skills = [
   'React',
@@ -53,13 +53,13 @@ export const Skills = () => {
 
   return (
     <div
-      className="w-screen relative px-4 py-20 mt-40 md:py-40 md:mt-80 bg-white"
+      className="w-screen relative px-4 py-20 mt-40 md:py-40 md:mt-80 bg-white dark:bg-rnny-dark-tint"
       ref={ref}
     >
       <Waves />
       <Container className="flex flex-col items-center md:flex-row">
         <div className="min-w-[260px] mr-14">
-          <Heading className="mt-2 text-2xl">Creating the web using</Heading>
+          <Heading className="mt-2 text-[2rem]">With love for the web</Heading>
           <p className="mt-4">
             I love building for the web. From simple pages, to native applications, all the way to
             large Next.js applications. <strong>The web and Javascript are incredible</strong>. It

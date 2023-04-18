@@ -24,7 +24,7 @@ const Resources = () => {
         </p>
       </Container>
 
-      <section className="min-h-screen py-40 bg-white">
+      <section className="min-h-screen py-40 bg-white dark:bg-rnny-dark-tint">
         <ResourceHeading
           icon="twitter"
           text="When you're in search for useful tips and tricks, tech Twitter is a perfect source."
@@ -51,7 +51,7 @@ const Resources = () => {
         </Suspense>
       </section>
 
-      <section className="min-h-screen py-40 bg-white">
+      <section className="min-h-screen py-40 bg-white dark:bg-rnny-dark-tint">
         <ResourceHeading
           icon="codepen"
           text="People on the internet build the most incredible things."

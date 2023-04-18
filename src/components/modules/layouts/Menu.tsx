@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LayoutGroup, motion } from 'framer-motion';
 
+import { DarkModeToggle } from 'common/interaction/DarkModeToggle';
+
 const items = {
   '/': 'About',
   '/resources': 'Resources',
@@ -54,20 +56,23 @@ type MenuItemProps = {
 
 export const Menu = () => {
   return (
-    <nav className="absolute left-2/4 -translate-x-2/4 top-8 rounded-full bg-rnny-primary-tint">
-      <div className="relative w-full flex justify-center py-4 px-2">
-        <LayoutGroup>
-          {Object.entries(items).map(([path, label]) => {
-            return (
-              <MenuItem
-                key={path}
-                href={path}
-                title={label}
-              />
-            );
-          })}
-        </LayoutGroup>
-      </div>
-    </nav>
+    <>
+      <DarkModeToggle />
+      <nav className="absolute left-2/4 -translate-x-2/4 top-8 rounded-full bg-rnny-primary-tint">
+        <div className="relative w-full flex justify-center py-4 px-2">
+          <LayoutGroup>
+            {Object.entries(items).map(([path, label]) => {
+              return (
+                <MenuItem
+                  key={path}
+                  href={path}
+                  title={label}
+                />
+              );
+            })}
+          </LayoutGroup>
+        </div>
+      </nav>
+    </>
   );
 };

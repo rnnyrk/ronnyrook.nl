@@ -20,7 +20,7 @@ const Cv = () => {
         </p>
       </Container>
 
-      <section className="py-20 md:py-40 bg-white">
+      <section className="py-20 md:py-40 bg-white dark:bg-rnny-dark-tint">
         <Container className="px-8">
           <Experience
             title="Label A"
