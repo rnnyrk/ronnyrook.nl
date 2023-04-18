@@ -18,27 +18,27 @@ export const Waves = () => {
       <g className="parallax">
         <use
           xlinkHref="#gentle-wave"
+          id="wave1"
           x="48"
           y="0"
-          fill="rgba(255,255,255,0.2)"
         />
         <use
           xlinkHref="#gentle-wave"
+          id="wave2"
           x="48"
           y="3"
-          fill="rgba(255,255,255,0.4)"
         />
         <use
           xlinkHref="#gentle-wave"
+          id="wave3"
           x="48"
           y="5"
-          fill="rgba(255,255,255,0.2)"
         />
         <use
           xlinkHref="#gentle-wave"
+          id="wave4"
           x="48"
           y="7"
-          fill="#fff"
         />
       </g>
     </svg>

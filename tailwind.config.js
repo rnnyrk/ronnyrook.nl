@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/app/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -9,6 +10,7 @@ module.exports = {
         'rnny-secondary': '#C6D76D',
         'rnny-secondary-tint': '#E5EDAA',
         'rnny-dark': '#111111',
+        'rnny-dark-tint': '#22232A',
         'rnny-light': '#F1F1F0',
         'rnny-light-tint': '#F9F9F9',
         'rnny-gray': '#787878',

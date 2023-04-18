@@ -45,3 +45,45 @@
     max-height: 150px;
   }
 }
+
+.social-icon {
+  fill: #000;
+}
+
+.dark .social-icon {
+  fill: #fff;
+}
+
+#wave1 {
+  fill: rgba(255, 255, 255, 0.2);
+}
+
+#wave2 {
+  fill: rgba(255, 255, 255, 0.4);
+}
+
+#wave3 {
+  fill: rgba(255, 255, 255, 0.2);
+}
+
+#wave4 {
+  fill: #fff;
+}
+
+.dark {
+  #wave1 {
+    fill: rgba(0, 0, 0, 0.2);
+  }
+
+  #wave2 {
+    fill: rgba(0, 0, 0, 0.3);
+  }
+
+  #wave3 {
+    fill: rgba(0, 0, 0, 0.1);
+  }
+
+  #wave4 {
+    fill: #22232a;
+  }
+}

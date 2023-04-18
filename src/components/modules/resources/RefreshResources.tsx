@@ -7,25 +7,25 @@ import { Button } from 'common/interaction/Button';
 import { useResourcesStore } from 'store/resources';
 
 const refreshVariants: Variants = {
-  active: () => ({
+  active: {
     width: 60,
     transition: {
       duration: 0.5,
       ease: 'easeInOut',
     },
-  }),
-  inactive: () => ({
+  },
+  inactive: {
     width: 200,
     transition: {
       duration: 0.5,
       ease: 'easeInOut',
       staggerChildren: 1,
     },
-  }),
+  },
 };
 
 const textVariants: Variants = {
-  active: () => ({
+  active: {
     opacity: 1,
     y: 0,
     transition: {
@@ -33,15 +33,15 @@ const textVariants: Variants = {
       duration: 0.5,
       ease: 'easeInOut',
     },
-  }),
-  inactive: () => ({
+  },
+  inactive: {
     opacity: 0,
     y: -4,
     transition: {
       duration: 0.3,
       ease: 'easeInOut',
     },
-  }),
+  },
 };
 
 export const RefreshResources = () => {
