@@ -60,7 +60,7 @@ type MenuItemProps = {
 export const Menu = () => {
   return (
     <>
-      {/* <DarkModeToggle /> */}
+      <DarkModeToggle />
       <nav className="absolute left-2/4 -translate-x-2/4 top-8 rounded-full bg-rnny-primary-tint">
         <div className="relative w-full flex justify-center py-4 px-2">
           <LayoutGroup>

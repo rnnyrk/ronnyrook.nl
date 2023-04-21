@@ -58,6 +58,12 @@ export const DarkModeToggle = () => {
   }, []);
 
   useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    console.info({
+      theme,
+      classlist: document.documentElement.classList,
+    });
+
     if (mode === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
