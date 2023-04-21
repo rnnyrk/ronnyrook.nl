@@ -4,7 +4,7 @@ import { fetchByTag } from 'queries/fetchByTag';
 import { ResourcesGrid } from 'modules/resources/ResourcesGrid';
 import { ResourceCategoryHeading } from 'modules/resources/ResourceCategoryHeading';
 
-export default async function ResourceCategory({ params }: ResourceCategoryProps) {
+const ResourceCategory = async ({ params }: ResourceCategoryProps) => {
   const tag = params.category;
   const title = formatCategoryParamToTag(tag);
 
@@ -28,10 +28,12 @@ export default async function ResourceCategory({ params }: ResourceCategoryProps
       </div>
     </Container>
   );
-}
+};
 
 type ResourceCategoryProps = {
   params: {
     category: string;
   };
 };
+
+export default ResourceCategory;
