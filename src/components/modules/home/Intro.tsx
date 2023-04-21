@@ -1,22 +1,6 @@
-'use client';
-
 import { Container } from 'common/layout/Container';
 import { Heading } from 'common/typography/Heading';
 import Image from 'next/image';
-
-const getAge = () => {
-  const today = new Date();
-  const birthDate = new Date('1994-08-03');
-
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const month = today.getMonth() - birthDate.getMonth();
-
-  if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
-    age--;
-  }
-
-  return age;
-};
 
 export const Intro = () => {
   return (
@@ -33,41 +17,37 @@ export const Intro = () => {
           </figure>
           <div className="mt-2 md:mt-0 md:ml-8">
             <Heading>Ronny Rook</Heading>
-            <h2 className="mt-2 text-lg uppercase font-semibold text-slate-600">
+            <h2 className="mt-2 text-lg uppercase font-medium text-slate-600">
               Technically a creative
             </h2>
           </div>
         </header>
 
         <p className="mt-10 mb-4 text-lg">
-          Hey, I'm Ronny. An {getAge()} year old <strong>Javascript developer</strong> from
-          Amsterdam, The Netherlands.
+          Hey there. My name is Ronny, <strong>Javascript developer</strong> from Amsterdam in The
+          Netherlands.
         </p>
 
         <p className="mb-4 text-lg">
-          On a daily basis I'm working for a digital agency Label A. Mainly working on all kind of
-          React and React Native based projects as well as leading the innovation team; pushing the
-          frontend craft, engineers and tech stack to the next level.
+          On a daily basis I'm working for a digital agency Label A. My main focus is creating new
+          and maintaining existing React and React Native projects. Besides that I'm leading an
+          innovation team. Together we try to push the frontend craft, engineers and tech stack to
+          the next level.
         </p>
 
         <p className="mb-4 text-lg">
-          Furthermore I'm working as a freelance developer and - consultants. This contains various
-          projects from settings up CI/CD pipelines to building React (Native) applications. For
-          example{' '}
+          Furthermore I'm working as freelance developer and - consultant for over 10 years. This
+          work contains various projects from settings up CI/CD pipelines to building React (Native)
+          applications. For example{' '}
           <a
             href="https://apps.apple.com/nl/app/roommates/id1523528110"
             target="_blank"
             rel="noreferrer"
+            className="text-slate-400 hover:text-slate-700 underline"
           >
             Roommates
-          </a>{' '}
-          is a React Native application.
-        </p>
-
-        <p className="mb-4 text-lg">
-          Outside of work you can find me in the water kitesurfing, still trying to run a marathon,
-          bouldering, riding my motorbike or spending time with friends and/or in nature. So I guess
-          I'm your sportive tech nerd who loves being outside.
+          </a>
+          .
         </p>
       </article>
     </Container>
