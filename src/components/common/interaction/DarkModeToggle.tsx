@@ -79,7 +79,7 @@ export const DarkModeToggle = () => {
   return (
     <button
       onClick={onToggleDarkMode}
-      className="absolute right-6 top-12 flex items-center justify-center rounded-full button-dark-mode"
+      className="absolute right-6 top-12 items-center justify-center rounded-full button-dark-mode hidden md:flex"
     >
       <motion.div
         custom="dark"
