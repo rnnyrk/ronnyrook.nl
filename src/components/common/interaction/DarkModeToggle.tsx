@@ -15,7 +15,7 @@ const toggleBackgroundVariants: Variants = {
     },
   }),
   inactive: (mode) => ({
-    backgroundColor: 'rgb(241, 241, 157)',
+    backgroundColor: 'rgb(241, 241, 240)',
     transition: {
       duration: 1,
       ease: 'easeInOut',
@@ -47,13 +47,19 @@ export const DarkModeToggle = () => {
   const [mode, setMode] = useState<'dark' | 'light'>();
 
   useEffect(() => {
-    console.info({
-      mode,
-      classlist: document.documentElement.classList,
-      window: window.matchMedia('(prefers-color-scheme: dark)').matches,
-      local: localStorage?.theme,
-    });
+    const localTheme = localStorage?.theme;
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+    if (localTheme) {
+      setMode(localTheme === 'dark' ? 'dark' : 'light');
+    } else if (prefersDarkScheme) {
+      setMode('dark');
+    } else {
+      setMode('light');
+    }
+  }, []);
+
+  useEffect(() => {
     if (
       localStorage?.theme === 'dark' ||
       (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
