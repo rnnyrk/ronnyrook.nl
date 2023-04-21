@@ -51,12 +51,14 @@ export const metadata = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <html
-      lang="en"
-      className={clsx(inter.className)}
-    >
+    <html lang="en">
       <head />
-      <body className="min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60 text-black bg-rnny-light dark:bg-rnny-dark dark:text-white">
+      <body
+        className={clsx(
+          'min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60 text-black bg-rnny-light dark:bg-rnny-dark dark:text-white',
+          inter.className,
+        )}
+      >
         <Menu />
         <main>{children}</main>
         <Footer />
