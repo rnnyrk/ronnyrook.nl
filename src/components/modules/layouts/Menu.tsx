@@ -26,13 +26,16 @@ const MenuItem = ({ title, href }: MenuItemProps) => {
   return (
     <Link
       href={href}
-      className={clsx('mx-2 transition-all hover:text-neutral-100 font-bold rounded-full', {
-        'text-slate-400': !isActive,
-        'text-white': isActive,
-      })}
+      className={clsx(
+        'mx-2 transition-all hover:text-neutral-100 font-bold rounded-full text-white',
+        {
+          'text-slate-400': !isActive,
+          'text-white': isActive,
+        },
+      )}
     >
       <span className="relative inline-block py-2 px-4">
-        {title}
+        <span className="relative">{title}</span>
         {isActive ? (
           <motion.span
             className="absolute inset-0 rounded-full z-[-1] bg-rnny-primary"
@@ -57,7 +60,7 @@ type MenuItemProps = {
 export const Menu = () => {
   return (
     <>
-      <DarkModeToggle />
+      {/* <DarkModeToggle /> */}
       <nav className="absolute left-2/4 -translate-x-2/4 top-8 rounded-full bg-rnny-primary-tint">
         <div className="relative w-full flex justify-center py-4 px-2">
           <LayoutGroup>

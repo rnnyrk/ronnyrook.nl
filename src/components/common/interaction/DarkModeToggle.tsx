@@ -1,7 +1,8 @@
+'use client';
+
 import { motion, Variants } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-import { isServer } from 'services';
 import DarkSvg from 'vectors/dark-mode.svg';
 import LightSvg from 'vectors/light-mode.svg';
 
@@ -49,6 +50,9 @@ export const DarkModeToggle = () => {
     function onCheckUiMode() {
       const theme = localStorage.getItem('theme');
       setMode(theme === 'dark' ? 'dark' : 'light');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
     }
     onCheckUiMode();
   }, []);
@@ -62,7 +66,6 @@ export const DarkModeToggle = () => {
   }, [mode]);
 
   const onToggleDarkMode = () => {
-    if (!window || isServer) return;
     const theme = localStorage.getItem('theme');
 
     if (theme === 'dark') {
