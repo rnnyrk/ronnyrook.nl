@@ -7,24 +7,24 @@ import DarkSvg from 'vectors/dark-mode.svg';
 import LightSvg from 'vectors/light-mode.svg';
 
 const toggleBackgroundVariants: Variants = {
-  active: (mode) => ({
+  active: {
     backgroundColor: 'rgb(36, 60, 102)',
     transition: {
       duration: 0.5,
       ease: 'easeInOut',
     },
-  }),
-  inactive: (mode) => ({
+  },
+  inactive: {
     backgroundColor: 'rgb(241, 241, 240)',
     transition: {
       duration: 1,
       ease: 'easeInOut',
     },
-  }),
+  },
 };
 
 const toggleVariants: Variants = {
-  active: (mode) => ({
+  active: (_) => ({
     opacity: 1,
     y: 0,
     transition: {
@@ -35,7 +35,7 @@ const toggleVariants: Variants = {
   }),
   inactive: (mode) => ({
     opacity: 0,
-    y: mode === 'dark' ? -4 : 4,
+    y: mode === 'dark' ? 4 : -4,
     transition: {
       duration: 1,
       ease: 'easeInOut',
@@ -60,14 +60,12 @@ export const DarkModeToggle = () => {
   }, []);
 
   useEffect(() => {
-    if (
-      localStorage?.theme === 'dark' ||
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      console.info('add dark');
+    const prefersDarkScheme =
+      !('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (localStorage?.theme === 'dark' || prefersDarkScheme) {
       document.documentElement.classList.add('dark');
     } else {
-      console.info('add light');
       document.documentElement.classList.remove('dark');
     }
   }, [mode]);
