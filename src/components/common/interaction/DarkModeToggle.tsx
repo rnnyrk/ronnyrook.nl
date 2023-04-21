@@ -44,41 +44,34 @@ const toggleVariants: Variants = {
 };
 
 export const DarkModeToggle = () => {
-  const [mode, setMode] = useState<undefined | 'dark' | 'light'>(undefined);
+  const [mode, setMode] = useState<'dark' | 'light'>();
 
   useEffect(() => {
-    function onCheckUiMode() {
-      const theme = localStorage.getItem('theme');
-      setMode(theme === 'dark' ? 'dark' : 'light');
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
-    }
-    onCheckUiMode();
-  }, []);
-
-  useEffect(() => {
-    const theme = localStorage.getItem('theme');
     console.info({
-      theme,
+      mode,
       classlist: document.documentElement.classList,
+      window: window.matchMedia('(prefers-color-scheme: dark)').matches,
+      local: localStorage?.theme,
     });
 
-    if (mode === 'dark') {
+    if (
+      localStorage?.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      console.info('add dark');
       document.documentElement.classList.add('dark');
     } else {
+      console.info('add light');
       document.documentElement.classList.remove('dark');
     }
   }, [mode]);
 
   const onToggleDarkMode = () => {
-    const theme = localStorage.getItem('theme');
-
-    if (theme === 'dark') {
-      localStorage.setItem('theme', 'light');
+    if (mode === 'dark') {
+      localStorage.theme = 'light';
       setMode('light');
-    } else if (theme === 'light') {
-      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.theme = 'dark';
       setMode('dark');
     }
   };
