@@ -29,7 +29,7 @@ export const Intro = () => {
         </p>
 
         <p className="mb-4 text-lg">
-          On a daily basis I'm working for a digital agency Label A. My main focus is creating new
+          On a daily basis I'm working for a digital agency, Label A. My main focus is creating new
           and maintaining existing React and React Native projects. Besides that I'm leading an
           innovation team. Together we try to push the frontend craft, engineers and tech stack to
           the next level.

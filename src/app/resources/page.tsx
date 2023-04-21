@@ -18,7 +18,7 @@ const Resources = () => {
           I use Notion basically as my second brain. When I come across an interesting (code
           related) tweet, see an useful code example or gather new knowdledge through an article I
           save it to my Notion library.{' '}
-          <strong>
+          <strong className="md:block">
             <em>A small insight into what's on my mind.</em>
           </strong>
         </p>
