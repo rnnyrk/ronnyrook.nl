@@ -23,8 +23,14 @@ const Cv = () => {
       <section className="py-20 md:py-40 bg-white dark:bg-rnny-dark-tint">
         <Container className="px-8">
           <Experience
+            title="iO Digital Consultancy"
+            date="July 2023 - present"
+            description="Senior Frontend Developer and Consultant for external clients like Stedin"
+          />
+
+          <Experience
             title="Label A"
-            date="March 2016 - present"
+            date="March 2016 - June 2023"
             description="Creating digital products for clients as Amdax, Alicia Insurances, Fastis, Jobner, Nationale Nederlanden, Porsche Nederland"
           />
 

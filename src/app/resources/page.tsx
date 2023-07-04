@@ -32,7 +32,6 @@ const Resources = () => {
           <Heading>Tweets</Heading>
         </ResourceHeading>
         <Suspense fallback="loading...">
-          {/* @ts-expect-error Server Component */}
           <ResourcesTweets />
         </Suspense>
       </section>
@@ -46,7 +45,6 @@ const Resources = () => {
         </ResourceHeading>
 
         <Suspense fallback="loading...">
-          {/* @ts-expect-error Server Component */}
           <ResourcesArticles />
         </Suspense>
       </section>
@@ -59,7 +57,6 @@ const Resources = () => {
           <Heading className="break-all">CodePens/CodeSandboxes</Heading>
         </ResourceHeading>
         <Suspense fallback="loading...">
-          {/* @ts-expect-error Server Component */}
           <ResourcesSandboxes />
         </Suspense>
       </section>
