@@ -15,6 +15,7 @@ export const fetchNotion = async <T extends i.ResourcesKeys>(
       method: 'GET',
       next: {
         revalidate: 60, // In seconds
+        tags: ['notion'],
       },
     });
 

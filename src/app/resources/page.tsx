@@ -32,7 +32,6 @@ const Resources = () => {
           <Heading>Tweets</Heading>
         </ResourceHeading>
         <Suspense fallback="loading...">
-          {/* @ts-expect-error Server Component */}
           <ResourcesTweets />
         </Suspense>
       </section>
