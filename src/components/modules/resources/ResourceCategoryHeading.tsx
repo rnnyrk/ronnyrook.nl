@@ -15,8 +15,8 @@ export const ResourceCategoryHeading = ({ title }: ResourceCategoryHeadingProps)
           href="/resources"
           className="flex items-center mb-2 hover:translate-x-2 transition-transform"
         >
-          <ArrowLeftSvg className="fill-rnny-dark w-6 h-6 mr-2" />
-          <span className="text-rnny-dark">Back to overview</span>
+          <ArrowLeftSvg className="fill-rnny-dark dark:fill-rnny-light w-6 h-6 mr-2" />
+          <span className="text-rnny-dark dark:text-rnny-light">Back to overview</span>
         </Link>
         <Heading>{title}</Heading>
       </div>

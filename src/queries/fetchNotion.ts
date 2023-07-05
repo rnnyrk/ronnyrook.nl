@@ -8,7 +8,7 @@ export const fetchNotion = async <T extends i.ResourcesKeys>(
   let resources: null | i.ResourceType<T>[] = null;
 
   try {
-    const res = await fetch(`${getApiUrl()}/notion?type=${type}`, {
+    const res = await fetch(`${getApiUrl()}/resources?type=${type}`, {
       headers: {
         'Content-Type': 'application/json',
       },
