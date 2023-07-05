@@ -12,7 +12,7 @@ import {
   useTransform,
 } from 'framer-motion';
 
-import { isServer } from 'services';
+import { isServer } from 'src/utils';
 
 import { Tag } from './Tag';
 

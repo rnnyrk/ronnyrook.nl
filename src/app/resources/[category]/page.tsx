@@ -1,5 +1,5 @@
 import { fetchByTag } from 'queries/fetchByTag';
-import { formatCategoryParamToTag } from 'services';
+import { formatCategoryParamToTag } from 'src/utils';
 import { Container } from 'common/layout/Container';
 import { ResourceCategoryHeading } from 'modules/resources/ResourceCategoryHeading';
 import { ResourcesGrid } from 'modules/resources/ResourcesGrid';

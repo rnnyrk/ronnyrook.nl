@@ -2,7 +2,7 @@ import type * as i from 'types';
 import { NextResponse } from 'next/server';
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints';
 
-import notionClient from 'services/notion';
+import notionClient from 'src/utils/notion';
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);

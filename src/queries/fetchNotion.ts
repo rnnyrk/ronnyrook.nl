@@ -1,6 +1,6 @@
 import * as i from 'types';
 
-import { formatResourceByType, getApiUrl } from 'services';
+import { formatResourceByType, getApiUrl } from 'src/utils';
 
 export const fetchNotion = async <T extends i.ResourcesKeys>(
   type: T,
