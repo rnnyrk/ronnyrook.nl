@@ -1,17 +1,19 @@
-import * as i from 'types';
-import { NextApiRequest, NextApiResponse } from 'next';
+import type * as i from 'types';
+import { NextResponse } from 'next/server';
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints';
 
 import notionClient from 'services/notion';
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const tag = req.query.tag as i.TagCategories | undefined;
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
 
-  const type = req.query.type as i.ResourcesKeys;
+  const tag = searchParams.get('tag') as i.TagCategories | undefined;
+  const type = searchParams.get('type') as i.ResourcesKeys;
+
   const type_options: i.ResourcesKeys[] = ['articles', 'tweets', 'sandboxes'];
 
   if (!type || !type_options.includes(type)) {
-    return res.status(400).json({ error: 'Invalid type provided' });
+    return NextResponse.json({ error: 'Invalid type provided' });
   }
 
   try {
@@ -51,11 +53,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       };
     });
 
-    return res.status(200).json(pages);
-  } catch (error) {
+    return NextResponse.json(pages);
+  } catch (error: any) {
     console.error(error);
-    return res.status(500).json({ error });
+    return NextResponse.json({ error: 'test' });
   }
-};
-
-export default handler;
+}

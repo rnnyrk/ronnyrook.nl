@@ -9,7 +9,7 @@ export const fetchByTag = async <T extends i.ResourcesKeys>(
   let resources: null | i.ResourceType<T>[] = null;
 
   try {
-    const res = await fetch(`${getApiUrl()}/notion?type=${type}&tag=${tag}`, {
+    const res = await fetch(`${getApiUrl()}/resources?type=${type}&tag=${tag}`, {
       headers: {
         'Content-Type': 'application/json',
       },
