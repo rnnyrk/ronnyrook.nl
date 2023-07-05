@@ -6,7 +6,7 @@ export const ResourcesArticles = async () => {
   const articles = await fetchNotion('articles');
 
   return (
-    <div className="min-h-screen min-w-full">
+    <div className="min-w-full">
       <ResourceOverview
         data={articles || []}
         type="articles"

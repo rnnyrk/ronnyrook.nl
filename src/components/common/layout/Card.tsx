@@ -72,7 +72,7 @@ export const Card = ({ children, isInView, tags, title, variant }: CardProps) =>
   const classes = clsx(
     'relative min-w-full md:min-w-[425px] md:max-w-[425px] mb-4 md:mr-4 rounded-xl shadow-md',
     {
-      'bg-rnny-light-tint dark:bg-rnny-dark': !variant,
+      'bg-rnny-light dark:bg-rnny-dark': !variant,
       'bg-white dark:bg-rnny-dark-tint': variant === 'off',
     },
   );

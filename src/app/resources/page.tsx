@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
 
 import { Container } from 'common/layout/Container';
-import { ResourcesTweets } from 'modules/resources/ResourcesTweets';
-import { ResourcesArticles } from 'modules/resources/ResourcesArticles';
-import { ResourcesSandboxes } from 'modules/resources/ResourcesSandboxes';
 import { Heading } from 'common/typography/Heading';
 import { RefreshResources } from 'modules/resources/RefreshResources';
 import { ResourceHeading } from 'modules/resources/ResourceHeading';
+import { ResourcesArticles } from 'modules/resources/ResourcesArticles';
+import { ResourcesSandboxes } from 'modules/resources/ResourcesSandboxes';
+import { ResourcesTweets } from 'modules/resources/ResourcesTweets';
 
 const Resources = () => {
   return (
@@ -24,7 +24,7 @@ const Resources = () => {
         </p>
       </Container>
 
-      <section className="min-h-screen py-40 bg-white dark:bg-rnny-dark-tint">
+      <section className="py-40 bg-white dark:bg-rnny-dark-tint">
         <ResourceHeading
           icon="twitter"
           text="When you're in search for useful tips and tricks, tech Twitter is a perfect source."
@@ -36,7 +36,7 @@ const Resources = () => {
         </Suspense>
       </section>
 
-      <section className="min-h-screen py-40">
+      <section className="py-40">
         <ResourceHeading
           icon="read"
           text="Varying from case studies to tutorials and in depth knowledge."
@@ -49,7 +49,7 @@ const Resources = () => {
         </Suspense>
       </section>
 
-      <section className="min-h-screen py-40 bg-white dark:bg-rnny-dark-tint">
+      <section className="py-40 bg-white dark:bg-rnny-dark-tint">
         <ResourceHeading
           icon="codepen"
           text="People on the internet build the most incredible things."
