@@ -13,7 +13,7 @@ export async function GET(req: Request) {
   const type_options: i.ResourcesKeys[] = ['articles', 'tweets', 'sandboxes'];
 
   if (!type || !type_options.includes(type)) {
-    return NextResponse.json({ error: 'Invalid type provided' });
+    return NextResponse.json({ error: 'Invalid type provided' }, { status: 400 });
   }
 
   try {
@@ -53,9 +53,9 @@ export async function GET(req: Request) {
       };
     });
 
-    return NextResponse.json(pages);
+    return NextResponse.json(pages, { status: 200 });
   } catch (error: any) {
     console.error(error);
-    return NextResponse.json({ error: 'test' });
+    return NextResponse.json({ error }, { status: 500 });
   }
 }
