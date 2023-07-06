@@ -44,8 +44,17 @@ export const metadata = {
     title: 'Ronny Rook',
     card: 'summary_large_image',
   },
+  manifest: '/images/favicon/site.webmanifest',
   icons: {
+    icon: '/images/favicon/favicon-32x32.png',
     shortcut: '/images/favicon/favicon.ico',
+    apple: '/images/favicon/apple-touch-icon.png',
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/images/favicon/safari-pinned-tab.svg',
+      },
+    ],
   },
 };
 
