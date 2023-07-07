@@ -8,6 +8,8 @@ import { ResourcesArticles } from 'modules/resources/ResourcesArticles';
 import { ResourcesSandboxes } from 'modules/resources/ResourcesSandboxes';
 import { ResourcesTweets } from 'modules/resources/ResourcesTweets';
 
+import Loading from './loading';
+
 const Resources = () => {
   return (
     <>
@@ -31,7 +33,7 @@ const Resources = () => {
         >
           <Heading>Tweets</Heading>
         </ResourceHeading>
-        <Suspense fallback="loading...">
+        <Suspense fallback={<Loading />}>
           <ResourcesTweets />
         </Suspense>
       </section>
@@ -44,7 +46,7 @@ const Resources = () => {
           <Heading>Articles</Heading>
         </ResourceHeading>
 
-        <Suspense fallback="loading...">
+        <Suspense fallback={<Loading />}>
           <ResourcesArticles />
         </Suspense>
       </section>
@@ -56,7 +58,7 @@ const Resources = () => {
         >
           <Heading className="break-all">CodePens/CodeSandboxes</Heading>
         </ResourceHeading>
-        <Suspense fallback="loading...">
+        <Suspense fallback={<Loading />}>
           <ResourcesSandboxes />
         </Suspense>
       </section>

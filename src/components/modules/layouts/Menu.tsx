@@ -1,10 +1,9 @@
 'use client';
-
-import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LayoutGroup, motion } from 'framer-motion';
 
+import { cn } from 'utils';
 import { DarkModeToggle } from 'common/interaction/DarkModeToggle';
 
 const items = {
@@ -26,7 +25,7 @@ const MenuItem = ({ title, href }: MenuItemProps) => {
   return (
     <Link
       href={href}
-      className={clsx(
+      className={cn(
         'mx-2 transition-all hover:text-neutral-100 font-bold rounded-full text-white',
         {
           'text-slate-400': !isActive,

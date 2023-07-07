@@ -1,8 +1,8 @@
 import './global.scss';
 import type * as i from 'types';
-import clsx from 'clsx';
 import { Inter } from 'next/font/google';
 
+import { cn } from 'utils';
 import { Footer } from 'modules/layouts/Footer';
 import { Menu } from 'modules/layouts/Menu';
 
@@ -63,7 +63,7 @@ const Layout = ({ children }: Props) => {
     <html lang="en">
       <head />
       <body
-        className={clsx(
+        className={cn(
           'min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60 text-black bg-rnny-light dark:bg-rnny-dark dark:text-white',
           inter.className,
         )}

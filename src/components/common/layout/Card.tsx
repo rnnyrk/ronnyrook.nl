@@ -2,7 +2,6 @@
 
 import * as i from 'types';
 import { useEffect, useRef, useState } from 'react';
-import clsx from 'clsx';
 import {
   animate,
   AnimatePresence,
@@ -12,7 +11,7 @@ import {
   useTransform,
 } from 'framer-motion';
 
-import { isServer } from 'src/utils';
+import { cn, isServer } from 'utils';
 
 import { Tag } from './Tag';
 
@@ -69,13 +68,10 @@ export const Card = ({ children, isInView, tags, title, variant }: CardProps) =>
     };
   }, []);
 
-  const classes = clsx(
-    'relative min-w-full md:min-w-[425px] md:max-w-[425px] mb-4 md:mr-4 rounded-xl shadow-md',
-    {
-      'bg-rnny-light dark:bg-rnny-dark': !variant,
-      'bg-white dark:bg-rnny-dark-tint': variant === 'off',
-    },
-  );
+  const classes = cn('relative min-w-full md:grid-span-1 mb-4 md:mb-0 rounded-xl shadow-md', {
+    'bg-rnny-light dark:bg-rnny-dark': !variant,
+    'bg-white dark:bg-rnny-dark-tint': variant === 'off',
+  });
 
   return (
     <AnimatePresence>
