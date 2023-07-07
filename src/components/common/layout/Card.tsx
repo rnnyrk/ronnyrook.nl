@@ -103,7 +103,7 @@ export const Card = ({ children, isInView, tags, title, variant }: CardProps) =>
           }}
         >
           <motion.div
-            className="w-full h-full flex flex-col p-8"
+            className="flex h-full w-full flex-col p-8"
             exit={{ opacity: 0 }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -120,7 +120,7 @@ export const Card = ({ children, isInView, tags, title, variant }: CardProps) =>
                 />
               ))}
             </div>
-            <h1 className="grow-[2] text-xl my-4 flex-[2]">{title}</h1>
+            <h1 className="my-4 flex-[2] grow-[2] text-xl">{title}</h1>
             {children}
           </motion.div>
         </motion.div>
