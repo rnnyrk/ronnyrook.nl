@@ -6,7 +6,7 @@ export const ResourcesSandboxes = async () => {
   const sandboxes = await fetchNotion('sandboxes');
 
   return (
-    <div className="min-h-screen min-w-full">
+    <div className="min-w-full">
       <ResourceOverview
         data={sandboxes || []}
         type="sandboxes"

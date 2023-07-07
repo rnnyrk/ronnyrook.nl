@@ -1,6 +1,6 @@
 # Ronny Rook
 
-2023 portfolio including new technologies such as:
+2023 portfolio with:
 
 - React 18 with Suspense and React Server Components
 - Next.js 13 app directory

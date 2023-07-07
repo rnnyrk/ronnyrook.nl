@@ -10,8 +10,8 @@ module.exports = {
         'rnny-secondary': '#C6D76D',
         'rnny-secondary-tint': '#E5EDAA',
         'rnny-dark': '#111111',
-        'rnny-dark-tint': '#22232A',
-        'rnny-light': '#F1F1F0',
+        'rnny-dark-tint': '#2D2E32',
+        'rnny-light': '#E8E8E8',
         'rnny-light-tint': '#F9F9F9',
         'rnny-gray': '#787878',
         'rnny-gray-tint': '#8F8D88',
@@ -27,4 +27,5 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
   },
+  plugins: [require('tailwindcss-animate')],
 };

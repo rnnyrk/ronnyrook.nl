@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import clsx from 'clsx';
 import { motion } from 'framer-motion';
 
+import { cn } from 'utils';
 import LoadingSvg from 'vectors/loading.svg';
 
 export const Button = ({
@@ -12,7 +12,7 @@ export const Button = ({
   size = 'default',
   ...otherProps
 }: ButtonProps | ButtonLinkProps) => {
-  const classes = clsx(`flex items-center justify-center font-semibold`, className, {
+  const classes = cn(`flex items-center justify-center font-semibold`, className, {
     relative: !className?.includes('absolute') && !className?.includes('fixed'),
     'bg-rnny-primary text-white': variant === 'primary',
     'bg-transparent border-2 border-rnny-dark dark:border-rnny-light text-rnny-dark dark:text-rnny-light transition-colors hover:bg-rnny-secondary-tint hover:border-rnny-secondary-tint dark:hover:bg-rnny-primary-tint dark:hover:border-rnny-primary-tint':

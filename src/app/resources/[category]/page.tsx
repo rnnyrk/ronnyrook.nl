@@ -1,8 +1,8 @@
-import { formatCategoryParamToTag } from 'services';
-import { Container } from 'common/layout/Container';
 import { fetchByTag } from 'queries/fetchByTag';
-import { ResourcesGrid } from 'modules/resources/ResourcesGrid';
+import { formatCategoryParamToTag } from 'src/utils';
+import { Container } from 'common/layout/Container';
 import { ResourceCategoryHeading } from 'modules/resources/ResourceCategoryHeading';
+import { ResourcesGrid } from 'modules/resources/ResourcesGrid';
 
 const ResourceCategory = async ({ params }: ResourceCategoryProps) => {
   const tag = params.category;
@@ -17,15 +17,17 @@ const ResourceCategory = async ({ params }: ResourceCategoryProps) => {
   const data = [...(tweets || []), ...(articles || []), ...(sandboxes || [])];
 
   return (
-    <Container className="px-8 w-full min-h-screen min-w-full">
+    <Container className="px-8 w-full min-w-full">
       <ResourceCategoryHeading title={title} />
 
-      <div className="w-full max-w-8xl mx-auto flex flex-wrap justify-center items-stretch content-start px-8">
-        <ResourcesGrid
-          data={data || []}
-          isInView={true}
-        />
-      </div>
+      <section className="py-40 bg-white dark:bg-rnny-dark-tint">
+        <div className="w-full max-w-8xl mx-auto flex flex-wrap justify-center items-stretch content-start px-8">
+          <ResourcesGrid
+            data={data || []}
+            isInView={true}
+          />
+        </div>
+      </section>
     </Container>
   );
 };

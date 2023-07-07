@@ -1,8 +1,8 @@
 'use client';
-
 import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimationControls } from 'framer-motion';
-import clsx from 'clsx';
+
+import { cn } from 'utils';
 
 export const Slider = ({ amountOfElements, className, children }: SliderProps) => {
   const controls = useAnimationControls();
@@ -25,7 +25,7 @@ export const Slider = ({ amountOfElements, className, children }: SliderProps) =
   const duration = amountOfElements * 40;
 
   return (
-    <div className={clsx('w-screen flex overflow-x-hidden', className)}>
+    <div className={cn('w-screen flex overflow-x-hidden', className)}>
       <motion.div
         ref={motionRef}
         className="flex"

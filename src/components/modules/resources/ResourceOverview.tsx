@@ -24,7 +24,7 @@ export const ResourceOverview = ({ data, type, variant }: ResourceOverviewProps)
   return (
     <div
       ref={ref}
-      className="w-full max-w-8xl mx-auto flex flex-wrap justify-center items-stretch content-start px-4 md:px-8"
+      className="w-full max-w-8xl mx-auto flex flex-col md:grid md:grid-cols-3 md:grid-rows-3 md:gap-8 px-4 md:px-8"
     >
       <ResourcesGrid
         data={(resources[type] as (i.Tweet | i.Article | i.Sandbox)[])?.slice(0, 9)}

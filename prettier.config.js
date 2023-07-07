@@ -11,9 +11,10 @@ module.exports = {
     '^next(.*)$',
     '<THIRD_PARTY_MODULES>',
     '',
-    '^(src|vectors|images|services|hooks|queries|store|styles|config|navigators|screens|static)(/.*|$)',
+    '^(src|vectors|images|utils|hooks|queries|store|styles|config|navigators|screens|static)(/.*|$)',
     '^(pages|layouts|modules|common)(/.*|$)',
     '',
     '^[./]',
   ],
+  plugins: [require('prettier-plugin-tailwindcss')],
 };
