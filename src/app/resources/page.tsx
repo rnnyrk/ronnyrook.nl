@@ -46,7 +46,7 @@ const Resources = () => {
           <Heading>Articles</Heading>
         </ResourceHeading>
 
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loading variant="off" />}>
           <ResourcesArticles />
         </Suspense>
       </section>

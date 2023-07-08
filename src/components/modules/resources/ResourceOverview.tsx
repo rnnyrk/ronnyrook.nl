@@ -36,8 +36,7 @@ export const ResourceOverview = ({ data, type, variant }: ResourceOverviewProps)
   );
 };
 
-type ResourceOverviewProps = {
+type ResourceOverviewProps = i.VariantProps & {
   data: (i.Tweet | i.Article | i.Sandbox)[];
   type: i.ResourcesKeys;
-  variant?: 'off';
 };
