@@ -1,0 +1,183 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+::selection {
+  background-color: #47a3f3;
+  color: #fefefe;
+}
+
+html {
+  min-width: 360px;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  @apply text-neutral-50;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Remove Safari input shadow on mobile */
+input[type='text'],
+input[type='email'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.tag--react,
+.tag--react-native {
+  background-color: #2fa0c0;
+}
+.tag--typescript {
+  background-color: #007acc;
+}
+
+.tag--node {
+  background-color: #339933;
+}
+
+.tag--javascript {
+  background-color: #b8a623;
+}
+
+.tag--html {
+  background-color: #e34c26;
+}
+
+.tag--css {
+  background-color: #264de4;
+}
+
+.tag--framer-motion {
+  background-color: #ff008c;
+}
+
+.tag--git {
+  background-color: #373737;
+}
+
+.tag--animations {
+  background-color: #530671;
+}
+
+.tag--performance {
+  background-color: #b24810;
+}
+
+.tag--nextjs {
+  background-color: #000000;
+}
+
+.tag--threejs {
+  background-color: #000000;
+}
+
+.button-dark-mode {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.waves {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  top: -40px;
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+}
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (min-width: 768px) {
+  .waves {
+    top: -150px;
+    height: 150px;
+    min-height: 150px;
+    max-height: 150px;
+  }
+}
+
+.social-icon {
+  fill: #000;
+}
+
+.dark .social-icon {
+  fill: #fff;
+}
+
+#wave1 {
+  fill: rgba(220, 220, 220, 0.2);
+}
+
+#wave2 {
+  fill: rgba(220, 220, 220, 0.4);
+}
+
+#wave3 {
+  fill: rgba(220, 220, 220, 0.2);
+}
+
+#wave4 {
+  fill: #fff;
+}
+
+.dark #wave1 {
+  fill: rgba(75, 75, 75, 0.2);
+}
+
+.dark #wave2 {
+  fill: rgba(75, 75, 75, 0.3);
+}
+
+.dark #wave3 {
+  fill: rgba(75, 75, 75, 0.1);
+}
+
+.dark #wave4 {
+  fill: #2d2e32;
+}

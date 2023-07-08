@@ -21,7 +21,7 @@ const ResourceCategory = async ({ params }: ResourceCategoryProps) => {
       <ResourceCategoryHeading title={title} />
 
       <section className="py-40 bg-white dark:bg-rnny-dark-tint">
-        <div className="w-full max-w-8xl mx-auto flex flex-wrap justify-center items-stretch content-start px-8">
+        <div className="w-full max-w-8xl mx-auto flex flex-col md:grid md:grid-cols-3 md:grid-rows-3 md:gap-8 px-4">
           <ResourcesGrid
             data={data || []}
             isInView={true}
