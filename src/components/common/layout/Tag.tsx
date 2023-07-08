@@ -1,7 +1,8 @@
 'use client';
+
 import type * as i from 'types';
-import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 import { cn } from 'utils';
 

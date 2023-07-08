@@ -3,8 +3,8 @@
 import { useRef } from 'react';
 import { motion, useInView, Variants } from 'framer-motion';
 
-import { List } from 'common/layout/List';
 import { Container } from 'common/layout/Container';
+import { List } from 'common/layout/List';
 import { Heading } from 'common/typography/Heading';
 
 import { Waves } from './Waves';

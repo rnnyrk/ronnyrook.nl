@@ -1,7 +1,7 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { motion, Variants } from 'framer-motion';
 
 import DarkSvg from 'vectors/dark-mode.svg';
 import LightSvg from 'vectors/light-mode.svg';

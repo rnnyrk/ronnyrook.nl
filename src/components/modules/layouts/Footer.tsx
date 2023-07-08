@@ -1,6 +1,6 @@
-import { Container } from 'common/layout/Container';
 import GithubSvg from 'vectors/github.svg';
 import TwitterSvg from 'vectors/twitter.svg';
+import { Container } from 'common/layout/Container';
 
 export const Footer = () => {
   return (

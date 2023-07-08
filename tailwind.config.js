@@ -22,6 +22,9 @@ module.exports = {
       fontFamily: {
         serif: ['var(--font-inter)'],
       },
+      screens: {
+        '3xl': '1600px',
+      },
     },
   },
   future: {

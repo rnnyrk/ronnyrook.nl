@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+
 import { Container } from 'common/layout/Container';
 
 // SVGs from: https://glyphs.fyi
