@@ -1,11 +1,9 @@
-import { Experience } from 'common/layout/Experience';
 import { Container } from 'common/layout/Container';
+import { Experience } from 'common/layout/Experience';
 import { Heading } from 'common/typography/Heading';
 
 export const metadata = {
-  title: {
-    default: 'Curriculum Vitae',
-  },
+  title: 'Curriculum Vitae',
 };
 
 const Cv = () => {

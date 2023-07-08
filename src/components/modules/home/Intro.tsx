@@ -1,6 +1,7 @@
+import Image from 'next/image';
+
 import { Container } from 'common/layout/Container';
 import { Heading } from 'common/typography/Heading';
-import Image from 'next/image';
 
 export const Intro = () => {
   return (

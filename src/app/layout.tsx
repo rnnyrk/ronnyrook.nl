@@ -1,4 +1,5 @@
 import './global.scss';
+
 import type * as i from 'types';
 import { Inter } from 'next/font/google';
 

@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
 
 import { useResourcesStore } from 'store/resources';
+
 import { ResourcesGrid } from './ResourcesGrid';
 
 export const ResourceOverview = ({ data, type, variant }: ResourceOverviewProps) => {

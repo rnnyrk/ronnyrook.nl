@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 
-import { Button } from 'common/interaction/Button';
 import { useResourcesStore } from 'store/resources';
+import { Button } from 'common/interaction/Button';
 
 const refreshVariants: Variants = {
   active: {
