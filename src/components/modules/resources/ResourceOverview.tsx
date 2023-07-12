@@ -1,6 +1,6 @@
 'use client';
 
-import * as i from 'types';
+import type * as i from 'types';
 import { useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
 

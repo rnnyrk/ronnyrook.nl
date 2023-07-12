@@ -1,4 +1,4 @@
-import * as i from 'types';
+import type * as i from 'types';
 
 import { formatResourceByType, getApiUrl } from 'src/utils';
 
