@@ -40,6 +40,35 @@ table {
   white-space: nowrap;
 }
 
+/* Markdown styling */
+.markdown p {
+  margin: 0 0 1.5em 0;
+}
+
+.markdown h3 {
+  margin: 1.8em 0 0.5em;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.markdown h4 {
+  margin: 0.3em 0;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.markdown blockquote {
+  font-weight: 500;
+  font-style: italic;
+  border-left-width: 0.25rem;
+  border-left-color: #e5e5e5;
+  quotes: '\201C''\201D''\2018''\2019';
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-left: 1em;
+}
+
+/* Tags for resources */
 .tag--react,
 .tag--react-native {
   background-color: #2fa0c0;
@@ -94,6 +123,7 @@ table {
   overflow: hidden;
 }
 
+/* Waves on homepage */
 .waves {
   position: absolute;
   left: 0;

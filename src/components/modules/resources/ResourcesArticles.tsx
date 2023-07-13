@@ -1,4 +1,4 @@
-import { fetchNotion } from 'queries/fetchNotion';
+import { fetchNotion } from 'queries/resources/fetchNotion';
 
 import { ResourceOverview } from './ResourceOverview';
 

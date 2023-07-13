@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { Button } from 'common/interaction/Button';
 import { Container } from 'common/layout/Container';
 import { Heading } from 'common/typography/Heading';
 
@@ -48,8 +49,27 @@ export const Intro = () => {
           >
             Roommates
           </a>
+          or{' '}
+          <a
+            href="https://giftheaux.com"
+            target="_blank"
+            rel="noreferrer"
+            className="text-slate-400 hover:text-slate-700 underline"
+          >
+            GIF the Aux
+          </a>
           .
         </p>
+
+        <p className="mb-4 text-lg">Curious to what I've been doing in the past?</p>
+        <Button
+          type="link"
+          href="/cv"
+          variant="secondary"
+          className="w-[220px]"
+        >
+          Check out my CV
+        </Button>
       </article>
     </Container>
   );
