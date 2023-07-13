@@ -43,6 +43,8 @@ table {
 /* Markdown styling */
 .markdown p {
   margin: 0 0 1.5em 0;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
 }
 
 .markdown h3 {
@@ -57,15 +59,34 @@ table {
   font-size: 1.1em;
 }
 
+.markdown p code {
+  color: #ec4899;
+  font-weight: 600;
+  font-size: 0.875em;
+  background-color: #282c34;
+  padding: 2px 4px;
+  border-radius: 0.25rem;
+}
+
 .markdown blockquote {
   font-weight: 500;
-  font-style: italic;
+  color: #dddddd;
   border-left-width: 0.25rem;
   border-left-color: #e5e5e5;
   quotes: '\201C''\201D''\2018''\2019';
-  margin-top: 1.6em;
-  margin-bottom: 1.6em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 2.2em;
   padding-left: 1em;
+}
+
+.markdown a {
+  @apply text-rnny-primary;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 /* Tags for resources */
