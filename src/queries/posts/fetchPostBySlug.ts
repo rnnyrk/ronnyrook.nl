@@ -1,8 +1,10 @@
+import path from 'path';
 import type * as i from 'types';
 import matter from 'gray-matter';
 
 export function fetchPostBySlug(slug: string): i.Post {
-  const filePath = `blogs/${slug}.md`;
+  const folder = path.join(process.cwd(), 'blogs');
+  const filePath = `${folder}/${slug}.md`;
   const fileContent = matter.read(filePath);
 
   return {
