@@ -49,16 +49,17 @@ table {
 
 .markdown h3 {
   margin: 1.8em 0 0.5em;
-  font-weight: bold;
-  font-size: 1.5em;
+  font-weight: 500;
+  font-size: 1.6em;
 }
 
 .markdown h4 {
   margin: 0.3em 0;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.1em;
 }
 
+.markdown li code,
 .markdown p code {
   color: #ec4899;
   font-weight: 600;
@@ -78,6 +79,33 @@ table {
   margin-bottom: 2em;
   margin-left: 2.2em;
   padding-left: 1em;
+}
+
+.markdown img {
+  margin: 1em auto;
+}
+
+.markdown ul,
+.markdown ol {
+  margin-left: 1.2em;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+}
+
+.markdown ul {
+  list-style: disc;
+}
+
+.markdown ol {
+  list-style: decimal;
+}
+
+.markdown li {
+  margin-bottom: 0.5em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .markdown a {
