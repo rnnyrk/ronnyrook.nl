@@ -1,4 +1,4 @@
-import * as i from 'types';
+import type * as i from 'types';
 
 export const formatResourceByType = <T extends i.ResourcesKeys>({
   data,

@@ -14,9 +14,9 @@ const Resources = () => {
   return (
     <>
       <RefreshResources />
-      <Container className="px-8 py-20 mb-20">
+      <Container className="px-8 mb-6 pb-10 md:mb-10 md:pb-20">
         <Heading>Notion</Heading>
-        <p className="my-8 text-lg">
+        <p className="mt-8 mb-20 text-lg">
           I use Notion basically as my second brain. When I come across an interesting (code
           related) tweet, see an useful code example or gather new knowdledge through an article I
           save it to my Notion library.{' '}
