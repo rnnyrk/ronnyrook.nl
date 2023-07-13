@@ -1,6 +1,6 @@
 'use client';
 
-import * as i from 'types';
+import type * as i from 'types';
 import { useEffect, useRef, useState } from 'react';
 import {
   animate,

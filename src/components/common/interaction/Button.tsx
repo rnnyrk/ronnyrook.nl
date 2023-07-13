@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -18,9 +20,9 @@ export const Button = ({
     'bg-transparent border-2 border-rnny-dark dark:border-rnny-light text-rnny-dark dark:text-rnny-light transition-colors hover:bg-rnny-secondary-tint hover:border-rnny-secondary-tint dark:hover:bg-rnny-primary-tint dark:hover:border-rnny-primary-tint':
       variant === 'secondary',
     'bg-slate-400	cursor-not-allowed': 'disabled' in otherProps && otherProps?.disabled,
-    'h-12 px-8 rounded text-base min-w-[200px]': size === 'default' && !otherProps?.animate,
+    'h-12 px-8 rounded-lg text-base min-w-[200px]': size === 'default' && !otherProps?.animate,
     'h-8 px-4 rounded-lg text-sm min-w-[100px]': size === 'small' && !otherProps?.animate,
-    'h-12 px-8 rounded min-w-0': otherProps?.animate,
+    'h-12 px-8 rounded-full min-w-0': otherProps?.animate,
   });
 
   if (type === 'link' && 'href' in otherProps && otherProps.href) {

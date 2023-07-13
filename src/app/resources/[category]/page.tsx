@@ -1,4 +1,4 @@
-import { fetchByTag } from 'queries/fetchByTag';
+import { fetchByTag } from 'queries/resources/fetchByTag';
 import { formatCategoryParamToTag } from 'src/utils';
 import { Container } from 'common/layout/Container';
 import { ResourceCategoryHeading } from 'modules/resources/ResourceCategoryHeading';
