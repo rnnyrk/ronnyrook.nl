@@ -64,21 +64,31 @@ table {
   color: #ec4899;
   font-weight: 600;
   font-size: 0.875em;
-  background-color: #282c34;
+  background-color: #eeeeee;
   padding: 2px 4px;
   border-radius: 0.25rem;
 }
 
+.dark .markdown li code,
+.dark .markdown p code {
+  background-color: #16171a;
+}
+
 .markdown blockquote {
   font-weight: 500;
-  color: #dddddd;
-  border-left-width: 0.25rem;
+  color: #222222;
   border-left-color: #e5e5e5;
+  border-left-width: 0.25rem;
   quotes: '\201C''\201D''\2018''\2019';
   margin-top: 2em;
   margin-bottom: 2em;
   margin-left: 2.2em;
   padding-left: 1em;
+}
+
+.dark .markdown blockquote {
+  color: #dddddd;
+  border-left-color: #e5e5e5;
 }
 
 .markdown img {

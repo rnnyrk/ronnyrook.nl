@@ -1,6 +1,7 @@
 'use client';
 
 import type * as i from 'types';
+import { useEffect, useState } from 'react';
 import rangeParser from 'parse-numeric-range';
 import ReactMarkdown from 'react-markdown';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -11,7 +12,7 @@ import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown
 import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss';
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
-import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { oneDark, oneLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import rehypeExternalLinks from 'rehype-external-links';
 import remarkGfm from 'remark-gfm';
 
@@ -24,7 +25,12 @@ SyntaxHighlighter.registerLanguage('markdown', markdown);
 SyntaxHighlighter.registerLanguage('json', json);
 
 export function Article({ post }: ArticleProps) {
-  const syntaxTheme = oneDark;
+  const [syntaxTheme, setSyntaxTheme] = useState(oneLight);
+
+  useEffect(() => {
+    const localTheme = localStorage?.theme === 'dark' ? oneDark : oneLight;
+    setSyntaxTheme(localTheme);
+  }, []);
 
   const MarkdownComponents: object = {
     code({ node, inline, className, ...props }) {
@@ -49,7 +55,6 @@ export function Article({ post }: ArticleProps) {
         <SyntaxHighlighter
           style={syntaxTheme}
           language={hasLang[1]}
-          className="codeStyle"
           showLineNumbers={true}
           wrapLines={hasMeta}
           useInlineStyles={true}
