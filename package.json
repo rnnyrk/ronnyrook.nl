@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Personal starter for NextJS 13, Tailwind, TypeScript",
   "author": "Ronny Rook",
-  "url": "https://rnny.nl/",
+  "url": "https://rnny.nl",
   "scripts": {
     "start": "next dev -p $([ -f .port ] && cat .port || echo 3000)",
     "dev": "npm run start",
@@ -26,7 +26,7 @@
     "react-dom": "18.2.0",
     "react-markdown": "8.0.7",
     "react-syntax-highlighter": "15.5.0",
-    "rehype-external-links": "^2.1.0",
+    "rehype-external-links": "2.1.0",
     "remark-gfm": "3.0.1",
     "sharp": "0.32.1",
     "zustand": "4.3.8"

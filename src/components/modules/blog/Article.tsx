@@ -66,6 +66,7 @@ export function Article({ post }: ArticleProps) {
       );
     },
   };
+
   return (
     <ReactMarkdown
       components={MarkdownComponents}

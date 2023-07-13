@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
     title: post.title,
     description: post.summary,
     keywords: post.tags,
-    authors: [{ name: 'Ronny Rook', url: 'https://ronnyrook.nl' }],
+    authors: [{ name: 'Ronny Rook', url: 'https://rnny.nl' }],
   };
 }
 
