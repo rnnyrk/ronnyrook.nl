@@ -49,8 +49,7 @@ export function Article({ post }: ArticleProps) {
         <SyntaxHighlighter
           style={syntaxTheme}
           language={hasLang[1]}
-          PreTag="div"
-          className="codeStyle whitespace-pre-line"
+          className="codeStyle"
           showLineNumbers={true}
           wrapLines={hasMeta}
           useInlineStyles={true}
