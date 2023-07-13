@@ -22,9 +22,9 @@ export const metadata = {
     siteName: 'Ronny Rook',
     images: [
       {
-        url: 'https://rnny.nl/og.jpg',
-        width: 1920,
-        height: 1080,
+        url: 'https://rnny.nl/api/og?title=Ronny%20Rook',
+        width: 1200,
+        height: 630,
       },
     ],
     locale: 'en-US',
@@ -43,7 +43,16 @@ export const metadata = {
   },
   twitter: {
     title: 'Ronny Rook',
+    description: 'Javascript developer from Amsterdam',
     card: 'summary_large_image',
+    images: [
+      {
+        url: 'https://rnny.nl/api/og?title=Ronny%20Rook',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    creator: '@rnnyrk',
   },
   manifest: '/images/favicon/site.webmanifest',
   icons: {
