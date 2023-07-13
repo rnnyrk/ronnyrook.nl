@@ -1,8 +1,6 @@
 import { ImageResponse } from '@vercel/og';
 
-export const config = {
-  runtime: 'edge',
-};
+export const runtime = 'edge';
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -16,7 +14,7 @@ export async function GET(req: Request) {
           <span tw="text-white">rnnyrk</span>
         </h2>
 
-        <div tw="w-[800px] h-[800px] rounded-full bg-[#253C66] absolute right-[-300px] " />
+        <div tw="w-[800px] h-[800px] rounded-full bg-[#253C66] absolute right-[-300px]" />
       </div>
     ),
     {
