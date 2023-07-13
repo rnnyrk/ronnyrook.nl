@@ -47,7 +47,7 @@ const BlogPost = ({ params }) => {
   return (
     <>
       <Container className="px-8 mb-6 pb-10 md:mb-10 md:pb-20">
-        <Heading>{post.title}</Heading>
+        <Heading as="h1">{post.title}</Heading>
         <p className="mt-8 mb-20 text-lg">{post.summary}</p>
       </Container>
 

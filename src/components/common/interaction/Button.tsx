@@ -17,7 +17,7 @@ export const Button = ({
   const classes = cn(`flex items-center justify-center font-semibold`, className, {
     relative: !className?.includes('absolute') && !className?.includes('fixed'),
     'bg-rnny-primary text-white': variant === 'primary',
-    'bg-transparent border-2 border-rnny-dark dark:border-rnny-light text-rnny-dark dark:text-rnny-light transition-colors hover:bg-rnny-secondary-tint hover:border-rnny-secondary-tint dark:hover:bg-rnny-primary-tint dark:hover:border-rnny-primary-tint':
+    'bg-transparent border-2 border-rnny-dark dark:border-rnny-light text-rnny-dark dark:text-rnny-light transition-colors hover:bg-rnny-primary-tint hover:border-rnny-primary-tint hover:text-rnny-light dark:hover:border-rnny-primary-tint':
       variant === 'secondary',
     'bg-slate-400	cursor-not-allowed': 'disabled' in otherProps && otherProps?.disabled,
     'h-12 px-8 rounded-lg text-base min-w-[200px]': size === 'default' && !otherProps?.animate,
