@@ -5,24 +5,24 @@ import { cn } from 'utils';
 const plexSerif = IBM_Plex_Serif({ weight: ['400'], subsets: ['latin'] });
 
 export const Heading = ({ as, className, children, color, size }: HeadingProps) => {
-  const classes = (defaultTextSize: HeadingProps['size']) =>
-    cn(`text-${size || defaultTextSize}`, plexSerif.className, className, {
-      [`text-${color}`]: Boolean(color),
-    });
+  const classes = cn(plexSerif.className, className, {
+    [`text-${color}`]: Boolean(color),
+    [`text-${size}`]: Boolean(size),
+  });
 
   if (as === 'h4') {
-    return <h4 className={classes('lg')}>{children}</h4>;
+    return <h4 className={`${classes} text-lg`}>{children}</h4>;
   }
 
   if (as === 'h3') {
-    return <h3 className={classes('xl')}>{children}</h3>;
+    return <h3 className={`${classes} text-xl`}>{children}</h3>;
   }
 
   if (as === 'h2') {
-    return <h2 className={classes('2xl')}>{children}</h2>;
+    return <h2 className={`${classes} text-2xl`}>{children}</h2>;
   }
 
-  return <h1 className={classes('4xl')}>{children}</h1>;
+  return <h1 className={`${classes} text-4xl`}>{children}</h1>;
 };
 
 type HeadingProps = {

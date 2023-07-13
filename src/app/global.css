@@ -47,6 +47,18 @@ table {
   line-height: 1.8rem;
 }
 
+.markdown h1 {
+  margin: 0 0 0.5em;
+  font-weight: 500;
+  font-size: 2em;
+}
+
+.markdown h2 {
+  margin: 1.8em 0 0.5em;
+  font-weight: 500;
+  font-size: 1.8em;
+}
+
 .markdown h3 {
   margin: 1.8em 0 0.5em;
   font-weight: 500;
@@ -64,21 +76,31 @@ table {
   color: #ec4899;
   font-weight: 600;
   font-size: 0.875em;
-  background-color: #282c34;
+  background-color: #eeeeee;
   padding: 2px 4px;
   border-radius: 0.25rem;
 }
 
+.dark .markdown li code,
+.dark .markdown p code {
+  background-color: #16171a;
+}
+
 .markdown blockquote {
   font-weight: 500;
-  color: #dddddd;
-  border-left-width: 0.25rem;
+  color: #222222;
   border-left-color: #e5e5e5;
+  border-left-width: 0.25rem;
   quotes: '\201C''\201D''\2018''\2019';
   margin-top: 2em;
   margin-bottom: 2em;
   margin-left: 2.2em;
   padding-left: 1em;
+}
+
+.dark .markdown blockquote {
+  color: #dddddd;
+  border-left-color: #e5e5e5;
 }
 
 .markdown img {
@@ -115,6 +137,10 @@ table {
   &:hover {
     text-decoration: none;
   }
+}
+
+.markdown *:first-child {
+  margin-top: 0;
 }
 
 /* Tags for resources */

@@ -27,7 +27,7 @@ const Blog = async () => {
       </Container>
 
       <section className="py-20 md:py-40 bg-white dark:bg-rnny-dark-tint">
-        <Container className="px-8">
+        <Container className="grid grid-cols-2 gap-8">
           {posts.map((post) => {
             return (
               <div
@@ -46,7 +46,7 @@ const Blog = async () => {
                   href={post.slug}
                   variant="secondary"
                 >
-                  Read "{post.title}"
+                  <span className="truncate">Read "{post.title}"</span>
                 </Button>
               </div>
             );
