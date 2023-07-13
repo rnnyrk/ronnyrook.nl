@@ -12,6 +12,7 @@ import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss';
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import rehypeExternalLinks from 'rehype-external-links';
 import remarkGfm from 'remark-gfm';
 
 SyntaxHighlighter.registerLanguage('tsx', tsx);
@@ -69,6 +70,7 @@ export function Article({ post }: ArticleProps) {
     <ReactMarkdown
       components={MarkdownComponents}
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[[rehypeExternalLinks, { target: '_blank' }]]}
       className="markdown"
     >
       {post.content}
