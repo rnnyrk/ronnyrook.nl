@@ -16,8 +16,6 @@ const Blog = async () => {
     {},
   );
 
-  // @TODO pass render as to Heading (h1, h2, h3, h4)
-
   return (
     <>
       <Container className="px-8 mb-6 pb-10 md:mb-10 md:pb-20">
@@ -36,7 +34,12 @@ const Blog = async () => {
                 className={classes}
                 key={`post_${post.slug}`}
               >
-                <Heading className="text-2xl mb-4">{post.title}</Heading>
+                <Heading
+                  as="h2"
+                  className="mb-4"
+                >
+                  {post.title}
+                </Heading>
                 <p className="mb-12">{post.summary}</p>
                 <Button
                   type="link"

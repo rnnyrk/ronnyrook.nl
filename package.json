@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@notionhq/client": "2.2.6",
+    "@vercel/og": "^0.5.8",
     "clsx": "1.2.1",
     "framer-motion": "9.0.7",
     "gray-matter": "4.0.3",
