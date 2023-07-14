@@ -1,5 +1,4 @@
 import { fetchPostsOverview } from 'queries/posts/fetchPostsOverview';
-import { cn } from 'utils';
 import { Button } from 'common/interaction/Button';
 import { Container } from 'common/layout/Container';
 import { Heading } from 'common/typography/Heading';
@@ -11,11 +10,6 @@ export const metadata = {
 
 const Blog = async () => {
   const posts = fetchPostsOverview();
-
-  const classes = cn(
-    'min-w-full p-8 mb-4 md:mb-8 rounded-xl shadow-md bg-rnny-light dark:bg-rnny-dark',
-    {},
-  );
 
   return (
     <>
@@ -31,7 +25,7 @@ const Blog = async () => {
           {posts.map((post) => {
             return (
               <div
-                className={classes}
+                className="'min-w-full p-8 mb-4 md:mb-8 rounded-xl shadow-md bg-rnny-light dark:bg-rnny-dark'"
                 key={`post_${post.slug}`}
               >
                 <Heading
