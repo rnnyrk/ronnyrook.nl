@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 
-import { Container } from 'common/layout/Container';
 import { Heading } from 'common/typography/Heading';
+import { PageHeader } from 'modules/layouts/PageHeader';
 import { RefreshResources } from 'modules/resources/RefreshResources';
 import { ResourceHeading } from 'modules/resources/ResourceHeading';
 import { ResourcesArticles } from 'modules/resources/ResourcesArticles';
@@ -14,17 +14,13 @@ const Resources = () => {
   return (
     <>
       <RefreshResources />
-      <Container className="px-8 mb-6 pb-10 md:mb-10 md:pb-20">
-        <Heading>Notion</Heading>
-        <p className="mt-8 mb-20 text-lg">
-          I use Notion basically as my second brain. When I come across an interesting (code
-          related) tweet, see an useful code example or gather new knowdledge through an article I
-          save it to my Notion library.{' '}
-          <strong className="md:block">
-            <em>A small insight into what's on my mind.</em>
-          </strong>
-        </p>
-      </Container>
+      <PageHeader
+        title="Notion"
+        className="mb-6 md:mb-10"
+        summary="I use Notion as an outsource of my brain. When I want to remember something I come across,
+        like an interesting (code related) tweet, an useful code example or gather new knowdledge
+        through an article I save it to my Notion library."
+      />
 
       <section className="py-40 bg-white dark:bg-rnny-dark-tint">
         <ResourceHeading
