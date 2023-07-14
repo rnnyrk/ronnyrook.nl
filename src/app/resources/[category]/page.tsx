@@ -1,7 +1,7 @@
 import { fetchByTag } from 'queries/resources/fetchByTag';
 import { formatCategoryParamToTag } from 'src/utils';
 import { Container } from 'common/layout/Container';
-import { ResourceCategoryHeading } from 'modules/resources/ResourceCategoryHeading';
+import { PageHeader } from 'modules/layouts/PageHeader';
 import { ResourcesGrid } from 'modules/resources/ResourcesGrid';
 
 const ResourceCategory = async ({ params }: ResourceCategoryProps) => {
@@ -18,7 +18,10 @@ const ResourceCategory = async ({ params }: ResourceCategoryProps) => {
 
   return (
     <Container className="px-8 w-full min-w-full">
-      <ResourceCategoryHeading title={title} />
+      <PageHeader
+        title={title}
+        backUrl="/resources"
+      />
 
       <section className="py-40 bg-white dark:bg-rnny-dark-tint">
         <div className="w-full max-w-8xl mx-auto flex flex-col md:grid md:grid-cols-3 md:grid-rows-3 md:gap-8 px-4">
