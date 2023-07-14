@@ -1,7 +1,7 @@
 import { fetchPostBySlug } from 'queries/posts/fetchPostBySlug';
 import { Container } from 'common/layout/Container';
-import { Heading } from 'common/typography/Heading';
 import { Article } from 'modules/blog/Article';
+import { PageHeader } from 'modules/layouts/PageHeader';
 
 export async function generateMetadata({ params }) {
   const post = fetchPostBySlug(params.slug);
@@ -46,12 +46,13 @@ const BlogPost = ({ params }) => {
 
   return (
     <>
-      <Container className="px-8 mb-6 pb-10 md:mb-10 md:pb-20">
-        <Heading as="h1">{post.title}</Heading>
-        <p className="mt-8 mb-20 text-lg">{post.summary}</p>
-      </Container>
+      <PageHeader
+        title={post.title}
+        summary={post.summary}
+        backUrl="/blog"
+      />
 
-      <section className="py-20 md:py-40 bg-white dark:bg-rnny-dark-tint">
+      <section className="py-20 bg-white dark:bg-rnny-dark-tint">
         <Container className="px-8">
           <Article post={post} />
         </Container>

@@ -1,6 +1,6 @@
 import { Container } from 'common/layout/Container';
 import { Experience } from 'common/layout/Experience';
-import { Heading } from 'common/typography/Heading';
+import { PageHeader } from 'modules/layouts/PageHeader';
 
 export const metadata = {
   title: 'Curriculum Vitae',
@@ -9,14 +9,13 @@ export const metadata = {
 const Cv = () => {
   return (
     <>
-      <Container className="px-8 mb-6 pb-10 md:mb-10 md:pb-20">
-        <Heading>Experience</Heading>
-        <p className="mt-8 mb-20 text-lg">
-          After (and during) studying Comminucations and Multimedia Design at the Hogeschool van
-          Amsterdam, I've ended up working for great employers and got the opportunity to work on
-          beautiful projects.
-        </p>
-      </Container>
+      <PageHeader
+        title="Experience"
+        className="mb-6 md:mb-10"
+        summary="After (and during) studying Comminucations and Multimedia Design at the Hogeschool van
+        Amsterdam, I've ended up working for great employers and got the opportunity to work on
+        beautiful projects."
+      />
 
       <section className="py-20 md:py-40 bg-white dark:bg-rnny-dark-tint">
         <Container className="px-8">
