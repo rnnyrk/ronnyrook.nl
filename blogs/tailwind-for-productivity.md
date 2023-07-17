@@ -1,7 +1,7 @@
 ---
 title: 'Tailwind for productivity'
 date: '2023-07-13'
-tags: ['Tailwind', 'CSS', 'Frontend', 'Productivity', 'DX']
+tags: ['Css', 'Other']
 summary: "In general, developers don't find writing CSS the most fun part of software development. Although, in my opinion, Tailwind CSS makes it fun and efficient!"
 ---
 

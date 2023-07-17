@@ -12,7 +12,7 @@ import Loading from './loading';
 
 const Resources = () => {
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <RefreshResources />
       <PageHeader
         title="Notion"
@@ -29,9 +29,7 @@ const Resources = () => {
         >
           <Heading>Tweets</Heading>
         </ResourceHeading>
-        <Suspense fallback={<Loading />}>
-          <ResourcesTweets />
-        </Suspense>
+        <ResourcesTweets />
       </section>
 
       <section className="py-40">
@@ -41,10 +39,7 @@ const Resources = () => {
         >
           <Heading>Articles</Heading>
         </ResourceHeading>
-
-        <Suspense fallback={<Loading variant="off" />}>
-          <ResourcesArticles />
-        </Suspense>
+        <ResourcesArticles />
       </section>
 
       <section className="py-40 bg-white dark:bg-rnny-dark-tint">
@@ -54,11 +49,9 @@ const Resources = () => {
         >
           <Heading className="break-all">CodePens/CodeSandboxes</Heading>
         </ResourceHeading>
-        <Suspense fallback={<Loading />}>
-          <ResourcesSandboxes />
-        </Suspense>
+        <ResourcesSandboxes />
       </section>
-    </>
+    </Suspense>
   );
 };
 

@@ -3,7 +3,7 @@ import type * as i from 'types';
 export type Post = {
   title: string;
   date: string;
-  tags: string[];
+  tags: i.TagCategories[];
   summary: string;
   slug: string;
   content: string;
