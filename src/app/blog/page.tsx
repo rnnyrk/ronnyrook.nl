@@ -25,7 +25,7 @@ const Blog = async () => {
           {posts.map((post) => {
             return (
               <div
-                className="'min-w-full p-8 mb-4 md:mb-8 rounded-xl shadow-md bg-rnny-light dark:bg-rnny-dark'"
+                className="'min-w-full p-8 mb-4 md:mb-8 rounded-xl shadow-md bg-rnny-light dark:bg-rnny-dark"
                 key={`post_${post.slug}`}
               >
                 <Heading
