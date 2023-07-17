@@ -22,20 +22,15 @@ export default function Loading({ variant }: i.VariantProps) {
 
   return (
     <>
-      <Container className="p-8 mb-6 md:mb-10">
+      <Container className="px-8 w-full min-w-full">
         <div className="flex flex-col">
           <Container className="w-full px-8">
+            <Skeleton className={cn('h-6 w-[200px] mb-2', variantHeadingClasses)} />
             <Skeleton className={cn('h-12 w-[200px] mb-8', variantHeadingClasses)} />
-            <Skeleton className={cn('h-6 w-[560px] mt-6', variantHeadingClasses)} />
-            <Skeleton className={cn('h-6 w-[560px] mt-2', variantHeadingClasses)} />
           </Container>
         </div>
       </Container>
       <section className="py-40 bg-white dark:bg-rnny-dark-tint">
-        <Container className="w-full px-8">
-          <Skeleton className={cn('h-12 w-[200px]', variantDefaultClasses)} />
-          <Skeleton className={cn('h-6 w-[560px] mt-6 mb-8', variantDefaultClasses)} />
-        </Container>
         <div className="w-full max-w-8xl mx-auto flex flex-col md:grid md:grid-cols-3 md:grid-rows-3 md:gap-8 px-4 md:px-8">
           <Skeleton className={skeletonCardClasses} />
           <Skeleton className={skeletonCardClasses} />
