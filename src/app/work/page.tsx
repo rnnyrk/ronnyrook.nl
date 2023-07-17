@@ -4,29 +4,37 @@ import { Container } from 'common/layout/Container';
 import { Tag } from 'common/layout/Tag';
 import { Heading } from 'common/typography/Heading';
 import { PageHeader } from 'modules/layouts/PageHeader';
+import { Cube } from 'modules/work/Cube';
 
 export const metadata = {
-  title: 'Blog',
+  title: 'Work',
+  description:
+    'Blogs about various Javascript topics, like React / Expo, CSS, Framer Motion, and more. And cases about projects I have worked on, such as websites with NextJS, apps with React Native.',
 };
 
-const Blog = async () => {
+const Work = async () => {
   const posts = fetchPostsOverview();
 
   return (
     <>
       <PageHeader
-        title="Blog"
+        title="Work"
         className="mb-6 md:mb-10"
         summary="Every now and then I write a blog post about something I have a good opinion about or I
         want to learn you something new."
       />
 
-      <section className="py-20 md:py-40 bg-white dark:bg-rnny-dark-tint">
-        <Container className="grid grid-cols-2 gap-8">
+      <section className="py-20 md:py-60 bg-white dark:bg-rnny-dark-tint">
+        <Container className="max-w-8xl grid grid-cols-2 gap-8">
+          {/* <Cube
+            title="Ronny"
+            image=""
+          /> */}
+
           {posts.map((post) => {
             return (
               <div
-                className="'min-w-full p-8 mb-4 md:mb-8 rounded-xl shadow-md bg-rnny-light dark:bg-rnny-dark"
+                className="min-w-full p-8 my-80 rounded-xl shadow-md bg-rnny-light dark:bg-rnny-dark"
                 key={`post_${post.slug}`}
               >
                 <div>
@@ -54,10 +62,15 @@ const Blog = async () => {
               </div>
             );
           })}
+
+          {/* <Cube
+            title="Amdax"
+            image=""
+          /> */}
         </Container>
       </section>
     </>
   );
 };
 
-export default Blog;
+export default Work;

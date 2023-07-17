@@ -28,7 +28,7 @@ export const PageHeader = ({ backUrl, className, title, summary }: PageHeaderPro
 };
 
 type PageHeaderProps = {
-  backUrl?: '/resources' | '/blog';
+  backUrl?: '/resources' | '/work';
   className?: string;
   title: string;
   summary?: string;

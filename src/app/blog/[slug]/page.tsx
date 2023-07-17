@@ -1,7 +1,7 @@
 import { fetchPostBySlug } from 'queries/posts/fetchPostBySlug';
 import { Container } from 'common/layout/Container';
-import { Article } from 'modules/blog/Article';
 import { PageHeader } from 'modules/layouts/PageHeader';
+import { Article } from 'modules/work/Article';
 
 export async function generateMetadata({ params }) {
   const post = fetchPostBySlug(params.slug);
@@ -49,7 +49,7 @@ const BlogPost = ({ params }) => {
       <PageHeader
         title={post.title}
         summary={post.summary}
-        backUrl="/blog"
+        backUrl="/work"
       />
 
       <section className="py-20 bg-white dark:bg-rnny-dark-tint">

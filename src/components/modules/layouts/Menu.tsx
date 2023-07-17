@@ -10,7 +10,7 @@ import { DarkModeToggle } from 'common/interaction/DarkModeToggle';
 const items = {
   '/': 'About',
   '/resources': 'Resources',
-  '/blog': 'Blog',
+  '/work': 'Work',
 };
 
 const MenuItem = ({ title, href }: MenuItemProps) => {
