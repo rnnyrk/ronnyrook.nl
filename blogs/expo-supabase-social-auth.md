@@ -1,7 +1,7 @@
 ---
 title: 'Social Authentication with Expo and Supabase'
 date: '2023-07-13'
-tags: ['Expo', 'Supabase', 'React Native', 'Apple', 'Google']
+tags: ['Expo', 'React Native', 'Supabase', 'Other']
 summary: 'Sign In with Apple or Google login? With Supabase social auth providers both are very easy to implement. Try it out now!'
 ---
 

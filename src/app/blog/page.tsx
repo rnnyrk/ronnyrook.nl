@@ -1,6 +1,7 @@
 import { fetchPostsOverview } from 'queries/posts/fetchPostsOverview';
 import { Button } from 'common/interaction/Button';
 import { Container } from 'common/layout/Container';
+import { Tag } from 'common/layout/Tag';
 import { Heading } from 'common/typography/Heading';
 import { PageHeader } from 'modules/layouts/PageHeader';
 
@@ -28,9 +29,17 @@ const Blog = async () => {
                 className="'min-w-full p-8 mb-4 md:mb-8 rounded-xl shadow-md bg-rnny-light dark:bg-rnny-dark"
                 key={`post_${post.slug}`}
               >
+                <div>
+                  {post.tags?.map((tag) => (
+                    <Tag
+                      key={tag}
+                      title={tag}
+                    />
+                  ))}
+                </div>
                 <Heading
                   as="h2"
-                  className="mb-4"
+                  className="my-4"
                 >
                   {post.title}
                 </Heading>
