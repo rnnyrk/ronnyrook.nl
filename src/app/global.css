@@ -109,7 +109,8 @@ table {
 
 .markdown ul,
 .markdown ol {
-  margin-left: 1.2em;
+  margin-left: 1.2rem;
+  margin-bottom: 1rem;
   font-size: 1.1rem;
   line-height: 1.8rem;
 }
@@ -128,6 +129,10 @@ table {
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.markdown li ul li {
+  margin-bottom: 0;
 }
 
 .markdown a {

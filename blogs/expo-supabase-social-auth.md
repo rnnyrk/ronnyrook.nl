@@ -5,32 +5,69 @@ tags: ['Expo', 'React Native', 'Supabase', 'Other']
 summary: 'Sign In with Apple or Google login? With Supabase social auth providers both are very easy to implement. Try it out now!'
 ---
 
-## Clone and setup the project
+## Project goal and set up
 
-[On Github I’ve made an example project with all the code required to build a basic application.](https://github.com/rnnyrk/expo-router-supabase-social-auth)
+The goal of this tutorial will be to create a React Native app and be able to log into the app with several social media providers. The app will support different app flavours/variants/environments so we can set up a development, staging and production version.
+
+To start, [download the Github repository](https://github.com/rnnyrk/expo-router-supabase-social-auth) I’ve made as an example. All the finalised code to build the application is included within the repository. The app makes use of [Expo Application Service (EAS)](https://expo.dev/eas). Make sure that, before this tutorial, you have a basic knowledge about creating an Expo app using EAS.
 
 While I’d try to keep to boilerplate as easy and small as possible, some libraries I’ve used and implementations I did are opinionated to the way I work. Think about using `styled-components` for styling, ESLint for linting and Prettier for formatting (including import sorting).
 
+### Installation
+
+This project support building the app in different environments/variants/app flavours. The app will support `development`, `staging` and `production`, but for this tutorial, we will only use `development` and `production`. Start with modifying the `env.js` in the root of your project. Change the `BUNDLE_IN`, `PACKAGE` and `NAME` constants within this file. This will automatically set up the current deep linking/redirect URLs. In my example, the name `com.expobase` is being used. Therefore, the redirect URLs will be to `com.expobase://{PAGE}/`.
+
 ```bash
 git clone git@github.com:rnnyrk/expo-router-supabase-social-auth.git YOUR_PROJECT_NAME
-cd YOUR_PROJECT_NAME && npm install
-npm run start
+cd YOUR_PROJECT_NAME
+npm install
 ```
 
-Start off with modifying the `app.json` in the root of your project and pick your own `scheme` value and app names. Your scheme name will be used to setup redirect URLs, or for more deep linking in the future. In my example, the scheme name is `com.expobase`, so the redirect URL will be similar to `com.expobase://{PAGE}/`.
+To customise the project, you can modify:
 
-## Supabase
+- `src/styles/theme.ts`, to change colours within the application
+- `src/assets/images/*.png`, the images in this folder are used as app icons and splash screens. The Expo plugin [app-icon-badge](https://github.com/obytes/app-icon-badge) automatically creates different app icons based on the environment you are building (see `app.config.ts`).
+
+### Environments
+
+**Because we're creating both the `development` and `production` environment, all the steps of this tutorial have to be done twice.**
 
 Create a project within Supabase and under “Project Settings” find your “Reference ID” (Supabase ID).
 
-Revisit your project in your editor and change the `.env.example` file to `.env` or `.env.local` . Fill in the required properties from your “Project Settings” page. The `SUPABASE_ANON_KEY` is within “Project Settings > API > Project API keys” and can be found as `anon` / `public` key.
+Revisit your project in your editor and change the `.env.example` file to `.env` or `.env.local`. Fill in the required properties from your “Project Settings” page. The `EXPO_PUBLIC_SUPABASE_URL_DEV` is within “Project Settings > API > Project API keys” and can be found as an `anon` key.
 
 ```bash
-EXPO_PUBLIC_SUPABASE_URL=https://{SUPABASE_ID}.supabase.co
-EXPO_PUBLIC_SUPABASE_PUBLIC_KEY={SUPABASE_ANON_KEY}
+EXPO_PUBLIC_SUPABASE_URL_DEV=https://{SUPABASE_ID}.supabase.co
+EXPO_PUBLIC_SUPABASE_PUBLIC_KEY_DEV={SUPABASE_ANON_KEY}
 ```
 
-### Database
+`_DEV`
+
+You can now build the project. For a development build, run (you can also replace `ios` with `android`):
+
+```bash
+npm run prebuild
+npm run ios
+```
+
+For every environment, we have separate NPM build commands.
+
+- Development
+  - `npm run prebuild`
+  - `npm run ios` / `npm run android`
+  - `npm run build:development:ios`
+  - `npm run build:development:android`
+- Production
+  - `npm run prebuild:production`
+  - `npm run ios:production` / `npm run android:production`
+  - `npm run build:production:ios`
+  - `npm run build:production:android`
+
+It's possible to run both the development build as well as the production build on the same device. Both will be installed with separate names and app icons. Don't forget to run `npm run prebuild` or `npm run prebuild:production` before building the app for a specific environment. Prebuilding will set the correct config for that environment. [Read more about Prebuilding in the Expo docs](https://docs.expo.dev/workflow/prebuild/).
+
+![Different app environments on one device](/images/expo-supabase-social-auth/App-Env-Installs.png)
+
+## Database
 
 In the main menu go to “Database > Tables” to create a new table called `users`. Create the fields as shown below. Fill in `gen_random_uuid()` as the default value for the `id` field.
 
@@ -44,7 +81,7 @@ Within the Supabase main menu go to the “Table editor > `users`” and find th
 
 ![Supabase Row Level Security overview](/images/expo-supabase-social-auth/Supabase-RLS.png)
 
-For now, we only need two RLS policies. We want everyone to be able to sign up and read the user data. When you click “New Policy > Get Started Quickly” you can use a template to set up the `read` and `insert` access for all users by simply setting the value to `true`.
+For now, we only need two RLS policies. We want everyone to be able to sign up and read the user data. When you click “New Policy > Get Started Quickly” you can use a template to set up the `read` and `insert` access for all users by simply setting the value to `true`. For `update`, use the "Quick start" template of the policy named `"Enable update for users based on email"`, so the passed JWT token of the logged-in user is matched with the email column in this table to find the rows a user is allowed to update.
 
 ![Supabase Row Level Security detail](/images/expo-supabase-social-auth/Supabase-RLS.png)
 
