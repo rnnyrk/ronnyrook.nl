@@ -82,7 +82,7 @@ const Layout = ({ children }: Props) => {
         <Menu />
         <main>{children}</main>
         <Footer />
-        <Analytics />
+        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   );
