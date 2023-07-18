@@ -30,18 +30,18 @@ To customise the project, you can modify:
 
 ### Environments
 
-**Because we're creating both the `development` and `production` environment, all the steps of this tutorial have to be done twice.**
+**Because we're creating both a `development` and a `production` app, all the steps of this tutorial have to be done twice.** So creating two Google apps in the development console and creating all identifiers and keys twice for Apple. You should also create two Supabase projects.
 
 Create a project within Supabase and under “Project Settings” find your “Reference ID” (Supabase ID).
 
-Revisit your project in your editor and change the `.env.example` file to `.env` or `.env.local`. Fill in the required properties from your “Project Settings” page. The `EXPO_PUBLIC_SUPABASE_URL_DEV` is within “Project Settings > API > Project API keys” and can be found as an `anon` key.
+Revisit your project in your editor and change the `.env.example` file to `.env.development` and create another `.env.production`. Fill in the required properties from your “Project Settings” page. The `EXPO_PUBLIC_SUPABASE_URL_DEV` is within “Project Settings > API > Project API keys” and can be found as an `anon` key.
 
 ```bash
 EXPO_PUBLIC_SUPABASE_URL_DEV=https://{SUPABASE_ID}.supabase.co
 EXPO_PUBLIC_SUPABASE_PUBLIC_KEY_DEV={SUPABASE_ANON_KEY}
 ```
 
-`_DEV`
+In `.env.production` the `_DEV` suffix is replaced with `_PROD`. The values within these files are loaded into the project via `env.js` in the root of your project. Throughout the project you can access env variables with `import { Env } from '@env';`.
 
 You can now build the project. For a development build, run (you can also replace `ios` with `android`):
 
@@ -50,7 +50,7 @@ npm run prebuild
 npm run ios
 ```
 
-For every environment, we have separate NPM build commands.
+For every environment, there are various NPM build commands.
 
 - Development
   - `npm run prebuild`
@@ -81,7 +81,7 @@ Within the Supabase main menu go to the “Table editor > `users`” and find th
 
 ![Supabase Row Level Security overview](/images/expo-supabase-social-auth/Supabase-RLS.png)
 
-For now, we only need two RLS policies. We want everyone to be able to sign up and read the user data. When you click “New Policy > Get Started Quickly” you can use a template to set up the `read` and `insert` access for all users by simply setting the value to `true`. For `update`, use the "Quick start" template of the policy named `"Enable update for users based on email"`, so the passed JWT token of the logged-in user is matched with the email column in this table to find the rows a user is allowed to update.
+For now, we only need two RLS policies. We want everyone to be able to sign up and read the user data. When you click “New Policy > Get Started Quickly” you can use a template to set up the `read` and `insert` access for all users by simply setting the value to `true`. For `update`, use the "Quick Start" template of the policy named `"Enable update for users based on email"`, so the passed JWT token of the logged-in user is matched with the email column in this table to find the rows a user is allowed to update.
 
 ![Supabase Row Level Security detail](/images/expo-supabase-social-auth/Supabase-RLS.png)
 
@@ -151,3 +151,7 @@ Insert this secret key in your Supabase dashboard under “Authentication > Prov
 You should now be able to have a successful login using **Sign In with Apple**.
 
 ## Conclusion
+
+## Troubleshooting
+
+https://github.com/expo/expo/issues/23590
