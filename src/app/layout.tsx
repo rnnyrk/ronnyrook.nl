@@ -2,6 +2,7 @@ import './global.css';
 
 import type * as i from 'types';
 import { Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 
 import { cn } from 'utils';
 import { Footer } from 'modules/layouts/Footer';
@@ -81,6 +82,7 @@ const Layout = ({ children }: Props) => {
         <Menu />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
