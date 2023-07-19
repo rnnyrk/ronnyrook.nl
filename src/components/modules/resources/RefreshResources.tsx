@@ -67,6 +67,7 @@ export const RefreshResources = () => {
       type="button"
       onClick={onShuffle}
       initial="inactive"
+      variant="secondary"
       animate={isShufflling ? 'active' : 'inactive'}
       variants={refreshVariants}
     >

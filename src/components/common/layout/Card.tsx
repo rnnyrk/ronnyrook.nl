@@ -69,7 +69,7 @@ export const Card = ({ children, isInView, tags, title, variant }: CardProps) =>
                 />
               ))}
             </div>
-            <h1 className="my-4 flex-[2] grow-[2] text-xl">{title}</h1>
+            <h1 className="my-4 flex-[2] grow-[2] text-xl text-gray">{title}</h1>
             {children}
           </motion.div>
         </motion.div>

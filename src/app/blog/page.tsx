@@ -22,11 +22,11 @@ const Blog = async () => {
       />
 
       <section className="py-20 md:py-40 bg-white dark:bg-rnny-dark-tint">
-        <Container className="grid grid-cols-2 gap-8">
+        <Container className="flex flex-col md:grid md:grid-cols-2 md:gap-8">
           {posts.map((post) => {
             return (
               <div
-                className="'min-w-full p-8 mb-4 md:mb-8 rounded-xl shadow-md bg-rnny-light dark:bg-rnny-dark"
+                className="min-w-full p-8 mb-4 md:mb-8 rounded-xl shadow-md bg-rnny-light dark:bg-rnny-dark"
                 key={`post_${post.slug}`}
               >
                 <div>
@@ -39,7 +39,7 @@ const Blog = async () => {
                 </div>
                 <Heading
                   as="h2"
-                  className="my-4"
+                  className="my-4 text-black dark:text-white"
                 >
                   {post.title}
                 </Heading>
@@ -47,7 +47,6 @@ const Blog = async () => {
                 <Button
                   type="link"
                   href={post.slug}
-                  variant="secondary"
                 >
                   <span className="truncate">Read "{post.title}"</span>
                 </Button>

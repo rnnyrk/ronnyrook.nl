@@ -75,7 +75,7 @@ const Layout = ({ children }: Props) => {
       <head />
       <body
         className={cn(
-          'min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60 text-black bg-rnny-light dark:bg-rnny-dark dark:text-white',
+          'min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60 text-black bg-rnny-light dark:bg-rnny-dark dark:text-rnny-dark-text',
           inter.className,
         )}
       >
