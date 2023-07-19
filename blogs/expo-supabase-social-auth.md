@@ -5,17 +5,23 @@ tags: ['Expo', 'React Native', 'Supabase', 'Other']
 summary: 'Sign In with Apple or Google login? With Supabase social auth providers both are very easy to implement. Try it out now!'
 ---
 
-## Project goal and set up
+_The goal of this tutorial will be to create a React Native app and be able to log into the app with several social media providers. The app will support different app flavours/variants/environments so we can set up a development, staging and production version._
 
-The goal of this tutorial will be to create a React Native app and be able to log into the app with several social media providers. The app will support different app flavours/variants/environments so we can set up a development, staging and production version.
+## Project set up
 
-To start, [download the Github repository](https://github.com/rnnyrk/expo-router-supabase-social-auth) I’ve made as an example. All the finalised code to build the application is included within the repository. The app makes use of [Expo Application Service (EAS)](https://expo.dev/eas). Make sure that, before this tutorial, you have a basic knowledge about creating an Expo app using EAS.
+To start, [download the Github repository](https://github.com/rnnyrk/expo-router-supabase-social-auth) I’ve made as an example. All the finalised code to build the application is included within the repository. The app makes use of [Expo Application Service (EAS)](https://expo.dev/eas). Make sure that, before this tutorial, you have the following:
 
-While I’d try to keep to boilerplate as easy and small as possible, some libraries I’ve used and implementations I did are opinionated to the way I work. Think about using `styled-components` for styling, ESLint for linting and Prettier for formatting (including import sorting).
+- Expo.dev account and [expo-cli](https://docs.expo.dev/more/expo-cli/) installed
+- Basic knowledge about creating an Expo app using EAS
+- Apple Developer account
+- Google (Developer) account
+- Supabase account
+
+While I’d try to keep to boilerplate as easy and small as possible, some implementations I did are opinionated to the way I work. Think about using `styled-components` for styling, my ESLint rules and Prettier for formatting and sorting the imports.
 
 ### Installation
 
-This project support building the app in different environments/variants/app flavours. The app will support `development`, `staging` and `production`, but for this tutorial, we will only use `development` and `production`. Start with modifying the `env.js` in the root of your project. Change the `BUNDLE_IN`, `PACKAGE` and `NAME` constants within this file. This will automatically set up the current deep linking/redirect URLs. In my example, the name `com.expobase` is being used. Therefore, the redirect URLs will be to `com.expobase://{PAGE}/`.
+This project support building the app in different environments/variants/app flavours. The app will support `development`, `staging` and `production`, but for this tutorial, we will only use `development` and `production`. Start with modifying the `env.js` in the root of your project. Change the `BUNDLE_ID`, `PACKAGE` and `NAME` constants within this file. This will automatically set up the correct deep linking/redirect URLs within your app. In my example, the bundle ID `com.expobase` is being used. Therefore, after logging in, users will be redirected to `com.expobase://{PAGE}/`.
 
 ```bash
 git clone git@github.com:rnnyrk/expo-router-supabase-social-auth.git YOUR_PROJECT_NAME
@@ -26,31 +32,36 @@ npm install
 To customise the project, you can modify:
 
 - `src/styles/theme.ts`, to change colours within the application
-- `src/assets/images/*.png`, the images in this folder are used as app icons and splash screens. The Expo plugin [app-icon-badge](https://github.com/obytes/app-icon-badge) automatically creates different app icons based on the environment you are building (see `app.config.ts`).
+- `src/assets/images/*.png`, the images in this folder are used as app icons and splash screens. The Expo plugin [app-icon-badge](https://github.com/obytes/app-icon-badge) automatically generates different app icons based on the environment you are (pre)building (see `app.config.ts`).
 
 ### Environments
 
-**Because we're creating both the `development` and `production` environment, all the steps of this tutorial have to be done twice.**
+**Because we're creating both `development` and `production` apps, all the steps of this tutorial have to be done twice.** So creating two Google apps in the development console and creating all identifiers and keys for Apple twice. You should also create two projects in Supabase. I've called one "Expobase" and the other "Expobase DEV". Within Google and Apple I follow the same notation. With a DEV suffix (or ACC for staging) and just the name for production.
 
 Create a project within Supabase and under “Project Settings” find your “Reference ID” (Supabase ID).
 
-Revisit your project in your editor and change the `.env.example` file to `.env` or `.env.local`. Fill in the required properties from your “Project Settings” page. The `EXPO_PUBLIC_SUPABASE_URL_DEV` is within “Project Settings > API > Project API keys” and can be found as an `anon` key.
+Within your editor, change the `.env.example` file to `.env.development` and create another `.env.production`. Fill in the required properties from your “Project Settings” page. The `EXPO_PUBLIC_SUPABASE_URL_DEV` is within “Project Settings > API > Project API keys” and can be found as `anon` key. The `EAS_PROJECT_ID` will be created to first time you deploy this project to your Expo account via the expo-cli.
 
 ```bash
 EXPO_PUBLIC_SUPABASE_URL_DEV=https://{SUPABASE_ID}.supabase.co
 EXPO_PUBLIC_SUPABASE_PUBLIC_KEY_DEV={SUPABASE_ANON_KEY}
+EAS_PROJECT_ID=
 ```
 
-`_DEV`
+In `.env.production` the `_DEV` suffix is replaced with `_PROD`. The values within these files are loaded into the project via `env.js` in the root of your project. Throughout the project you can access env variables with `import { Env } from '@env';`.
 
-You can now build the project. For a development build, run (you can also replace `ios` with `android`):
+These environment variables should also be included in your Expo/EAS project secrets page. Without these secrets in your Expo account, building the final application will fail.
+
+![Secrets in your Expo environments](/images/expo-supabase-social-auth/Expo-Secrets.png)
+
+You can now run the project. For a development build, run (you can also replace `ios` with `android`):
 
 ```bash
 npm run prebuild
 npm run ios
 ```
 
-For every environment, we have separate NPM build commands.
+For every environment, there are various NPM build commands.
 
 - Development
   - `npm run prebuild`
@@ -81,7 +92,7 @@ Within the Supabase main menu go to the “Table editor > `users`” and find th
 
 ![Supabase Row Level Security overview](/images/expo-supabase-social-auth/Supabase-RLS.png)
 
-For now, we only need two RLS policies. We want everyone to be able to sign up and read the user data. When you click “New Policy > Get Started Quickly” you can use a template to set up the `read` and `insert` access for all users by simply setting the value to `true`. For `update`, use the "Quick start" template of the policy named `"Enable update for users based on email"`, so the passed JWT token of the logged-in user is matched with the email column in this table to find the rows a user is allowed to update.
+For now, we only need two RLS policies. We want everyone to be able to sign up and read the user data. When you click “New Policy > Get Started Quickly” you can use a template to set up the `read` and `insert` access for all users by simply setting the value to `true`. For `update`, use the "Quick Start" template of the policy named `"Enable update for users based on email"`, so the passed JWT token of the logged-in user is matched with the email column in this table to find the rows a user is allowed to update.
 
 ![Supabase Row Level Security detail](/images/expo-supabase-social-auth/Supabase-RLS.png)
 
@@ -89,7 +100,7 @@ The first step is done! Now let’s move on to setting up authentication with Go
 
 ## Google Authentication
 
-Visit your [Google Cloud Developer Console](https://www.notion.so/95a55f410d5e4e15a00f2084a2c8eb6c?pvs=21) and create a new project. After creating the project, you might be prompted to setup the OAuth Consent screen first. Just follow the steps accordingly. After, choose “Create credentials” and create a new “OAuth Client ID”.
+Visit your [Google Cloud Developer Console](https://www.notion.so/95a55f410d5e4e15a00f2084a2c8eb6c?pvs=21) and create a new project. After creating the project, you might be prompted to set up the OAuth Consent screen first. Just follow the steps accordingly. After, choose “Create credentials” and create a new “OAuth Client ID”.
 
 ![Where to find Google OAuth creation](/images/expo-supabase-social-auth/Google-OAuth.png)
 
@@ -151,3 +162,7 @@ Insert this secret key in your Supabase dashboard under “Authentication > Prov
 You should now be able to have a successful login using **Sign In with Apple**.
 
 ## Conclusion
+
+## Troubleshooting
+
+https://github.com/expo/expo/issues/23590

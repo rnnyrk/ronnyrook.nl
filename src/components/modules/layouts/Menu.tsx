@@ -17,7 +17,7 @@ const MenuItem = ({ title, href }: MenuItemProps) => {
   const pathname = usePathname();
 
   let isActive = false;
-  if (href === '/' && pathname === href) {
+  if ((href === '/' && pathname === href) || (href === '/' && pathname === '/cv')) {
     isActive = true;
   } else if (href !== '/' && pathname?.includes(href)) {
     isActive = true;

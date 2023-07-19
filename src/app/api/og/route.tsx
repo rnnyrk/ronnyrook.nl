@@ -11,9 +11,8 @@ export async function GET(req: Request) {
       <div tw="h-full w-full flex items-center bg-[#6FAEF7]">
         <h2 tw="w-full flex flex-col py-8 px-12 max-w-[60%]">
           <span tw="text-[#253C66] text-[48px] font-bold">{title}</span>
-          <span tw="text-white">rnnyrk</span>
+          <span tw="text-white mt-2">rnnyrk</span>
         </h2>
-
         <div tw="w-[800px] h-[800px] rounded-full bg-[#253C66] absolute right-[-300px]" />
       </div>
     ),
