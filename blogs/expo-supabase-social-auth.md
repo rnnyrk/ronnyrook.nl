@@ -36,11 +36,11 @@ To customise the project, you can modify:
 
 ### Environments
 
-**Because we're creating both `development` and `production` apps, all the steps of this tutorial have to be done twice.** So creating two Google apps in the development console and creating all identifiers and keys for Apple twice. You should also create two projects in Supabase. I've called one "Expobase" and the other "Expobase DEV". Within Google and Apple I follow the same notation. With a DEV suffix (or ACC for staging) and just the name for production.
+**Because we're creating both `development` and `production` apps, all the steps of this tutorial have to be done twice.** So creating two Google apps in the development console and creating all identifiers and keys for Apple twice. You should also create two projects in Supabase. I've called one "Expobase" and the other "Expobase DEV". Within the Apple and Google consoles, I follow the same notation. With a DEV suffix (or ACC for staging) and just the name for production.
 
 Create a project within Supabase and under “Project Settings” find your “Reference ID” (Supabase ID).
 
-Within your editor, change the `.env.example` file to `.env.development` and create another `.env.production`. Fill in the required properties from your “Project Settings” page. The `EXPO_PUBLIC_SUPABASE_URL_DEV` is within “Project Settings > API > Project API keys” and can be found as `anon` key. The `EAS_PROJECT_ID` will be created to first time you deploy this project to your Expo account via the expo-cli.
+Within your editor, change the `.env.example` file to `.env.development` and create another `.env.production`. Fill in the required properties from your “Project Settings” page. The `EXPO_PUBLIC_SUPABASE_URL_DEV` is within “Project Settings > API > Project API keys” and can be found as `anon` key. The `EAS_PROJECT_ID` will be created the first time you deploy this project to your Expo account via the expo-cli.
 
 ```bash
 EXPO_PUBLIC_SUPABASE_URL_DEV=https://{SUPABASE_ID}.supabase.co
@@ -163,8 +163,8 @@ You should now be able to have a successful login using **Sign In with Apple**.
 
 ## Conclusion
 
-Setting up an Expo application with both Google and Apple logins require a lot on configuration and therefore time. Hopefully, with this tutorial I've taken the hard parts out of your hands and made the process of starting a basic app with social authentication as smooth as possible. You can also contact me via [Twitter](http://twitter.com/rnnyrk) if you have any questions.
+Setting up an Expo application with both Google and Apple logins requires a lot of configuration and therefore time. Hopefully, with this tutorial, I've taken the hard parts out of your hands and made the process of starting a basic app with social authentication as smooth as possible. You can also contact me via [Twitter](http://twitter.com/rnnyrk) if you have any questions.
 
 ## Troubleshooting
 
-Most issues I've had where regarding building the Android application. If you run into similar issues, I recommend looking into [this Github issue](https://github.com/expo/expo/issues/23590) where a summed a lot of errors and possible solutions.
+Most issues I've had were regarding building the Android application. If you run into similar issues, I recommend looking into [this Github issue](https://github.com/expo/expo/issues/23590) where a summed a lot of errors and possible solutions.
