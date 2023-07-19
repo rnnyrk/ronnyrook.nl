@@ -1,4 +1,4 @@
-import { fetchPostsOverview } from 'queries/posts/fetchPostsOverview';
+import { fetchPosts } from 'queries/posts/fetchPosts';
 import { Button } from 'common/interaction/Button';
 import { Container } from 'common/layout/Container';
 import { Tag } from 'common/layout/Tag';
@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 const Blog = async () => {
-  const posts = fetchPostsOverview();
+  const posts = fetchPosts();
 
   return (
     <>

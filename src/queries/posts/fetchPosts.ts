@@ -3,7 +3,7 @@ import path from 'path';
 import type * as i from 'types';
 import matter from 'gray-matter';
 
-export function fetchPostsOverview(): i.OverviewPost[] {
+export function fetchPosts(): i.OverviewPost[] {
   const folder = path.join(process.cwd(), 'blogs');
   const files = fs.readdirSync(folder);
 
