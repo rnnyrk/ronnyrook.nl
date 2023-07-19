@@ -31,16 +31,14 @@ export const Intro = () => {
         </p>
 
         <p className="mb-4 text-lg">
-          On a daily basis I'm working for a digital agency, Label A. My main focus is creating new
-          and maintaining existing React and React Native projects. Besides that I'm leading an
-          innovation team. Together we try to push the frontend craft, engineers and tech stack to
-          the next level.
+          On a daily basis I'm working as a front-end developer/consultant for iO Consultancy.
+          Besides that I work as a freelancer in the same industry, for over 10 years already. Both
+          include working mainly on React and React Native projects.
         </p>
 
         <p className="mb-4 text-lg">
-          Furthermore I'm working as freelance developer and - consultant for over 10 years. This
-          work contains various projects from settings up CI/CD pipelines to building React (Native)
-          applications. For example{' '}
+          Probably every developer has some side projects they're working on. As well do I. For
+          example{' '}
           <a
             href="https://apps.apple.com/nl/app/roommates/id1523528110"
             target="_blank"
@@ -48,8 +46,17 @@ export const Intro = () => {
             className="text-slate-400 hover:text-slate-700 underline"
           >
             Roommates
-          </a>
-          or{' '}
+          </a>{' '}
+          (an app for to manage your household) ,{' '}
+          <a
+            href="https://voicy.nl"
+            target="_blank"
+            rel="noreferrer"
+            className="text-slate-400 hover:text-slate-700 underline"
+          >
+            Voicy
+          </a>{' '}
+          (attach a voice message to a gift) and{' '}
           <a
             href="https://giftheaux.com"
             target="_blank"
@@ -57,8 +64,8 @@ export const Intro = () => {
             className="text-slate-400 hover:text-slate-700 underline"
           >
             GIF the Aux
-          </a>
-          .
+          </a>{' '}
+          (a websockets based party game).
         </p>
 
         <p className="mb-4 text-lg">Curious to what I've been doing in the past?</p>
