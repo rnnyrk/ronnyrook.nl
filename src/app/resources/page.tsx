@@ -10,6 +10,12 @@ import { ResourcesTweets } from 'modules/resources/ResourcesTweets';
 
 import Loading from './loading';
 
+export const metadata = {
+  title: 'Resources',
+  description:
+    'A collection of useful resources. From tweets about React, Expo, ThreeJS or any other Javascript/coding related topic, to articles and code examples.',
+};
+
 const Resources = () => {
   return (
     <Suspense fallback={<Loading />}>

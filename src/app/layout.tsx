@@ -15,10 +15,10 @@ export const metadata = {
     default: 'About me | Ronny Rook',
     template: '%s | Ronny Rook',
   },
-  description: 'Javascript developer from Amsterdam',
+  description: 'Ronny Roo is a Javascript developer from Amsterdam',
   openGraph: {
     title: 'Ronny Rook',
-    description: 'Javascript developer from Amsterdam',
+    description: 'Ronny Rook is a Javascript developer from Amsterdam',
     url: 'https://rnny.nl',
     siteName: 'Ronny Rook',
     images: [
@@ -44,7 +44,7 @@ export const metadata = {
   },
   twitter: {
     title: 'Ronny Rook',
-    description: 'Javascript developer from Amsterdam',
+    description: 'Ronny Rook is a Javascript developer from Amsterdam',
     card: 'summary_large_image',
     images: [
       {
