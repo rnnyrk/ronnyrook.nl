@@ -27,7 +27,7 @@ const Resources = () => {
           icon="twitter"
           text="When you're in search for useful tips and tricks, tech Twitter is a perfect source."
         >
-          <Heading>Tweets</Heading>
+          <Heading className="text-black dark:text-white">Tweets</Heading>
         </ResourceHeading>
         <ResourcesTweets />
       </section>
@@ -37,7 +37,7 @@ const Resources = () => {
           icon="read"
           text="Varying from case studies to tutorials and in depth knowledge."
         >
-          <Heading>Articles</Heading>
+          <Heading className="text-black dark:text-white">Articles</Heading>
         </ResourceHeading>
         <ResourcesArticles />
       </section>
@@ -47,7 +47,7 @@ const Resources = () => {
           icon="codepen"
           text="People on the internet build the most incredible things."
         >
-          <Heading className="break-all">CodePens/CodeSandboxes</Heading>
+          <Heading className="text-black dark:text-white break-all">CodePens/CodeSandboxes</Heading>
         </ResourceHeading>
         <ResourcesSandboxes />
       </section>

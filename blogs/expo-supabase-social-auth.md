@@ -163,6 +163,8 @@ You should now be able to have a successful login using **Sign In with Apple**.
 
 ## Conclusion
 
+Setting up an Expo application with both Google and Apple logins require a lot on configuration and therefore time. Hopefully, with this tutorial I've taken the hard parts out of your hands and made the process of starting a basic app with social authentication as smooth as possible. You can also contact me via [Twitter](http://twitter.com/rnnyrk) if you have any questions.
+
 ## Troubleshooting
 
-https://github.com/expo/expo/issues/23590
+Most issues I've had where regarding building the Android application. If you run into similar issues, I recommend looking into [this Github issue](https://github.com/expo/expo/issues/23590) where a summed a lot of errors and possible solutions.

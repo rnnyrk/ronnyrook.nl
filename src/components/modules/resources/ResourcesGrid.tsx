@@ -20,7 +20,6 @@ export const ResourcesGrid = ({ data, isInView, variant }: ResourcesGridProps) =
             <Button
               href={resource.link}
               type="link"
-              variant="secondary"
             >
               {resource.type === 'sandboxes' ? 'View example' : null}
               {resource.type === 'tweets' ? 'View tweet' : null}
