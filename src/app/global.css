@@ -41,12 +41,6 @@ table {
 }
 
 /* Markdown styling */
-.markdown p {
-  margin: 0 0 1.5rem 0;
-  font-size: 1.2rem;
-  line-height: 2rem;
-}
-
 .markdown h1 {
   margin: 0 0 0.5rem;
   font-weight: 500;
@@ -54,13 +48,13 @@ table {
 }
 
 .markdown h2 {
-  margin: 1.8rem 0 0.5rem;
+  margin: 3rem 0 0.5rem;
   font-weight: 500;
   font-size: 1.8rem;
 }
 
 .markdown h3 {
-  margin: 1.8rem 0 0.5rem;
+  margin: 3rem 0 0.5rem;
   font-weight: 500;
   font-size: 1.6rem;
 }
@@ -71,48 +65,22 @@ table {
   font-size: 1.1rem;
 }
 
-.markdown li code,
-.markdown p code {
-  color: #ec4899;
-  font-weight: 600;
-  font-size: 1rem;
-  background-color: #eeeeee;
-  padding: 2px 4px;
-  border-radius: 0.25rem;
+.markdown p {
+  margin: 0 0 1.5rem 0;
 }
 
-.dark .markdown li code,
-.dark .markdown p code {
-  background-color: #16171a;
-}
-
-.markdown blockquote {
-  font-weight: 500;
-  color: #222222;
-  border-left-color: #e5e5e5;
-  border-left-width: 0.25rem;
-  quotes: '\201C''\201D''\2018''\2019';
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  margin-left: 2.2rem;
-  padding-left: 1rem;
-}
-
-.dark .markdown blockquote {
-  color: #dddddd;
-  border-left-color: #e5e5e5;
-}
-
-.markdown img {
-  margin: 1rem auto;
+.markdown pre,
+.markdown ul,
+.markdown ol,
+.markdown p {
+  font-size: 1.2rem;
+  line-height: 2rem;
 }
 
 .markdown ul,
 .markdown ol {
   margin-left: 1.2rem;
   margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  line-height: 1.8rem;
 }
 
 .markdown ul {
@@ -146,6 +114,42 @@ table {
 
 .markdown *:first-child {
   margin-top: 0;
+}
+
+.markdown li code,
+.markdown p code {
+  color: #ec4899;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background-color: #eeeeee;
+  padding: 2px 4px;
+  border-radius: 0.25rem;
+}
+
+.dark .markdown li code,
+.dark .markdown p code {
+  background-color: #16171a;
+}
+
+.markdown blockquote {
+  font-weight: 500;
+  color: #222222;
+  border-left-color: #e5e5e5;
+  border-left-width: 0.25rem;
+  quotes: '\201C''\201D''\2018''\2019';
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 2.2rem;
+  padding-left: 1rem;
+}
+
+.dark .markdown blockquote {
+  color: #dddddd;
+  border-left-color: #e5e5e5;
+}
+
+.markdown img {
+  margin: 1rem auto;
 }
 
 /* Tags for resources */
