@@ -5,8 +5,12 @@ import { Tag } from 'common/layout/Tag';
 import { Heading } from 'common/typography/Heading';
 import { PageHeader } from 'modules/layouts/PageHeader';
 
+export const revalidate = 300; // 5 minutes
+
 export const metadata = {
   title: 'Blog',
+  description:
+    'Find blogs about e.g. social authentication with Expo (React Native) and Supabase, but also opinionated blogs about Tailwind CSS or Typescript.',
 };
 
 const Blog = async () => {
