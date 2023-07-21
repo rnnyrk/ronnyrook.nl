@@ -21,11 +21,9 @@ const Resources = () => {
     <Suspense fallback={<Loading />}>
       <RefreshResources />
       <PageHeader
-        title="Notion"
+        title="Resources"
         className="mb-6 md:mb-10"
-        summary="I use Notion as an outsource of my brain. When I want to remember something I come across,
-        like an interesting (code related) tweet, an useful code example or gather new knowdledge
-        through an article I save it to my Notion library."
+        summary="I like to gather resources from all over the internet. This page is a collection of useful resources so I can easily find them again myself. From tweets about React, Expo, ThreeJS or any other Javascript/coding related topic, to articles and code examples."
       />
 
       <section className="py-40 bg-white dark:bg-rnny-dark-tint">
