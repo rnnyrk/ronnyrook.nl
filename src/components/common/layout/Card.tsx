@@ -7,7 +7,7 @@ import { cn } from 'utils';
 
 import { Tag } from './Tag';
 
-// Inspired on: https://buildui.com/recipes/spotlight
+// Inspiration: https://buildui.com/recipes/spotlight
 export const Card = ({ children, isInView, tags, title, variant }: CardProps) => {
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
@@ -23,8 +23,8 @@ export const Card = ({ children, isInView, tags, title, variant }: CardProps) =>
   const spotlightStyle = useMotionTemplate`
   radial-gradient(
     650px circle at ${mouseX}px ${mouseY}px,
-    rgba(14, 165, 233, 0.10),
-    transparent 80%
+    rgba(117, 206, 247, 0.1),
+    transparent 50%
   )
 `;
 
@@ -62,9 +62,9 @@ export const Card = ({ children, isInView, tags, title, variant }: CardProps) =>
             }}
           >
             <div>
-              {tags?.map((tag) => (
+              {tags?.map((tag, index) => (
                 <Tag
-                  key={tag}
+                  key={`${tag}_${index}`}
                   title={tag}
                 />
               ))}

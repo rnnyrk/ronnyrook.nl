@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { cn } from 'utils';
 import { Footer } from 'modules/layouts/Footer';
 import { Menu } from 'modules/layouts/Menu';
+import { PageWrapper } from 'modules/layouts/PageWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -80,7 +81,9 @@ const Layout = ({ children }: Props) => {
         )}
       >
         <Menu />
-        <main>{children}</main>
+        <main>
+          <PageWrapper>{children}</PageWrapper>
+        </main>
         <Footer />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
