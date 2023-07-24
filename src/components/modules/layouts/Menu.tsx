@@ -61,13 +61,13 @@ export const Menu = () => {
   return (
     <>
       <DarkModeToggle />
-      <nav className="absolute left-2/4 -translate-x-2/4 top-8 rounded-full bg-rnny-primary-tint">
+      <nav className="absolute left-2/4 -translate-x-2/4 z-[100] top-8 rounded-full bg-rnny-primary-tint shadow-lg">
         <div className="relative w-full flex justify-center py-4 px-2">
           <LayoutGroup>
-            {Object.entries(items).map(([path, label]) => {
+            {Object.entries(items).map(([path, label], index) => {
               return (
                 <MenuItem
-                  key={path}
+                  key={`${path}_${index}`}
                   href={path}
                   title={label}
                 />
