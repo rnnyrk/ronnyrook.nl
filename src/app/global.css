@@ -129,7 +129,7 @@ a {
   }
 }
 
-.markdown *:first-child {
+.markdown > *:first-child {
   margin-top: 0;
 }
 
