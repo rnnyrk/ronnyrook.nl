@@ -45,7 +45,7 @@ dependencies:
     specifier: 15.5.0
     version: 15.5.0(react@18.2.0)
   react-tweet:
-    specifier: ^3.0.3
+    specifier: 3.0.3
     version: 3.0.3(react-dom@18.2.0)(react@18.2.0)
   rehype-external-links:
     specifier: 2.1.0
