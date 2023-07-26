@@ -31,7 +31,6 @@ export const ResourceOverview = ({ data, type, variant }: ResourceOverviewProps)
         data={(resources[type] as (i.Tweet | i.Article | i.Sandbox)[])?.slice(0, 9)}
         isInView={isInView}
         variant={variant}
-        type={type}
       />
     </div>
   );
