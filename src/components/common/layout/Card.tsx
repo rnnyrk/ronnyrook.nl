@@ -28,10 +28,13 @@ export const Card = ({ children, isInView, tags, title, variant }: CardProps) =>
   )
 `;
 
-  const classes = cn('group relative min-w-full md:grid-span-1 mb-4 md:mb-0 rounded-xl shadow-md', {
-    'bg-rnny-light dark:bg-rnny-dark': !variant,
-    'bg-white dark:bg-rnny-dark-tint': variant === 'off',
-  });
+  const classes = cn(
+    'group relative min-w-full md:col-span-1 md:row-span-5 mb-4 md:mb-0 rounded-xl shadow-md',
+    {
+      'bg-rnny-light dark:bg-rnny-dark': !variant,
+      'bg-white dark:bg-rnny-dark-tint': variant === 'off',
+    },
+  );
 
   return (
     <AnimatePresence>
