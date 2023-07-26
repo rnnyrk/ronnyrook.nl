@@ -54,6 +54,16 @@ a {
   }
 }
 
+/* Masonry grid */
+@media only screen and (min-width: 768px) {
+  .masonry-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-auto-rows: 10px;
+  }
+}
+
 /* Markdown styling */
 .markdown h1 {
   @apply text-white;
