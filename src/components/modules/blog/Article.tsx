@@ -16,6 +16,8 @@ import { oneDark, oneLight } from 'react-syntax-highlighter/dist/cjs/styles/pris
 import rehypeExternalLinks from 'rehype-external-links';
 import remarkGfm from 'remark-gfm';
 
+import { useUiStore } from 'store/ui';
+
 SyntaxHighlighter.registerLanguage('tsx', tsx);
 SyntaxHighlighter.registerLanguage('typescript', typescript);
 SyntaxHighlighter.registerLanguage('css', css);
@@ -25,12 +27,13 @@ SyntaxHighlighter.registerLanguage('markdown', markdown);
 SyntaxHighlighter.registerLanguage('json', json);
 
 export function Article({ post }: ArticleProps) {
+  const { theme } = useUiStore();
   const [syntaxTheme, setSyntaxTheme] = useState(oneLight);
 
   useEffect(() => {
-    const localTheme = localStorage?.theme === 'dark' ? oneDark : oneLight;
+    const localTheme = theme === 'dark' ? oneDark : oneLight;
     setSyntaxTheme(localTheme);
-  }, []);
+  }, [theme]);
 
   const MarkdownComponents: object = {
     code({ node, inline, className, ...props }) {

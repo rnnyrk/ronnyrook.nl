@@ -4,10 +4,12 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 
+import { useUiStore } from 'store/ui';
 import { cn } from 'utils';
 
 export const PageWrapper = ({ children }: PageWrapperProps) => {
   const pathname = usePathname();
+  const { fancy } = useUiStore();
   const [isTransitioning, setIsTransitioning] = useState(true);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -48,6 +50,10 @@ export const PageWrapper = ({ children }: PageWrapperProps) => {
     },
   });
 
+  if (fancy === 'off') {
+    return children;
+  }
+
   return (
     <AnimatePresence>
       {isTransitioning ? (
@@ -62,7 +68,7 @@ export const PageWrapper = ({ children }: PageWrapperProps) => {
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
-                className={cn('w-[50vw] md:w-[25vw] h-[100vh] fixed bottom-0 origin-top z-50', {
+                className={cn('w-[50vw] md:w-[25vw] h-[100vh] fixed bottom-0 origin-top z-[110]', {
                   'bg-rnny-primary': isOdd,
                   'bg-rnny-primary-tint': !isOdd,
                   'left-0': index === 0,

@@ -29,7 +29,7 @@ const ResourceCategory = async ({ params }: ResourceCategoryProps) => {
         />
 
         <section className="py-40 bg-white dark:bg-rnny-dark-tint">
-          <div className="w-full max-w-8xl mx-auto flex flex-col md:grid md:grid-cols-3 md:grid-rows-3 md:gap-8 px-4">
+          <div className="w-full max-w-8xl mx-auto flex flex-col md:grid md:grid-cols-3 md:grid-rows-[masonry] md:gap-8 px-4 items-start">
             <ResourcesGrid
               data={data || []}
               isInView={true}

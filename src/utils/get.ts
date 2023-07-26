@@ -1,4 +1,4 @@
-export const getApiUrl = () => {
+export function getApiUrl() {
   if (process.env.NEXT_PUBLIC_APP_ENV === 'production') {
     return 'https://rnny.nl/api';
   } else if (process.env.NEXT_PUBLIC_APP_ENV === 'development') {
@@ -6,9 +6,9 @@ export const getApiUrl = () => {
   }
 
   return 'http://localhost:3000/api';
-};
+}
 
-export const getSiteUrl = () => {
+export function getSiteUrl() {
   if (process.env.NEXT_PUBLIC_APP_ENV === 'production') {
     return 'https://rnny.nl';
   } else if (process.env.NEXT_PUBLIC_APP_ENV === 'development') {
@@ -16,4 +16,4 @@ export const getSiteUrl = () => {
   }
 
   return 'http://localhost:3000';
-};
+}

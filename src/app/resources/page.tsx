@@ -28,22 +28,22 @@ const Resources = () => {
 
       <section className="py-40 bg-white dark:bg-rnny-dark-tint">
         <ResourceHeading
-          icon="twitter"
-          text="When you're in search for useful tips and tricks, tech Twitter is a perfect source."
-        >
-          <Heading className="text-black dark:text-white">Tweets</Heading>
-        </ResourceHeading>
-        <ResourcesTweets />
-      </section>
-
-      <section className="py-40">
-        <ResourceHeading
           icon="read"
           text="Varying from case studies to tutorials and in depth knowledge."
         >
           <Heading className="text-black dark:text-white">Articles</Heading>
         </ResourceHeading>
         <ResourcesArticles />
+      </section>
+
+      <section className="py-40">
+        <ResourceHeading
+          icon="twitter"
+          text="When you're in search for useful tips and tricks, tech Twitter is a perfect source."
+        >
+          <Heading className="text-black dark:text-white">Tweets</Heading>
+        </ResourceHeading>
+        <ResourcesTweets />
       </section>
 
       <section className="py-40 bg-white dark:bg-rnny-dark-tint">

@@ -10,6 +10,7 @@ export const ResourcesTweets = async () => {
       <ResourceOverview
         data={tweets || []}
         type="tweets"
+        variant="off"
       />
     </div>
   );
