@@ -31,7 +31,7 @@ export const PageWrapper = ({ children }: PageWrapperProps) => {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [pathname]);
+  }, [pathname, fancy]);
 
   const variants: (index: number) => Variants = (index: number) => ({
     hidden: {
