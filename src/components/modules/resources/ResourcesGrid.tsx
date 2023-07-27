@@ -18,7 +18,7 @@ export const ResourcesGrid = ({ data, isInView, variant }: ResourcesGridProps) =
             const tweetId = resource.link.split('/').pop();
             return (
               <div
-                className={`${theme} tweet-card`}
+                className={`${theme} masonary-card`}
                 key={resource.id}
               >
                 <div className="content">

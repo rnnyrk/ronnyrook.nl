@@ -14,6 +14,8 @@ export const PageWrapper = ({ children }: PageWrapperProps) => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    if (fancy === 'off') return;
+
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
