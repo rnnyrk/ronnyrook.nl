@@ -12,7 +12,7 @@ import { ResourcesGrid } from './ResourcesGrid';
 
 export const ResourceOverview = ({ data, type, variant }: ResourceOverviewProps) => {
   const { resources, setResources } = useResourcesStore();
-  useMasonaryGrid({ resources, type });
+  useMasonaryGrid({ data: resources, type });
 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });

@@ -2,7 +2,7 @@ import type * as i from 'types';
 import { useEffect } from 'react';
 
 // Masonry inspiration: https://medium.com/@andybarefoot/a-masonry-style-layout-using-css-grid-8c663d355ebb
-export function useMasonaryGrid({ resources, type }: MasonaryGridProps) {
+export function useMasonaryGrid({ data, type }: MasonaryGridProps) {
   function resizeGridItem(item: HTMLElement) {
     if (!item) return;
 
@@ -39,10 +39,10 @@ export function useMasonaryGrid({ resources, type }: MasonaryGridProps) {
     setTimeout(() => {
       resizeAllGridItems();
     }, 500);
-  }, [resources]);
+  }, [data]);
 }
 
 type MasonaryGridProps = {
-  resources: i.ResourcesList;
-  type: i.ResourcesKeys;
+  data: any;
+  type: i.ResourcesKeys | 'all';
 };
