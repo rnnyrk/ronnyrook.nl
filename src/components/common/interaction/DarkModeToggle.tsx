@@ -67,7 +67,7 @@ export const DarkModeToggle = () => {
   return (
     <button
       onClick={onToggleDarkMode}
-      className="flex items-center justify-center button-dark-mode relative"
+      className="flex items-center justify-center button-toggle relative"
     >
       <motion.div
         custom="dark"

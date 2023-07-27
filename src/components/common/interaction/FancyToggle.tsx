@@ -33,7 +33,7 @@ export const FancyToggle = () => {
   return (
     <button
       onClick={onToggleFancy}
-      className="flex items-center justify-center button-dark-mode relative"
+      className="flex items-center justify-center button-toggle relative"
     >
       <motion.div
         whileHover={{
