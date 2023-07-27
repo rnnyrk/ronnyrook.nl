@@ -14,6 +14,7 @@ export const Tag = ({ title }: TagProps) => {
 
   return (
     <motion.button
+      className="mb-2 md:mb-0 mr-2"
       onClick={() => router.push(`/resources/${tag}`)}
       whileHover={{
         scale: 1.1,
@@ -24,7 +25,7 @@ export const Tag = ({ title }: TagProps) => {
     >
       <span
         className={cn(
-          'text-xs uppercase font-bold bg-slate-500 text-white rounded-full px-3 py-1 mr-2 whitespace-nowrap',
+          'text-xs uppercase font-bold bg-slate-500 text-white rounded-full px-3 py-1 whitespace-nowrap',
           tagClass,
         )}
       >
