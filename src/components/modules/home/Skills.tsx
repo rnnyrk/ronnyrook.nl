@@ -12,17 +12,19 @@ import { Waves } from './Waves';
 const skills = [
   'React',
   'React Query',
-  'Styled Components',
+  'Tailwind',
   'NextJS',
   'React Native',
   'React Navigation',
   'Reanimated',
+  'Framer Motion',
   'React Testing Library',
   'Typescript',
   'Serverless',
   'AWS',
+  'PostgreSQL',
   'SupaBase',
-  'Tailwind',
+  'Styled Components',
   'Three.JS (React Three Fiber)',
 ];
 
