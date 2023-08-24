@@ -44,7 +44,7 @@ export const Intro = () => {
           >
             Roommates
           </a>{' '}
-          (an app for to manage your household) ,{' '}
+          (an app to manage your household) ,{' '}
           <a
             href="https://voicy.nl"
             target="_blank"

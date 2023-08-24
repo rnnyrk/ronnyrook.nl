@@ -16,7 +16,7 @@ export const metadata = {
     default: 'About me | Ronny Rook',
     template: '%s | Ronny Rook',
   },
-  description: 'Ronny Roo is a Javascript developer from Amsterdam',
+  description: 'Ronny Rook is a Javascript developer from Amsterdam',
   openGraph: {
     title: 'Ronny Rook',
     description: 'Ronny Rook is a Javascript developer from Amsterdam',
