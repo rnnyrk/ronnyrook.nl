@@ -1,4 +1,5 @@
 import GithubSvg from 'vectors/github.svg';
+import LinkedinSvg from 'vectors/linkedin.svg';
 import TwitterSvg from 'vectors/twitter.svg';
 import { Container } from 'common/layout/Container';
 
@@ -11,6 +12,14 @@ export const Footer = () => {
         </p>
 
         <div className="flex mt-4 md:mt-0">
+          <a
+            href="https://www.linkedin.com/in/ronny-rook-02ab1622"
+            target="_blank"
+            rel="noreferrer"
+            className="no-underline mr-4"
+          >
+            <LinkedinSvg className="w-6 h-6 hover:fill-rnny-primary social-icon" />
+          </a>
           <a
             href="http://github.com/rnnyrk"
             target="_blank"
