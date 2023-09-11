@@ -15,6 +15,7 @@ export const Intro = () => {
               alt="Ronny Rook"
               width={200}
               height={200}
+              loading="eager"
             />
           </figure>
           <div className="mt-2 md:mt-0 md:ml-8">
