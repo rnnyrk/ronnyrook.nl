@@ -6,13 +6,13 @@
   "url": "https://rnny.nl",
   "scripts": {
     "start": "next dev -p $([ -f .port ] && cat .port || echo 3000)",
-    "dev": "npm run start",
+    "dev": "bun run start",
     "build": "next build",
     "server": "next start",
     "lint": "next lint",
     "prettier": "prettier --write '**/*.{js,ts,tsx}'",
     "typecheck": "tsc --noEmit",
-    "test": "npx concurrently 'npm run lint' 'npm run typecheck'"
+    "test": "npx concurrently 'bun run lint' 'bun run typecheck'"
   },
   "dependencies": {
     "@notionhq/client": "2.2.8",
