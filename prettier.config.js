@@ -2,8 +2,8 @@ module.exports = {
   trailingComma: 'all',
   arrowParens: 'always',
   singleQuote: true,
-  printWidth: 100,
   singleAttributePerLine: true,
+  printWidth: 100,
   importOrder: [
     '^types$',
     '^(react|react-dom)$',

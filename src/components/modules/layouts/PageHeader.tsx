@@ -14,13 +14,13 @@ export const PageHeader = ({ backUrl, className, title, summary }: PageHeaderPro
         {backUrl && (
           <Link
             href={backUrl}
-            className="flex items-center mb-2 hover:translate-x-2 transition-transform"
+            className="flex items-center mb-2 no-underline hover:translate-x-2 transition-transform"
           >
             <ArrowLeftSvg className="fill-rnny-dark dark:fill-rnny-light w-6 h-6 mr-2" />
             <span className="text-rnny-dark dark:text-rnny-light">Back to overview</span>
           </Link>
         )}
-        <Heading>{title}</Heading>
+        <Heading className="text-black dark:text-white mt-4">{title}</Heading>
         {summary && <p className="mt-6 text-lg">{summary}</p>}
       </div>
     </Container>

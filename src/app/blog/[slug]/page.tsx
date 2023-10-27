@@ -3,6 +3,8 @@ import { Container } from 'common/layout/Container';
 import { PageHeader } from 'modules/layouts/PageHeader';
 import { Article } from 'modules/work/Article';
 
+export const revalidate = 300; // 5 minutes
+
 export async function generateMetadata({ params }) {
   const post = fetchPostBySlug(params.slug);
 
@@ -41,7 +43,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const BlogPost = ({ params }) => {
+function BlogPost({ params }) {
   const post = fetchPostBySlug(params.slug);
 
   return (
@@ -59,6 +61,6 @@ const BlogPost = ({ params }) => {
       </section>
     </>
   );
-};
+}
 
 export default BlogPost;

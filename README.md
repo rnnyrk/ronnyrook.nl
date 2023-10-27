@@ -6,7 +6,8 @@
 - Next.js 13 app directory
 - Framer Motion for animations
 - Tailwind CSS with `clsx` for dynamic classes
-- TypeScript (no-brainer)
+- TypeScript
 - Zustand with `immer` for immutable state management
 - PNPM package manager
 - ESLint and Prettier
+- React Markdown with React Syntax Highlighter

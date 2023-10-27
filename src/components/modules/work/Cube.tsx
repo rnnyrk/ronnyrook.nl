@@ -37,7 +37,7 @@ export function Cube({ title, image }: CubeProps) {
 
   return (
     <div
-      className="cube-wrapper"
+      className="cube-wrapper mb-40"
       ref={cubeRef}
     >
       <div className="cube-wrapper-left l">

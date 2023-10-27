@@ -1,27 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
 
+import { useUiStore } from 'store/ui';
 import DarkSvg from 'vectors/dark-mode.svg';
 import LightSvg from 'vectors/light-mode.svg';
-
-const toggleBackgroundVariants: Variants = {
-  active: {
-    backgroundColor: 'rgb(36, 60, 102)',
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
-    },
-  },
-  inactive: {
-    backgroundColor: 'rgb(241, 241, 240)',
-    transition: {
-      duration: 1,
-      ease: 'easeInOut',
-    },
-  },
-};
 
 const toggleVariants: Variants = {
   active: (_) => ({
@@ -44,18 +28,18 @@ const toggleVariants: Variants = {
 };
 
 export const DarkModeToggle = () => {
-  const [mode, setMode] = useState<'dark' | 'light'>();
+  const { theme, setTheme } = useUiStore();
 
   useEffect(() => {
     const localTheme = localStorage?.theme;
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     if (localTheme) {
-      setMode(localTheme === 'dark' ? 'dark' : 'light');
+      setTheme(localTheme === 'dark' ? 'dark' : 'light');
     } else if (prefersDarkScheme) {
-      setMode('dark');
+      setTheme('dark');
     } else {
-      setMode('light');
+      setTheme('light');
     }
   }, []);
 
@@ -68,26 +52,26 @@ export const DarkModeToggle = () => {
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, [mode]);
+  }, [theme]);
 
   const onToggleDarkMode = () => {
-    if (mode === 'dark') {
+    if (theme === 'dark') {
       localStorage.theme = 'light';
-      setMode('light');
+      setTheme('light');
     } else {
       localStorage.theme = 'dark';
-      setMode('dark');
+      setTheme('dark');
     }
   };
 
   return (
     <button
       onClick={onToggleDarkMode}
-      className="absolute right-6 top-12 items-center justify-center rounded-full button-dark-mode hidden md:flex"
+      className="flex items-center justify-center button-toggle relative"
     >
       <motion.div
         custom="dark"
-        animate={mode === 'dark' ? 'active' : 'inactive'}
+        animate={theme === 'dark' ? 'active' : 'inactive'}
         variants={toggleVariants}
         whileHover={{
           rotateZ: 20,
@@ -96,14 +80,14 @@ export const DarkModeToggle = () => {
         className="flex items-center justify-center absolute inset-0 z-10 dark:z-20"
       >
         <LightSvg
-          className="w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] stroke-rnny-dark"
+          className="w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] stroke-yellow-500"
           strokeWidth="3"
         />
       </motion.div>
 
       <motion.div
         custom="light"
-        animate={mode === 'light' ? 'active' : 'inactive'}
+        animate={theme === 'light' ? 'active' : 'inactive'}
         variants={toggleVariants}
         whileHover={{
           rotateZ: -30,
@@ -112,16 +96,10 @@ export const DarkModeToggle = () => {
         className="flex items-center justify-center absolute inset-0 z-20 dark:z-10"
       >
         <DarkSvg
-          className="w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] stroke-rnny-light"
+          className="w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] stroke-gray-800"
           strokeWidth="3"
         />
       </motion.div>
-
-      <motion.div
-        className="absolute inset-0 z-0 rounded-full"
-        animate={mode === 'light' ? 'active' : 'inactive'}
-        variants={toggleBackgroundVariants}
-      />
     </button>
   );
 };

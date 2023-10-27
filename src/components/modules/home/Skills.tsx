@@ -12,17 +12,19 @@ import { Waves } from './Waves';
 const skills = [
   'React',
   'React Query',
-  'Styled Components',
+  'Tailwind',
   'NextJS',
   'React Native',
   'React Navigation',
   'Reanimated',
+  'Framer Motion',
   'React Testing Library',
   'Typescript',
   'Serverless',
   'AWS',
+  'PostgreSQL',
   'SupaBase',
-  'Tailwind',
+  'Styled Components',
   'Three.JS (React Three Fiber)',
 ];
 
@@ -59,7 +61,9 @@ export const Skills = () => {
       <Waves />
       <Container className="flex flex-col items-center md:flex-row">
         <div className="min-w-[260px] mr-14">
-          <Heading className="mt-2 text-[2rem]">With love for the web</Heading>
+          <Heading className="mt-2 text-[2rem] text-black dark:text-white">
+            With love for the web
+          </Heading>
           <p className="mt-4">
             I love building for the web. From simple pages, to native applications, all the way to
             large Next.js applications. <strong>The web and Javascript are incredible</strong>. It

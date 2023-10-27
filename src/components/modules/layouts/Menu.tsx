@@ -6,6 +6,7 @@ import { LayoutGroup, motion } from 'framer-motion';
 
 import { cn } from 'utils';
 import { DarkModeToggle } from 'common/interaction/DarkModeToggle';
+import { FancyToggle } from 'common/interaction/FancyToggle';
 
 const items = {
   '/': 'About',
@@ -17,7 +18,7 @@ const MenuItem = ({ title, href }: MenuItemProps) => {
   const pathname = usePathname();
 
   let isActive = false;
-  if (href === '/' && pathname === href) {
+  if ((href === '/' && pathname === href) || (href === '/' && pathname === '/cv')) {
     isActive = true;
   } else if (href !== '/' && pathname?.includes(href)) {
     isActive = true;
@@ -60,14 +61,13 @@ type MenuItemProps = {
 export const Menu = () => {
   return (
     <>
-      <DarkModeToggle />
-      <nav className="absolute left-2/4 -translate-x-2/4 top-8 rounded-full bg-rnny-primary-tint">
+      <nav className="absolute left-2/4 -translate-x-2/4 z-[100] top-8 rounded-full bg-rnny-primary-tint shadow-lg">
         <div className="relative w-full flex justify-center py-4 px-2">
           <LayoutGroup>
-            {Object.entries(items).map(([path, label]) => {
+            {Object.entries(items).map(([path, label], index) => {
               return (
                 <MenuItem
-                  key={path}
+                  key={`${path}_${index}`}
                   href={path}
                   title={label}
                 />
@@ -76,6 +76,11 @@ export const Menu = () => {
           </LayoutGroup>
         </div>
       </nav>
+      <div className="hidden md:flex absolute z-20 right-6 top-12 justify-between border-2 border-[#c2c7d1] dark:border-[#383d47] rounded-lg">
+        <FancyToggle />
+        <hr className="absolute left-[50%] top-0 ml-[-1px] w-[2px] h-full border-0 bg-[#c2c7d1] dark:bg-[#383d47]" />
+        <DarkModeToggle />
+      </div>
     </>
   );
 };

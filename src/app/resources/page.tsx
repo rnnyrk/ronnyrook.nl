@@ -10,36 +10,40 @@ import { ResourcesTweets } from 'modules/resources/ResourcesTweets';
 
 import Loading from './loading';
 
-const Resources = () => {
+export const metadata = {
+  title: 'Resources',
+  description:
+    'A collection of useful resources. From tweets about React, Expo, ThreeJS or any other Javascript/coding related topic, to articles and code examples.',
+};
+
+async function Resources() {
   return (
     <Suspense fallback={<Loading />}>
       <RefreshResources />
       <PageHeader
-        title="Notion"
+        title="Resources"
         className="mb-6 md:mb-10"
-        summary="I use Notion as an outsource of my brain. When I want to remember something I come across,
-        like an interesting (code related) tweet, an useful code example or gather new knowdledge
-        through an article I save it to my Notion library."
+        summary="I like to gather resources from all over the internet. This page is a collection of useful resources so I can easily find them again myself. From tweets about React, Expo, ThreeJS or any other Javascript/coding related topic, to articles and code examples."
       />
 
       <section className="py-40 bg-white dark:bg-rnny-dark-tint">
         <ResourceHeading
-          icon="twitter"
-          text="When you're in search for useful tips and tricks, tech Twitter is a perfect source."
+          icon="read"
+          text="Varying from case studies to tutorials and in depth knowledge."
         >
-          <Heading>Tweets</Heading>
+          <Heading className="text-black dark:text-white">Articles</Heading>
         </ResourceHeading>
-        <ResourcesTweets />
+        <ResourcesArticles />
       </section>
 
       <section className="py-40">
         <ResourceHeading
-          icon="read"
-          text="Varying from case studies to tutorials and in depth knowledge."
+          icon="twitter"
+          text="When you're in search for useful tips and tricks, tech Twitter is a perfect source."
         >
-          <Heading>Articles</Heading>
+          <Heading className="text-black dark:text-white">Tweets</Heading>
         </ResourceHeading>
-        <ResourcesArticles />
+        <ResourcesTweets />
       </section>
 
       <section className="py-40 bg-white dark:bg-rnny-dark-tint">
@@ -47,12 +51,12 @@ const Resources = () => {
           icon="codepen"
           text="People on the internet build the most incredible things."
         >
-          <Heading className="break-all">CodePens/CodeSandboxes</Heading>
+          <Heading className="text-black dark:text-white break-all">CodePens/CodeSandboxes</Heading>
         </ResourceHeading>
         <ResourcesSandboxes />
       </section>
     </Suspense>
   );
-};
+}
 
 export default Resources;

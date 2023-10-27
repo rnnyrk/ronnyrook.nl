@@ -2,10 +2,12 @@ import './global.css';
 
 import type * as i from 'types';
 import { Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 
 import { cn } from 'utils';
 import { Footer } from 'modules/layouts/Footer';
 import { Menu } from 'modules/layouts/Menu';
+import { PageWrapper } from 'modules/layouts/PageWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,10 +16,10 @@ export const metadata = {
     default: 'About me | Ronny Rook',
     template: '%s | Ronny Rook',
   },
-  description: 'Javascript developer from Amsterdam',
+  description: 'Ronny Rook is a Javascript developer from Amsterdam',
   openGraph: {
     title: 'Ronny Rook',
-    description: 'Javascript developer from Amsterdam',
+    description: 'Ronny Rook is a Javascript developer from Amsterdam',
     url: 'https://rnny.nl',
     siteName: 'Ronny Rook',
     images: [
@@ -43,7 +45,7 @@ export const metadata = {
   },
   twitter: {
     title: 'Ronny Rook',
-    description: 'Javascript developer from Amsterdam',
+    description: 'Ronny Rook is a Javascript developer from Amsterdam',
     card: 'summary_large_image',
     images: [
       {
@@ -74,13 +76,16 @@ const Layout = ({ children }: Props) => {
       <head />
       <body
         className={cn(
-          'min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60 text-black bg-rnny-light dark:bg-rnny-dark dark:text-white',
+          'min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60 text-black bg-rnny-light dark:bg-rnny-dark dark:text-rnny-dark-text',
           inter.className,
         )}
       >
         <Menu />
-        <main>{children}</main>
+        <main>
+          <PageWrapper>{children}</PageWrapper>
+        </main>
         <Footer />
+        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   );

@@ -4,9 +4,10 @@ import { PageHeader } from 'modules/layouts/PageHeader';
 
 export const metadata = {
   title: 'Curriculum Vitae',
+  description: 'CV of Javascript Developer Ronny Rook. Find my work experience and education.',
 };
 
-const Cv = () => {
+function Cv() {
   return (
     <>
       <PageHeader
@@ -52,6 +53,6 @@ const Cv = () => {
       </section>
     </>
   );
-};
+}
 
 export default Cv;

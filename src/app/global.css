@@ -40,45 +40,114 @@ table {
   white-space: nowrap;
 }
 
-/*
- *
- * Markdown styling
- */
-.markdown p {
-  margin: 0 0 1.5em 0;
-  font-size: 1.1rem;
+p {
+  font-size: 1.2rem;
   line-height: 1.8rem;
 }
 
+a {
+  @apply text-rnny-primary-link;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* Masonry grid */
+@media only screen and (min-width: 768px) {
+  .masonry-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-auto-rows: 10px;
+  }
+}
+
+/* Markdown styling */
 .markdown h1 {
-  margin: 0 0 0.5em;
+  @apply text-white;
+  margin: 0 0 0.5rem;
   font-weight: 500;
   font-size: 2em;
 }
 
 .markdown h2 {
-  margin: 1.8em 0 0.5em;
+  @apply text-white;
+  margin: 3rem 0 0.5rem;
   font-weight: 500;
-  font-size: 1.8em;
+  font-size: 1.8rem;
 }
 
 .markdown h3 {
-  margin: 1.8em 0 0.5em;
+  @apply text-white;
+  margin: 3rem 0 0.5rem;
   font-weight: 500;
-  font-size: 1.6em;
+  font-size: 1.6rem;
 }
 
 .markdown h4 {
-  margin: 0.3em 0;
+  margin: 0.3rem 0;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1.1rem;
+}
+
+.markdown p {
+  margin: 0 0 1.5rem 0;
+}
+
+.markdown pre,
+.markdown ul,
+.markdown ol,
+.markdown p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.markdown ul,
+.markdown ol {
+  margin-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.markdown ul {
+  list-style: disc;
+}
+
+.markdown ol {
+  list-style: decimal;
+}
+
+.markdown li {
+  margin-bottom: 0.2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.markdown li ul li {
+  margin-bottom: 0;
+}
+
+.markdown a {
+  @apply text-rnny-primary;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.markdown > *:first-child {
+  margin-top: 0;
 }
 
 .markdown li code,
 .markdown p code {
   color: #ec4899;
   font-weight: 600;
-  font-size: 0.875em;
+  font-size: 1.1rem;
   background-color: #eeeeee;
   padding: 2px 4px;
   border-radius: 0.25rem;
@@ -95,10 +164,10 @@ table {
   border-left-color: #e5e5e5;
   border-left-width: 0.25rem;
   quotes: '\201C''\201D''\2018''\2019';
-  margin-top: 2em;
-  margin-bottom: 2em;
-  margin-left: 2.2em;
-  padding-left: 1em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 2.2rem;
+  padding-left: 1rem;
 }
 
 .dark .markdown blockquote {
@@ -107,43 +176,7 @@ table {
 }
 
 .markdown img {
-  margin: 1em auto;
-}
-
-.markdown ul,
-.markdown ol {
-  margin-left: 1.2em;
-  font-size: 1.1rem;
-  line-height: 1.8rem;
-}
-
-.markdown ul {
-  list-style: disc;
-}
-
-.markdown ol {
-  list-style: decimal;
-}
-
-.markdown li {
-  margin-bottom: 0.5em;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.markdown a {
-  @apply text-rnny-primary;
-  text-decoration: underline;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.markdown *:first-child {
-  margin-top: 0;
+  margin: 1rem auto;
 }
 
 /*
@@ -198,7 +231,7 @@ table {
   background-color: #000000;
 }
 
-.button-dark-mode {
+.button-toggle {
   width: 40px;
   height: 40px;
   overflow: hidden;
@@ -268,11 +301,11 @@ table {
 }
 
 #wave1 {
-  fill: rgba(220, 220, 220, 0.2);
+  fill: rgba(220, 220, 220, 0.5);
 }
 
 #wave2 {
-  fill: rgba(220, 220, 220, 0.4);
+  fill: rgba(220, 220, 220, 0.28);
 }
 
 #wave3 {
@@ -284,19 +317,19 @@ table {
 }
 
 .dark #wave1 {
-  fill: rgba(75, 75, 75, 0.2);
+  fill: rgba(50, 50, 50, 0.4);
 }
 
 .dark #wave2 {
-  fill: rgba(75, 75, 75, 0.3);
+  fill: rgba(50, 50, 50, 0.3);
 }
 
 .dark #wave3 {
-  fill: rgba(75, 75, 75, 0.1);
+  fill: rgba(50, 50, 50, 0.1);
 }
 
 .dark #wave4 {
-  fill: #2d2e32;
+  fill: #16181d;
 }
 
 /*

@@ -7,7 +7,7 @@ import { cn } from 'utils';
 
 import { Tag } from './Tag';
 
-// Inspired on: https://buildui.com/recipes/spotlight
+// Inspiration: https://buildui.com/recipes/spotlight
 export const Card = ({ children, isInView, tags, title, variant }: CardProps) => {
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
@@ -23,15 +23,18 @@ export const Card = ({ children, isInView, tags, title, variant }: CardProps) =>
   const spotlightStyle = useMotionTemplate`
   radial-gradient(
     650px circle at ${mouseX}px ${mouseY}px,
-    rgba(14, 165, 233, 0.10),
-    transparent 80%
+    rgba(117, 206, 247, 0.1),
+    transparent 50%
   )
 `;
 
-  const classes = cn('group relative min-w-full md:grid-span-1 mb-4 md:mb-0 rounded-xl shadow-md', {
-    'bg-rnny-light dark:bg-rnny-dark': !variant,
-    'bg-white dark:bg-rnny-dark-tint': variant === 'off',
-  });
+  const classes = cn(
+    'group relative min-w-full md:col-span-1 md:row-span-5 mb-4 md:mb-0 rounded-xl shadow-md',
+    {
+      'bg-rnny-light dark:bg-rnny-dark': !variant,
+      'bg-white dark:bg-rnny-dark-tint': variant === 'off',
+    },
+  );
 
   return (
     <AnimatePresence>
@@ -62,14 +65,14 @@ export const Card = ({ children, isInView, tags, title, variant }: CardProps) =>
             }}
           >
             <div>
-              {tags?.map((tag) => (
+              {tags?.map((tag, index) => (
                 <Tag
-                  key={tag}
+                  key={`${tag}_${index}`}
                   title={tag}
                 />
               ))}
             </div>
-            <h1 className="my-4 flex-[2] grow-[2] text-xl">{title}</h1>
+            <h1 className="my-4 flex-[2] grow-[2] text-xl text-gray">{title}</h1>
             {children}
           </motion.div>
         </motion.div>

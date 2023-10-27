@@ -6,10 +6,11 @@ export const ResourcesTweets = async () => {
   const tweets = await fetchNotion('tweets');
 
   return (
-    <div className="min-w-full">
+    <div className="min-w-full min-h-screen">
       <ResourceOverview
         data={tweets || []}
         type="tweets"
+        variant="off"
       />
     </div>
   );

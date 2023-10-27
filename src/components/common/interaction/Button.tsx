@@ -14,16 +14,20 @@ export const Button = ({
   size = 'default',
   ...otherProps
 }: ButtonProps | ButtonLinkProps) => {
-  const classes = cn(`flex items-center justify-center font-semibold`, className, {
-    relative: !className?.includes('absolute') && !className?.includes('fixed'),
-    'bg-rnny-primary text-white': variant === 'primary',
-    'bg-transparent border-2 border-rnny-dark dark:border-rnny-light text-rnny-dark dark:text-rnny-light transition-colors hover:bg-rnny-primary-tint hover:border-rnny-primary-tint hover:text-rnny-light dark:hover:border-rnny-primary-tint':
-      variant === 'secondary',
-    'bg-slate-400	cursor-not-allowed': 'disabled' in otherProps && otherProps?.disabled,
-    'h-12 px-8 rounded-lg text-base min-w-[200px]': size === 'default' && !otherProps?.animate,
-    'h-8 px-4 rounded-lg text-sm min-w-[100px]': size === 'small' && !otherProps?.animate,
-    'h-12 px-8 rounded-full min-w-0': otherProps?.animate,
-  });
+  const classes = cn(
+    `flex items-center justify-center font-semibold no-underline transition-colors duration-500`,
+    className,
+    {
+      relative: !className?.includes('absolute') && !className?.includes('fixed'),
+      'border-[1px] border-rnny-gray text-black hover:text-white dark:text-white hover:bg-rnny-primary hover:border-rnny-primary':
+        variant === 'primary',
+      'bg-rnny-primary-tint hover:bg-rnny-primary-tint-hover text-white': variant === 'secondary',
+      'bg-slate-400	cursor-not-allowed': 'disabled' in otherProps && otherProps?.disabled,
+      'h-12 px-8 rounded-lg text-base min-w-[200px]': size === 'default' && !otherProps?.animate,
+      'h-8 px-4 rounded-lg text-sm min-w-[100px]': size === 'small' && !otherProps?.animate,
+      'h-12 px-8 rounded-full min-w-0': otherProps?.animate,
+    },
+  );
 
   if (type === 'link' && 'href' in otherProps && otherProps.href) {
     const href = otherProps.href;
