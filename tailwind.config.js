@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       colors: {
         'rnny-primary': '#6FAEF7',
+        'rnny-primary-link': '#a2c4f2',
         'rnny-primary-tint': '#243C66',
         'rnny-primary-tint-hover': '#304e82',
         'rnny-secondary': '#C6D76D',

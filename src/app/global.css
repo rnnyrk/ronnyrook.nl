@@ -46,7 +46,7 @@ p {
 }
 
 a {
-  @apply text-rnny-primary;
+  @apply text-rnny-primary-link;
   text-decoration: underline;
 
   &:hover {
