@@ -1,3 +1,9 @@
+import Amdax1 from 'images/projects/amdax-1.png';
+import Amdax2 from 'images/projects/amdax-2.png';
+import Gta1 from 'images/projects/gta-1.png';
+import Gta2 from 'images/projects/gta-2.png';
+import SafeWord1 from 'images/projects/safeword-1.png';
+import SafeWord2 from 'images/projects/safeword-2.png';
 import { fetchPosts } from 'queries/posts/fetchPosts';
 import { Button } from 'common/interaction/Button';
 import { Container } from 'common/layout/Container';
@@ -22,38 +28,40 @@ async function Work() {
       <PageHeader
         title="Work"
         className="mb-6 md:mb-10"
-        summary="Every now and then I write a blog post about something I have a good opinion about or I
-        want to learn you something new."
+        summary="
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eleifend hendrerit massa in facilisis. Aenean auctor tortor eget elit pharetra varius. Proin hendrerit sed diam suscipit vehicula. Proin vel magna a quam ullamcorper feugiat ut vitae arcu. Donec quis fringilla tellus. Nam ac consequat mauris. In libero metus, rutrum vel nisi sit amet, dictum elementum erat. Morbi tellus orci, commodo sed iaculis vestibulum, dapibus ut mauris. Morbi non magna odio. Integer sit amet consequat mauris. Pellentesque laoreet sodales ornare. Nunc condimentum vitae dolor vitae ullamcorper."
       />
 
-      <section className="flex flex-wrap justify-center py-20 md:py-40 bg-white dark:bg-rnny-dark-tint">
+      <section className="flex flex-wrap justify-center py-40 md:pt-[30vh] md:pb-0 bg-white dark:bg-rnny-dark-tint">
         <Cube
           title="SafeWord"
-          image=""
+          image={SafeWord1}
+          image2={SafeWord2}
         />
         <Cube
           title="Amdax"
-          image=""
+          image={Amdax1}
+          image2={Amdax2}
         />
         <Cube
           title="GIF the Aux"
-          image=""
+          image={Gta1}
+          image2={Gta2}
         />
         <Cube
           title="Roommates"
-          image=""
+          image={SafeWord1}
+          image2={SafeWord2}
         />
         <Cube
           title="Voicy"
-          image=""
-        />
-        <Cube
-          title="Archeomaps"
-          image=""
+          image={Amdax1}
+          image2={Amdax2}
         />
         <Cube
           title="Ruach"
-          image=""
+          image={SafeWord1}
+          image2={SafeWord2}
         />
       </section>
     </>

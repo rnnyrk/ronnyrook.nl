@@ -339,12 +339,15 @@ a {
 .cube-wrapper {
   display: flex;
   grid-column: 1 / 3;
+  overflow: hidden;
 }
 
+.cube-wrapper-right.l,
 .cube-wrapper-left.l {
-  perspective: 120em;
+  perspective: 60em;
 }
 
+.cube-wrapper-rev,
 .cube-wrapper-2 {
   width: 45rem;
   height: 12vw;
@@ -354,9 +357,10 @@ a {
   transform-style: preserve-3d;
 }
 
+.cube-wrapper-rev.large,
 .cube-wrapper-2.large {
   height: 30em;
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .cube-face-front {
@@ -490,10 +494,6 @@ a {
   line-height: 0.8;
 }
 
-.cube-wrapper-right.l {
-  perspective: 120em;
-}
-
 .cube-wrapper-right {
   height: 100%;
   perspective: 1250px;
@@ -503,20 +503,6 @@ a {
   padding-right: 3em;
   display: flex;
   position: relative;
-}
-
-.cube-wrapper-rev.large {
-  height: 30em;
-  max-width: 700px;
-}
-
-.cube-wrapper-rev {
-  width: 45vw;
-  height: 12vw;
-  position: relative;
-
-  will-change: transform;
-  transform-style: preserve-3d;
 }
 
 .cover-image-2 {
