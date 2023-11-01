@@ -35,31 +35,37 @@ async function Work() {
       <section className="flex flex-wrap justify-center py-40 md:pt-[30vh] md:pb-0 bg-white dark:bg-rnny-dark-tint">
         <Cube
           title="SafeWord"
+          slug="/work/safeword"
           image={SafeWord1}
           image2={SafeWord2}
         />
         <Cube
           title="Amdax"
+          slug="/work/amdax"
           image={Amdax1}
           image2={Amdax2}
         />
         <Cube
           title="GIF the Aux"
+          slug="/work/gif-the-aux"
           image={Gta1}
           image2={Gta2}
         />
         <Cube
           title="Roommates"
+          slug="/work/roommates"
           image={SafeWord1}
           image2={SafeWord2}
         />
         <Cube
           title="Voicy"
+          slug="/work/voicy"
           image={Amdax1}
           image2={Amdax2}
         />
         <Cube
           title="Ruach"
+          slug="/work/ruach"
           image={SafeWord1}
           image2={SafeWord2}
         />
