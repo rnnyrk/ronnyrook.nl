@@ -1,7 +1,7 @@
 import './global.css';
 
 import type * as i from 'types';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import { Analytics } from '@vercel/analytics/react';
 
 import { cn } from 'utils';
@@ -9,7 +9,20 @@ import { Footer } from 'modules/layouts/Footer';
 import { Menu } from 'modules/layouts/Menu';
 import { PageWrapper } from 'modules/layouts/PageWrapper';
 
-const inter = Inter({ subsets: ['latin'] });
+const sathosi = localFont({
+  display: 'swap',
+  variable: '--font-satoshi',
+  src: [
+    {
+      path: '../../public/fonts/Satoshi-VariableItalic.ttf',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/Satoshi-Variable.ttf',
+      style: 'normal',
+    },
+  ],
+});
 
 export const metadata = {
   title: {
@@ -76,8 +89,8 @@ const Layout = ({ children }: Props) => {
       <head />
       <body
         className={cn(
-          'min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60 text-black bg-rnny-light dark:bg-rnny-dark dark:text-rnny-dark-text',
-          inter.className,
+          'min-h-full min-w-full overflow-x-hidden text-black bg-rnny-light dark:bg-rnny-dark dark:text-rnny-dark-text',
+          sathosi.variable,
         )}
       >
         <Menu />

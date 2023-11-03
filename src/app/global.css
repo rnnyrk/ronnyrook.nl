@@ -9,6 +9,7 @@
 
 html {
   min-width: 360px;
+  font-family: var(--font-sathosi);
 }
 
 code[class*='language-'],
@@ -52,6 +53,10 @@ a {
   &:hover {
     text-decoration: none;
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 /* Masonry grid */
@@ -163,7 +168,7 @@ a {
   color: #222222;
   border-left-color: #e5e5e5;
   border-left-width: 0.25rem;
-  quotes: '\201C''\201D''\2018''\2019';
+  quotes: '\201C' '\201D' '\2018' '\2019';
   margin-top: 2rem;
   margin-bottom: 2rem;
   margin-left: 2.2rem;
@@ -385,7 +390,7 @@ a {
 .inner-cube-marquee {
   height: 100%;
   grid-column-gap: 8em;
-  color: #000;
+  color: #fff;
   flex: 1;
   justify-content: flex-start;
   align-items: center;

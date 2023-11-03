@@ -1,13 +1,11 @@
-import { IBM_Plex_Serif } from 'next/font/google';
-
 import { cn } from 'utils';
 
-const plexSerif = IBM_Plex_Serif({ weight: ['400'], subsets: ['latin'] });
-
-export const Heading = ({ as, className, children, color, size }: HeadingProps) => {
-  const classes = cn(plexSerif.className, className, {
+export const Heading = ({ as, className, children, color, size, weight }: HeadingProps) => {
+  const classes = cn('font-sathosi tracking-wide', className, {
     [`text-${color}`]: Boolean(color),
     [`text-${size}`]: Boolean(size),
+    'font-bold': weight === 'bold',
+    'font-extrabold': weight === 'extrabold',
   });
 
   if (as === 'h4') {
@@ -31,4 +29,5 @@ type HeadingProps = {
   children: React.ReactNode;
   color?: 'black' | 'white';
   size?: 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
+  weight?: 'bold' | 'extrabold';
 };

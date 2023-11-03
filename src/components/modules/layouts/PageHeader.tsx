@@ -9,7 +9,7 @@ import { Heading } from 'common/typography/Heading';
 
 export const PageHeader = ({ backUrl, className, title, summary }: PageHeaderProps) => {
   return (
-    <Container className={cn('p-8', className)}>
+    <Container className={cn('p-8 pt-60', className)}>
       <div className="flex flex-col">
         {backUrl && (
           <Link
@@ -21,7 +21,7 @@ export const PageHeader = ({ backUrl, className, title, summary }: PageHeaderPro
           </Link>
         )}
         <Heading className="text-black dark:text-white mt-4">{title}</Heading>
-        {summary && <p className="mt-6 text-lg">{summary}</p>}
+        {summary && <p className="mt-6 text-xl leading-8 font-sathosi tracking-wide">{summary}</p>}
       </div>
     </Container>
   );

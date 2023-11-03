@@ -28,7 +28,7 @@ const MenuItem = ({ title, href }: MenuItemProps) => {
     <Link
       href={href}
       className={cn(
-        'mx-2 transition-all hover:text-neutral-100 font-bold rounded-full text-white',
+        'mx-2 transition-all tracking-wide hover:text-neutral-100 font-bold rounded-full text-white font-sathosi',
         {
           'text-slate-400': !isActive,
           'text-white': isActive,

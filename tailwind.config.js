@@ -23,7 +23,7 @@ module.exports = {
         '8xl': '90rem',
       },
       fontFamily: {
-        serif: ['var(--font-inter)'],
+        sathosi: ['var(--font-satoshi)'],
       },
       screens: {
         '3xl': '1600px',
