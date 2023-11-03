@@ -1,5 +1,6 @@
 import { Container } from 'common/layout/Container';
 import { Experience } from 'common/layout/Experience';
+import PageAnimation from 'modules/layouts/PageAnimation';
 import { PageHeader } from 'modules/layouts/PageHeader';
 
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 
 function Cv() {
   return (
-    <>
+    <PageAnimation>
       <PageHeader
         title="Experience"
         className="mb-6 md:mb-10"
@@ -51,7 +52,7 @@ function Cv() {
           />
         </Container>
       </section>
-    </>
+    </PageAnimation>
   );
 }
 

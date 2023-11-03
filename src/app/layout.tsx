@@ -24,7 +24,10 @@ const sathosi = localFont({
   ],
 });
 
+const SITE_URL = process.env.SITE_URL || 'http://localhost:3000';
+
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'About me | Ronny Rook',
     template: '%s | Ronny Rook',
@@ -33,11 +36,11 @@ export const metadata = {
   openGraph: {
     title: 'Ronny Rook',
     description: 'Ronny Rook is a Javascript developer from Amsterdam',
-    url: 'https://rnny.nl',
+    url: SITE_URL,
     siteName: 'Ronny Rook',
     images: [
       {
-        url: 'https://rnny.nl/api/og?title=Ronny%20Rook',
+        url: `${SITE_URL}/api/og?title=Ronny%20Rook`,
         width: 1200,
         height: 630,
       },
@@ -62,22 +65,22 @@ export const metadata = {
     card: 'summary_large_image',
     images: [
       {
-        url: 'https://rnny.nl/api/og?title=Ronny%20Rook',
+        url: `${SITE_URL}/api/og?title=Ronny%20Rook`,
         width: 1200,
         height: 630,
       },
     ],
     creator: '@rnnyrk',
   },
-  manifest: '/images/favicon/site.webmanifest',
+  manifest: `${SITE_URL}/images/favicon/site.webmanifest`,
   icons: {
-    icon: '/images/favicon/favicon-32x32.png',
-    shortcut: '/images/favicon/favicon.ico',
-    apple: '/images/favicon/apple-touch-icon.png',
+    icon: `${SITE_URL}/images/favicon/favicon-32x32.png`,
+    shortcut: `${SITE_URL}/images/favicon/favicon.ico`,
+    apple: `${SITE_URL}/images/favicon/apple-touch-icon.png`,
     other: [
       {
         rel: 'mask-icon',
-        url: '/images/favicon/safari-pinned-tab.svg',
+        url: `${SITE_URL}/images/favicon/safari-pinned-tab.svg`,
       },
     ],
   },

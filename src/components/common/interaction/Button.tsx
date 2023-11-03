@@ -15,7 +15,7 @@ export const Button = ({
   ...otherProps
 }: ButtonProps | ButtonLinkProps) => {
   const classes = cn(
-    `flex items-center justify-center font-semibold no-underline transition-colors duration-500`,
+    `flex items-center justify-center font-semibold tracking-wider font-sathosi no-underline transition-colors duration-500`,
     className,
     {
       relative: !className?.includes('absolute') && !className?.includes('fixed'),

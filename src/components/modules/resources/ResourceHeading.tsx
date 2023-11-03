@@ -115,7 +115,7 @@ export const ResourceHeading = ({ children, icon, text }: ResourceHeadingProps) 
         )}
         {children}
       </div>
-      {text && <p className="mb-16 text-lg">{text}</p>}
+      {text && <p className="mb-16 text-lg font-sathosi tracking-wider">{text}</p>}
     </Container>
   );
 };

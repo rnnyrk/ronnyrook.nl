@@ -95,10 +95,7 @@ export const DarkModeToggle = () => {
         }}
         className="flex items-center justify-center absolute inset-0 z-20 dark:z-10"
       >
-        <DarkSvg
-          className="w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] stroke-gray-800"
-          strokeWidth="3"
-        />
+        <DarkSvg />
       </motion.div>
     </button>
   );

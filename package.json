@@ -5,8 +5,7 @@
   "author": "Ronny Rook",
   "url": "https://rnny.nl",
   "scripts": {
-    "start": "next dev -p $([ -f .port ] && cat .port || echo 3000)",
-    "dev": "bun run start",
+    "start": "next dev",
     "build": "next build",
     "server": "next start",
     "lint": "next lint",

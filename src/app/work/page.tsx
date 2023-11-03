@@ -7,14 +7,13 @@ import SafeWord2 from 'images/projects/safeword-2.png';
 import { fetchPosts } from 'queries/posts/fetchPosts';
 import PageAnimation from 'modules/layouts/PageAnimation';
 import { PageHeader } from 'modules/layouts/PageHeader';
-import { Cube } from 'modules/work/Cube';
 
 export const revalidate = 300; // 5 minutes
 
 export const metadata = {
-  title: 'Blog',
-  description:
-    'Find blogs about e.g. social authentication with Expo (React Native) and Supabase, but also opinionated blogs about Tailwind CSS or Typescript.',
+  title: 'Work',
+  // @TODO
+  description: '',
 };
 
 async function Work() {
@@ -25,48 +24,10 @@ async function Work() {
       <PageHeader
         title="Work"
         className="mb-6 md:mb-10"
-        summary="
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eleifend hendrerit massa in facilisis. Aenean auctor tortor eget elit pharetra varius. Proin hendrerit sed diam suscipit vehicula. Proin vel magna a quam ullamcorper feugiat ut vitae arcu. Donec quis fringilla tellus. Nam ac consequat mauris. In libero metus, rutrum vel nisi sit amet, dictum elementum erat. Morbi tellus orci, commodo sed iaculis vestibulum, dapibus ut mauris. Morbi non magna odio. Integer sit amet consequat mauris. Pellentesque laoreet sodales ornare. Nunc condimentum vitae dolor vitae ullamcorper."
+        summary="As a developer you stand out by the work you do. I've been fortunate to work on some amazing projects with to support of great people and companies. Here are some of my favourites."
       />
 
-      <section className="flex flex-col flex-wrap justify-center items-center py-40 md:pt-[30vh] md:pb-0 bg-white dark:bg-rnny-dark-tint">
-        <Cube
-          title="SafeWord"
-          slug="/work/safeword"
-          image={SafeWord1}
-          image2={SafeWord2}
-        />
-        <Cube
-          title="Amdax"
-          slug="/work/amdax"
-          image={Amdax1}
-          image2={Amdax2}
-        />
-        <Cube
-          title="GIF the Aux"
-          slug="/work/gif-the-aux"
-          image={Gta1}
-          image2={Gta2}
-        />
-        <Cube
-          title="Roommates"
-          slug="/work/roommates"
-          image={SafeWord1}
-          image2={SafeWord2}
-        />
-        <Cube
-          title="Voicy"
-          slug="/work/voicy"
-          image={Amdax1}
-          image2={Amdax2}
-        />
-        <Cube
-          title="Ruach"
-          slug="/work/ruach"
-          image={SafeWord1}
-          image2={SafeWord2}
-        />
-      </section>
+      <section className="flex flex-col flex-wrap justify-center items-center py-40 md:pt-[30vh] md:pb-0 bg-white dark:bg-rnny-dark-tint"></section>
     </PageAnimation>
   );
 }

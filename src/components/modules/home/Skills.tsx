@@ -3,35 +3,37 @@
 import { useRef } from 'react';
 import { motion, useInView, Variants } from 'framer-motion';
 
-import { Container } from 'common/layout/Container';
-import { List } from 'common/layout/List';
-import { Heading } from 'common/typography/Heading';
+import { cn } from 'utils';
 
-import { Waves } from './Waves';
-
-const skills = [
+const skillsOne = [
   'React',
   'React Query',
-  'Tailwind',
   'NextJS',
   'React Native',
   'React Navigation',
   'Reanimated',
   'Framer Motion',
   'React Testing Library',
+  'Three.JS (React Three Fiber)',
+];
+
+const skillsTwo = [
   'Typescript',
   'Serverless',
   'AWS',
+  'Shopify',
   'PostgreSQL',
   'SupaBase',
+  'Firebase',
+  'Tailwind',
   'Styled Components',
-  'Three.JS (React Three Fiber)',
+  'Contentful',
 ];
 
 const skillVariants: Variants = {
   visible: (index) => ({
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
       duration: 1,
       delay: index * 0.15,
@@ -40,7 +42,7 @@ const skillVariants: Variants = {
   }),
   hidden: (index) => ({
     opacity: 0,
-    x: -10,
+    y: -10,
     transition: {
       duration: 1,
       delay: index * 0.1,
@@ -53,37 +55,48 @@ export const Skills = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const inView = useInView(ref, { once: true });
 
+  const skillClasses = (index: number) =>
+    cn(
+      'font-sathosi font-bold text-8xl tracking-wide py-8 px-12 uppercase flex whitespace-nowrap',
+      {
+        'bg-rnny-primary text-white': index % 2 === 0,
+        'bg-rnny-dark': index % 2 !== 0,
+      },
+    );
+
   return (
     <div
-      className="w-screen relative px-4 py-20 mt-40 md:py-40 md:mt-80 bg-white dark:bg-rnny-dark-tint"
+      className="w-screen h-[calc(100vh-104px)] fixed z-10 inset-0 flex flex-wrap items-center content-center overflow-hidden"
       ref={ref}
     >
-      <Waves />
-      <Container className="flex flex-col items-center md:flex-row">
-        <div className="min-w-[260px] mr-14">
-          <Heading className="mt-2 text-[2rem] text-black dark:text-white">
-            With love for the web
-          </Heading>
-          <p className="mt-4">
-            I love building for the web. From simple pages, to native applications, all the way to
-            large Next.js applications. <strong>The web and Javascript are incredible</strong>. It
-            gives everyone the freedom to just start creating.
-          </p>
-        </div>
-        <List.Container className="mt-2 mb-10 -ml-2 md:ml-0">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill}
-              custom={index}
-              initial="hidden"
-              animate={inView ? 'visible' : 'hidden'}
-              variants={skillVariants}
-            >
-              <List.Item>{skill}</List.Item>
-            </motion.div>
-          ))}
-        </List.Container>
-      </Container>
+      <div className="flex">
+        {skillsOne.map((skill, index) => (
+          <motion.span
+            key={skill}
+            custom={index}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            variants={skillVariants}
+            className={skillClasses(index)}
+          >
+            {skill}
+          </motion.span>
+        ))}
+      </div>
+      <div className="flex">
+        {skillsTwo.map((skill, index) => (
+          <motion.span
+            key={skill}
+            custom={index}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            variants={skillVariants}
+            className={skillClasses(index)}
+          >
+            {skill}
+          </motion.span>
+        ))}
+      </div>
     </div>
   );
 };
