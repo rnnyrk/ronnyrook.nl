@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView, Variants } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useCycle, useInView, Variants } from 'framer-motion';
 
 import { cn } from 'utils';
 
@@ -52,24 +52,63 @@ const skillVariants: Variants = {
 };
 
 export const Skills = () => {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref, { once: true });
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const marqueeRef = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(wrapperRef, { once: true });
+  let timeout: NodeJS.Timeout;
 
   const skillClasses = (index: number) =>
     cn(
-      'font-sathosi font-bold text-8xl tracking-wide py-8 px-12 uppercase flex whitespace-nowrap',
+      'font-sathosi font-bold text-8xl tracking-wide py-8 px-12 uppercase flex whitespace-nowrap mx-6',
       {
-        'bg-rnny-primary text-white': index % 2 === 0,
-        'bg-rnny-dark': index % 2 !== 0,
+        'bg-rnny-primary text-rnny-dark': index % 2 === 0,
+        'bg-rnny-dark-tint': index % 2 !== 0,
       },
     );
 
+  const widthMarquee1 = 8000 - window.innerWidth;
+  const widthMarquee2 = 6000 - window.innerWidth;
+
+  const [currentCycle, setCurrentCycle] = useState(1);
+  const [xCycle, onCycleX] = useCycle(0, -widthMarquee1);
+  const [xReverseCycle, onReverseCycleX] = useCycle(0, widthMarquee2);
+
+  const durationInSeconds = 45;
+  const timeoutDuration = durationInSeconds * 1000;
+
+  useEffect(() => {
+    if (!marqueeRef.current) return;
+    onCycleX(currentCycle);
+    onReverseCycleX(currentCycle);
+  }, [marqueeRef?.current]);
+
+  useEffect(() => {
+    if (timeout) clearTimeout(timeout);
+
+    let newCycle = currentCycle === 1 ? 0 : 1;
+
+    timeout = setTimeout(() => {
+      setCurrentCycle(newCycle);
+
+      onCycleX(newCycle);
+      onReverseCycleX(newCycle);
+    }, timeoutDuration);
+  }, [currentCycle]);
+
   return (
     <div
-      className="w-screen h-[calc(100vh-104px)] fixed z-10 inset-0 flex flex-wrap items-center content-center overflow-hidden"
-      ref={ref}
+      className="w-screen h-[calc(100vh-104px)] fixed z-10 inset-0 -left-20 flex flex-wrap items-center content-center -rotate-12 origin-center"
+      ref={wrapperRef}
     >
-      <div className="flex">
+      <motion.div
+        ref={marqueeRef}
+        className="flex mb-12"
+        animate={{ x: xCycle }}
+        transition={{
+          duration: durationInSeconds,
+          ease: 'linear',
+        }}
+      >
         {skillsOne.map((skill, index) => (
           <motion.span
             key={skill}
@@ -82,20 +121,29 @@ export const Skills = () => {
             {skill}
           </motion.span>
         ))}
-      </div>
-      <div className="flex">
-        {skillsTwo.map((skill, index) => (
-          <motion.span
-            key={skill}
-            custom={index}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            variants={skillVariants}
-            className={skillClasses(index)}
-          >
-            {skill}
-          </motion.span>
-        ))}
+      </motion.div>
+      <div style={{ marginLeft: -widthMarquee2 }}>
+        <motion.div
+          className="flex"
+          animate={{ x: xReverseCycle }}
+          transition={{
+            duration: durationInSeconds,
+            ease: 'linear',
+          }}
+        >
+          {skillsTwo.map((skill, index) => (
+            <motion.span
+              key={skill}
+              custom={index}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              variants={skillVariants}
+              className={skillClasses(index)}
+            >
+              {skill}
+            </motion.span>
+          ))}
+        </motion.div>
       </div>
     </div>
   );
