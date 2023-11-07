@@ -17,7 +17,9 @@ export const PageHeader = ({ backUrl, className, title, summary }: PageHeaderPro
             className="flex items-center mb-2 no-underline hover:translate-x-2 transition-transform"
           >
             <ArrowLeftSvg className="fill-rnny-dark dark:fill-rnny-light w-6 h-6 mr-2" />
-            <span className="text-rnny-dark dark:text-rnny-light">Back to overview</span>
+            <span className="text-rnny-dark dark:text-rnny-light font-sathosi">
+              Back to overview
+            </span>
           </Link>
         )}
         <Heading className="text-black dark:text-white mt-4">{title}</Heading>

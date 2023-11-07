@@ -38,7 +38,7 @@ const MenuItem = ({ title, href }: MenuItemProps) => {
         <span className="relative">{title}</span>
         {isActive ? (
           <motion.span
-            className="absolute inset-0 rounded-full z-[-1] bg-rnny-primary"
+            className="absolute inset-0 rounded-full shadow-lg z-[-1] bg-rnny-primary"
             layoutId="sidebar"
             transition={{
               type: 'spring',

@@ -14,7 +14,7 @@ export const Tag = ({ title }: TagProps) => {
 
   return (
     <motion.button
-      className="mb-2 md:mb-0 mr-2"
+      className="mb-2 md:mb-0 mr-2 font-sathosi"
       onClick={() => router.push(`/resources/${tag}`)}
       whileHover={{
         scale: 1.1,

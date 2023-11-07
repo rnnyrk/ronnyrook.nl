@@ -79,7 +79,7 @@ export function Article({ post }: ArticleProps) {
       components={MarkdownComponents}
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[[rehypeExternalLinks, { target: '_blank' }]]}
-      className="markdown"
+      className="markdown font-sathosi"
     >
       {post.content}
     </ReactMarkdown>

@@ -100,7 +100,6 @@ const Layout = ({ children }: Props) => {
         <main>
           <PageWrapper>{children}</PageWrapper>
         </main>
-        <Footer />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

@@ -10,7 +10,8 @@ export function Card() {
       href="/cv"
       className={cn(
         'absolute left-8 bottom-8 z-20 py-8 px-12 rounded-lg cursor-pointer no-underline',
-        'transition-colors bg-slate-200/10 hover:bg-rnny-primary/20',
+        'group bg-slate-200/10 hover:bg-rnny-primary-tint',
+        'hover:-translate-y-1 transition-all duration-500',
       )}
     >
       <header className="flex items-center">
@@ -30,7 +31,14 @@ export function Card() {
           >
             Ronny Rook
           </Heading>
-          <h3 className="text-lg tracking-wide font-sathosi">Technically a creative</h3>
+          <h3
+            className={cn(
+              'text-lg tracking-wide font-sathosi text-rnny-gray-tint group-hover:text-white',
+              'transition-colors duration-500',
+            )}
+          >
+            Technically a creative
+          </h3>
         </div>
       </header>
     </Link>

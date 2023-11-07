@@ -66,14 +66,14 @@ export const Skills = () => {
       },
     );
 
-  const widthMarquee1 = 8000 - window.innerWidth;
-  const widthMarquee2 = 6000 - window.innerWidth;
+  const widthMarquee1 = 8000 - (window?.innerWidth || 0);
+  const widthMarquee2 = 6000 - (window?.innerWidth || 0);
 
   const [currentCycle, setCurrentCycle] = useState(1);
   const [xCycle, onCycleX] = useCycle(0, -widthMarquee1);
   const [xReverseCycle, onReverseCycleX] = useCycle(0, widthMarquee2);
 
-  const durationInSeconds = 45;
+  const durationInSeconds = 60;
   const timeoutDuration = durationInSeconds * 1000;
 
   useEffect(() => {
