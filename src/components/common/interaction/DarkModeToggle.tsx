@@ -69,8 +69,9 @@ export const DarkModeToggle = () => {
     <button
       onClick={onToggleDarkMode}
       className={cn(
-        'flex items-center justify-center button-toggle relative',
-        'bg-slate-200/10 hover:bg-slate-200/40 rounded-lg',
+        'relative w-[40px] h-[40px] flex items-center justify-center overflow-hidden rounded-lg',
+        'bg-rnny-dark-tint/20 hover:bg-rnny-light-tint/80 dark:bg-rnny-light-tint/20 dark:hover:bg-rnny-dark/50',
+        'transition-colors duration-500',
       )}
     >
       <motion.div
@@ -99,7 +100,7 @@ export const DarkModeToggle = () => {
         }}
         className="flex items-center justify-center absolute inset-0 z-20 dark:z-10"
       >
-        <DarkSvg />
+        <DarkSvg className="w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] fill-[#5F59D3]" />
       </motion.div>
     </button>
   );

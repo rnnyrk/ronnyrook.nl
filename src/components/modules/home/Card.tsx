@@ -10,7 +10,7 @@ export function Card() {
       href="/cv"
       className={cn(
         'absolute left-8 bottom-8 z-20 py-8 px-12 rounded-lg cursor-pointer no-underline',
-        'group bg-slate-200/10 hover:bg-rnny-primary-tint',
+        'group bg-rnny-dark-tint/10 hover:bg-rnny-dark-tint/5 dark:bg-rnny-light-tint/20 dark:hover:bg-rnny-light-tint/5',
         'hover:-translate-y-1 transition-all duration-500',
       )}
     >
@@ -26,14 +26,17 @@ export function Card() {
         </figure>
         <div className="mt-2 md:mt-0 md:ml-4">
           <Heading
-            className="text-black dark:text-white"
+            className={cn(
+              'text-black group-hover:text-black dark:text-white dark:group-hover:text-white',
+              'transition-colors duration-500',
+            )}
             as="h2"
           >
             Ronny Rook
           </Heading>
           <h3
             className={cn(
-              'text-lg tracking-wide font-sathosi text-rnny-gray-tint group-hover:text-white',
+              'text-lg tracking-wide font-sathosi text-rnny-gray group-hover:text-black dark:text-rnny-gray-tint dark:group-hover:text-white',
               'transition-colors duration-500',
             )}
           >
