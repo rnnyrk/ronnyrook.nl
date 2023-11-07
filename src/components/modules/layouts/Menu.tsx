@@ -75,9 +75,7 @@ export const Menu = () => {
           </LayoutGroup>
         </div>
       </nav>
-      <div className="hidden md:flex absolute z-20 right-6 top-12 justify-between border-2 border-[#c2c7d1] dark:border-[#383d47] rounded-lg">
-        {/* <FancyToggle /> */}
-        {/* <hr className="absolute left-[50%] top-0 ml-[-1px] w-[2px] h-full border-0 bg-[#c2c7d1] dark:bg-[#383d47]" /> */}
+      <div className="hidden md:flex absolute z-20 right-6 top-12">
         <DarkModeToggle />
       </div>
     </>

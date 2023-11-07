@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useCycle, useInView, Variants } from 'framer-motion';
 
-import { cn } from 'utils';
+import { cn, isServer } from 'utils';
 
 const skillsOne = [
   'React',
@@ -57,17 +57,20 @@ export const Skills = () => {
   const inView = useInView(wrapperRef, { once: true });
   let timeout: NodeJS.Timeout;
 
-  const skillClasses = (index: number) =>
-    cn(
+  const skillClasses = (index: number) => {
+    const isOdd = index % 2 !== 0;
+    return cn(
       'font-sathosi font-bold text-8xl tracking-wide py-8 px-12 uppercase flex whitespace-nowrap mx-6',
       {
-        'bg-rnny-primary text-rnny-dark': index % 2 === 0,
-        'bg-rnny-dark-tint': index % 2 !== 0,
+        'bg-rnny-primary text-rnny-dark-tint': !isOdd,
+        'bg-rnny-dark-tint': isOdd,
       },
     );
+  };
 
-  const widthMarquee1 = 8000 - (window?.innerWidth || 0);
-  const widthMarquee2 = 6000 - (window?.innerWidth || 0);
+  const wWidth = !isServer ? window?.innerWidth : 0;
+  const widthMarquee1 = 8000 - wWidth;
+  const widthMarquee2 = 6000 - wWidth;
 
   const [currentCycle, setCurrentCycle] = useState(1);
   const [xCycle, onCycleX] = useCycle(0, -widthMarquee1);
@@ -144,6 +147,21 @@ export const Skills = () => {
             </motion.span>
           ))}
         </motion.div>
+      </div>
+
+      <div className="absolute inset-16 z-[-1] opacity-30 flex items-center justify-center overflow-hidden blur-[10vw] saturate-150">
+        <div className="absolute h-full w-full animate-orbit">
+          <div className="absolute left-[25%] top-[25%] w-[50%] rounded-full bg-rnny-primary pb-[50%]"></div>
+        </div>
+        <div className="animate-orbit2 absolute h-1/2 w-full">
+          <div className="absolute left-[25%] top-[20%] w-[40%] rounded-full bg-rnny-purple pb-[40%]"></div>
+        </div>
+        <div className="animate-orbit3 absolute h-full w-full">
+          <div className="absolute left-[30%] top-[50%] w-[30%] rounded-full bg-rnny-primary-tint pb-[30%]"></div>
+        </div>
+        <div className="animate-orbit4 absolute h-full w-1/2">
+          <div className="absolute left-[25%] top-[25%] w-[30%] rounded-full bg-white pb-[30%]"></div>
+        </div>
       </div>
     </div>
   );
