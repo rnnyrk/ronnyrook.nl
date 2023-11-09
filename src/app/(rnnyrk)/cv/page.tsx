@@ -20,7 +20,7 @@ function Cv() {
       />
 
       <section className="py-20 md:py-40 bg-white dark:bg-rnny-dark-tint">
-        <Container className="px-8">
+        <Container className="px-8 max-w-6xl">
           <Experience
             title="iO Digital Consultancy"
             date="July 2023 - present"

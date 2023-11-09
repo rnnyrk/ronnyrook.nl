@@ -10,7 +10,7 @@ export function Card() {
       href="/cv"
       className={cn(
         'absolute left-8 bottom-8 z-20 py-8 px-12 rounded-lg cursor-pointer no-underline',
-        'group bg-rnny-dark-tint/10 hover:bg-rnny-dark-tint/5 dark:bg-rnny-light-tint/20 dark:hover:bg-rnny-light-tint/5',
+        'group bg-rnny-dark-tint/10 hover:bg-rnny-dark-tint/5 dark:bg-rnny-light-tint/5 dark:hover:bg-rnny-light-tint/10',
         'hover:-translate-y-1 transition-all duration-500',
       )}
     >
