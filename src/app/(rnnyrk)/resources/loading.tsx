@@ -3,6 +3,7 @@ import type * as i from 'types';
 import { cn } from 'utils';
 import { Container } from 'common/layout/Container';
 import { Skeleton } from 'common/layout/Skeleton';
+import PageAnimation from 'modules/layouts/PageAnimation';
 
 export default function Loading({ variant }: i.VariantProps) {
   const variantHeadingClasses = {
@@ -21,8 +22,8 @@ export default function Loading({ variant }: i.VariantProps) {
   );
 
   return (
-    <>
-      <Container className="p-8 mb-6 md:mb-10">
+    <PageAnimation>
+      <Container className="p-8 pt-60 mb-6 md:mb-10">
         <div className="flex flex-col">
           <Container className="w-full px-8">
             <Skeleton className={cn('h-12 w-[200px] mb-8', variantHeadingClasses)} />
@@ -48,6 +49,6 @@ export default function Loading({ variant }: i.VariantProps) {
           <Skeleton className={skeletonCardClasses} />
         </div>
       </section>
-    </>
+    </PageAnimation>
   );
 }

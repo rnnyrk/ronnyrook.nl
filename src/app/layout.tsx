@@ -1,7 +1,7 @@
 import './global.css';
 
 import type * as i from 'types';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import { Analytics } from '@vercel/analytics/react';
 
 import { cn } from 'utils';
@@ -9,9 +9,25 @@ import { Footer } from 'modules/layouts/Footer';
 import { Menu } from 'modules/layouts/Menu';
 import { PageWrapper } from 'modules/layouts/PageWrapper';
 
-const inter = Inter({ subsets: ['latin'] });
+const sathosi = localFont({
+  display: 'swap',
+  variable: '--font-satoshi',
+  src: [
+    {
+      path: '../../public/fonts/Satoshi-VariableItalic.ttf',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/Satoshi-Variable.ttf',
+      style: 'normal',
+    },
+  ],
+});
+
+const SITE_URL = process.env.SITE_URL || 'http://localhost:3000';
 
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'About me | Ronny Rook',
     template: '%s | Ronny Rook',
@@ -20,11 +36,11 @@ export const metadata = {
   openGraph: {
     title: 'Ronny Rook',
     description: 'Ronny Rook is a Javascript developer from Amsterdam',
-    url: 'https://rnny.nl',
+    url: SITE_URL,
     siteName: 'Ronny Rook',
     images: [
       {
-        url: 'https://rnny.nl/api/og?title=Ronny%20Rook',
+        url: `${SITE_URL}/api/og?title=Ronny%20Rook`,
         width: 1200,
         height: 630,
       },
@@ -49,22 +65,22 @@ export const metadata = {
     card: 'summary_large_image',
     images: [
       {
-        url: 'https://rnny.nl/api/og?title=Ronny%20Rook',
+        url: `${SITE_URL}/api/og?title=Ronny%20Rook`,
         width: 1200,
         height: 630,
       },
     ],
     creator: '@rnnyrk',
   },
-  manifest: '/images/favicon/site.webmanifest',
+  manifest: `${SITE_URL}/images/favicon/site.webmanifest`,
   icons: {
-    icon: '/images/favicon/favicon-32x32.png',
-    shortcut: '/images/favicon/favicon.ico',
-    apple: '/images/favicon/apple-touch-icon.png',
+    icon: `${SITE_URL}/images/favicon/favicon-32x32.png`,
+    shortcut: `${SITE_URL}/images/favicon/favicon.ico`,
+    apple: `${SITE_URL}/images/favicon/apple-touch-icon.png`,
     other: [
       {
         rel: 'mask-icon',
-        url: '/images/favicon/safari-pinned-tab.svg',
+        url: `${SITE_URL}/images/favicon/safari-pinned-tab.svg`,
       },
     ],
   },
@@ -76,15 +92,14 @@ const Layout = ({ children }: Props) => {
       <head />
       <body
         className={cn(
-          'min-h-full min-w-full overflow-x-hidden pt-36 md:pt-60 text-black bg-rnny-light dark:bg-rnny-dark dark:text-rnny-dark-text',
-          inter.className,
+          'min-h-full min-w-full overflow-x-hidden text-black bg-rnny-light dark:bg-rnny-dark dark:text-rnny-dark-text',
+          sathosi.variable,
         )}
       >
         <Menu />
         <main>
           <PageWrapper>{children}</PageWrapper>
         </main>
-        <Footer />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

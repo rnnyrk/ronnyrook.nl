@@ -1,93 +1,22 @@
 'use client';
 
-import { Fragment, useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { AnimatePresence, motion, Variants } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
-import { useUiStore } from 'store/ui';
-import { cn } from 'utils';
+import { FrozenRoute } from './FrozenRoute';
 
-export const PageWrapper = ({ children }: PageWrapperProps) => {
+// We use `motion.div` as the first child of `<AnimatePresence />` Component so we can specify page animations at the page level.
+// The `motion.div` Component gets re-evaluated when the `key` prop updates, triggering the animation's lifecycles.
+// During this re-evaluation, the `<FrozenRoute />` Component also gets updated with the new route components.
+
+export function PageWrapper({ children }: React.PropsWithChildren) {
   const pathname = usePathname();
-  const { fancy } = useUiStore();
-  const [isTransitioning, setIsTransitioning] = useState(true);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    if (fancy === 'off') return;
-
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    setIsTransitioning(true);
-    timeoutRef.current = setTimeout(() => {
-      setIsTransitioning(false);
-      window.scrollTo(0, 0);
-    }, 1100);
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, [pathname, fancy]);
-
-  const variants: (index: number) => Variants = (index: number) => ({
-    hidden: {
-      scaleY: 0,
-      transition: {
-        duration: 0.4,
-        delay: index * 0.05,
-        ease: 'easeInOut',
-      },
-    },
-    visible: {
-      scaleY: 1,
-      transition: {
-        duration: 0.4,
-        delay: index * 0.05,
-        ease: 'easeInOut',
-      },
-    },
-  });
-
-  if (fancy === 'off') {
-    return children;
-  }
 
   return (
-    <AnimatePresence>
-      {isTransitioning ? (
-        <Fragment key="route_transition_animator">
-          {[...Array(4).keys()].map((index) => {
-            const isOdd = index % 2 === 0;
-
-            return (
-              <motion.div
-                key={`${pathname}_animation_${index}`}
-                variants={variants(index)}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                className={cn('w-[50vw] md:w-[25vw] h-[100vh] fixed bottom-0 origin-top z-[110]', {
-                  'bg-rnny-primary': isOdd,
-                  'bg-rnny-primary-tint': !isOdd,
-                  'left-0': index === 0,
-                  'left-[50vw] md:left-[25vw]': index === 1,
-                  'left-[50vw] hidden md:block': index === 2,
-                  'left-[75vw] hidden md:block': index === 3,
-                })}
-              />
-            );
-          })}
-        </Fragment>
-      ) : null}
-      {isTransitioning ? <div className="min-w-screen min-h-screen" /> : children}
+    <AnimatePresence mode="wait">
+      <motion.div key={pathname}>
+        <FrozenRoute>{children}</FrozenRoute>
+      </motion.div>
     </AnimatePresence>
   );
-};
-
-type PageWrapperProps = {
-  children: React.ReactNode;
-};
+}

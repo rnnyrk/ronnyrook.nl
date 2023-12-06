@@ -6,12 +6,11 @@ import { LayoutGroup, motion } from 'framer-motion';
 
 import { cn } from 'utils';
 import { DarkModeToggle } from 'common/interaction/DarkModeToggle';
-import { FancyToggle } from 'common/interaction/FancyToggle';
 
 const items = {
   '/': 'About',
   '/resources': 'Resources',
-  '/blog': 'Blog',
+  '/work': 'Work',
 };
 
 const MenuItem = ({ title, href }: MenuItemProps) => {
@@ -28,7 +27,7 @@ const MenuItem = ({ title, href }: MenuItemProps) => {
     <Link
       href={href}
       className={cn(
-        'mx-2 transition-all hover:text-neutral-100 font-bold rounded-full text-white',
+        'mx-2 transition-all tracking-wide hover:text-neutral-100 font-bold rounded-full text-white font-sathosi',
         {
           'text-slate-400': !isActive,
           'text-white': isActive,
@@ -39,7 +38,7 @@ const MenuItem = ({ title, href }: MenuItemProps) => {
         <span className="relative">{title}</span>
         {isActive ? (
           <motion.span
-            className="absolute inset-0 rounded-full z-[-1] bg-rnny-primary"
+            className="absolute inset-0 rounded-full shadow-lg z-[-1] bg-rnny-primary"
             layoutId="sidebar"
             transition={{
               type: 'spring',
@@ -76,9 +75,7 @@ export const Menu = () => {
           </LayoutGroup>
         </div>
       </nav>
-      <div className="hidden md:flex absolute z-20 right-6 top-12 justify-between border-2 border-[#c2c7d1] dark:border-[#383d47] rounded-lg">
-        <FancyToggle />
-        <hr className="absolute left-[50%] top-0 ml-[-1px] w-[2px] h-full border-0 bg-[#c2c7d1] dark:bg-[#383d47]" />
+      <div className="hidden md:flex absolute z-20 right-6 top-12">
         <DarkModeToggle />
       </div>
     </>

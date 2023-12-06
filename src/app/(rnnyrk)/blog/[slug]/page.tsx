@@ -1,7 +1,7 @@
 import { fetchPostBySlug } from 'queries/posts/fetchPostBySlug';
 import { Container } from 'common/layout/Container';
-import { Article } from 'modules/blog/Article';
 import { PageHeader } from 'modules/layouts/PageHeader';
+import { Article } from 'modules/work/Article';
 
 export const revalidate = 300; // 5 minutes
 
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const BlogPost = ({ params }) => {
+function BlogPost({ params }) {
   const post = fetchPostBySlug(params.slug);
 
   return (
@@ -51,7 +51,7 @@ const BlogPost = ({ params }) => {
       <PageHeader
         title={post.title}
         summary={post.summary}
-        backUrl="/blog"
+        backUrl="/work"
       />
 
       <section className="py-20 bg-white dark:bg-rnny-dark-tint">
@@ -61,6 +61,6 @@ const BlogPost = ({ params }) => {
       </section>
     </>
   );
-};
+}
 
 export default BlogPost;

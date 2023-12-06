@@ -55,7 +55,7 @@ export const Card = ({ children, isInView, tags, title, variant }: CardProps) =>
           />
 
           <motion.div
-            className="flex h-full w-full flex-col p-8"
+            className="flex h-full w-full flex-col p-8 font-sathosi tracking-wider"
             exit={{ opacity: 0 }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -47,7 +47,7 @@ const Blog = async () => {
                 >
                   {post.title}
                 </Heading>
-                <p className="mb-12">{post.summary}</p>
+                <p className="mb-12 font-sathosi">{post.summary}</p>
                 <Button
                   type="link"
                   href={post.slug}

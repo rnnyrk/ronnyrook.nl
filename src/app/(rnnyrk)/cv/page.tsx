@@ -1,5 +1,6 @@
 import { Container } from 'common/layout/Container';
 import { Experience } from 'common/layout/Experience';
+import PageAnimation from 'modules/layouts/PageAnimation';
 import { PageHeader } from 'modules/layouts/PageHeader';
 
 export const metadata = {
@@ -7,9 +8,9 @@ export const metadata = {
   description: 'CV of Javascript Developer Ronny Rook. Find my work experience and education.',
 };
 
-const Cv = () => {
+function Cv() {
   return (
-    <>
+    <PageAnimation>
       <PageHeader
         title="Experience"
         className="mb-6 md:mb-10"
@@ -19,7 +20,7 @@ const Cv = () => {
       />
 
       <section className="py-20 md:py-40 bg-white dark:bg-rnny-dark-tint">
-        <Container className="px-8">
+        <Container className="px-8 max-w-6xl">
           <Experience
             title="iO Digital Consultancy"
             date="July 2023 - present"
@@ -51,8 +52,8 @@ const Cv = () => {
           />
         </Container>
       </section>
-    </>
+    </PageAnimation>
   );
-};
+}
 
 export default Cv;
