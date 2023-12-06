@@ -186,6 +186,29 @@ a {
 
 /*
  *
+ * Projects colors
+ */
+.stedin {
+  background-color: #ffd100;
+}
+.amdax {
+  background-color: #06372e;
+}
+.voicy {
+  background-color: #5c4fac;
+}
+.safeword {
+  background-color: #00a8c2;
+}
+.giftheaux {
+  background-color: #b4361f;
+}
+.roommates {
+  background-color: #ec9647;
+}
+
+/*
+ *
  * Tags for resources
  */
 .tag--react,

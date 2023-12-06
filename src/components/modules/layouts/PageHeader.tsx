@@ -23,7 +23,20 @@ export const PageHeader = ({ backUrl, className, title, summary }: PageHeaderPro
           </Link>
         )}
         <Heading className="text-black dark:text-white mt-4">{title}</Heading>
-        {summary && <p className="mt-6 text-xl leading-8 font-sathosi tracking-wide">{summary}</p>}
+        {summary && (
+          <>
+            <p
+              className="mt-6 text-xl leading-8 font-sathosi tracking-wide"
+              dangerouslySetInnerHTML={{ __html: summary }}
+            />
+            {title === 'Work' && (
+              <p className="text-xl leading-8 font-sathosi tracking-wide">
+                If you're looking for all the work I've done, check out{' '}
+                <Link href="/cv">my resume</Link>.
+              </p>
+            )}
+          </>
+        )}
       </div>
     </Container>
   );
