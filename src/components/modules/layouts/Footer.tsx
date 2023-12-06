@@ -5,10 +5,11 @@ import { Container } from 'common/layout/Container';
 
 export const Footer = () => {
   return (
-    <Container>
-      <footer className="flex flex-col md:flex-row md:justify-between md:items-center px-4 py-10 h-full">
+    <footer className="px-4 py-10 h-full font-sathosi">
+      <Container className="flex flex-col md:flex-row md:justify-between md:items-center ">
         <p className="text-xs italic">
-          Build with NextJS 13 (app dir/RSC), PNPM, Tailwind, Framer Motion and TypeScript
+          Build with NextJS app directory and React Server Components, Bun, Tailwind, Framer Motion
+          and TypeScript
         </p>
 
         <div className="flex mt-4 md:mt-0">
@@ -37,7 +38,7 @@ export const Footer = () => {
             <TwitterSvg className="w-6 h-6 hover:fill-rnny-primary social-icon" />
           </a>
         </div>
-      </footer>
-    </Container>
+      </Container>
+    </footer>
   );
 };

@@ -9,7 +9,7 @@ import { ResourcesGrid } from 'modules/resources/ResourcesGrid';
 
 import Loading from './loading';
 
-const ResourceCategory = async ({ params }: ResourceCategoryProps) => {
+async function ResourceCategory({ params }: ResourceCategoryProps) {
   const tag = params.category;
   const title = formatCategoryParamToTag(tag);
 
@@ -44,7 +44,7 @@ const ResourceCategory = async ({ params }: ResourceCategoryProps) => {
       </Container>
     </Suspense>
   );
-};
+}
 
 type ResourceCategoryProps = {
   params: {

@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
 
 import { useUiStore } from 'store/ui';
+import { cn } from 'utils';
 import DarkSvg from 'vectors/dark-mode.svg';
 import LightSvg from 'vectors/light-mode.svg';
 
@@ -67,7 +68,11 @@ export const DarkModeToggle = () => {
   return (
     <button
       onClick={onToggleDarkMode}
-      className="flex items-center justify-center button-toggle relative"
+      className={cn(
+        'relative w-[40px] h-[40px] flex items-center justify-center overflow-hidden rounded-lg',
+        'bg-rnny-dark-tint/20 hover:bg-rnny-light-tint/80 dark:bg-rnny-light-tint/20 dark:hover:bg-rnny-dark/50',
+        'transition-colors duration-500',
+      )}
     >
       <motion.div
         custom="dark"
@@ -95,10 +100,7 @@ export const DarkModeToggle = () => {
         }}
         className="flex items-center justify-center absolute inset-0 z-20 dark:z-10"
       >
-        <DarkSvg
-          className="w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] stroke-gray-800"
-          strokeWidth="3"
-        />
+        <DarkSvg className="w-6 h-6 min-w-[1.5rem] min-h-[1.5rem] fill-[#5F59D3]" />
       </motion.div>
     </button>
   );

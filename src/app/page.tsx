@@ -1,12 +1,15 @@
-import { Intro } from 'modules/home/Intro';
+import { Card } from 'modules/home/Card';
 import { Skills } from 'modules/home/Skills';
+import PageAnimation from 'modules/layouts/PageAnimation';
 
 const Home = () => {
   return (
-    <>
-      <Intro />
-      <Skills />
-    </>
+    <PageAnimation>
+      <section className="relative h-screen">
+        <Card />
+        <Skills />
+      </section>
+    </PageAnimation>
   );
 };
 

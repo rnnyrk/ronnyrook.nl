@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
 /** @typedef {import('next').NextConfig} NextConfig */
 /** @typedef {import('webpack').Configuration} WebpackConfiguration */
 
@@ -31,13 +29,6 @@ const config = (phase, config) => {
     // Remove x-powered-by header to remove information about the server
     poweredByHeader: false,
     basePath: '',
-    devIndicators: {
-      buildActivity: true,
-      buildActivityPosition: 'bottom-left',
-    },
-    experimental: {
-      appDir: true,
-    },
     headers() {
       return [
         {
