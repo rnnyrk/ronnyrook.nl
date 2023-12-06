@@ -2,9 +2,10 @@ import Image from 'next/image';
 
 import Amdax1 from 'images/projects/amdax-1.png';
 import Amdax2 from 'images/projects/amdax-2.png';
-import Gta2 from 'images/projects/gta-2.png';
+import Gta1 from 'images/projects/gta-1.png';
 import Roommates1 from 'images/projects/roommates-1.png';
 import SafeWord1 from 'images/projects/safeword-1.png';
+import Stedin1 from 'images/projects/stedin-1.png';
 import { cn } from 'utils';
 import { Button } from 'common/interaction/Button';
 import { Container } from 'common/layout/Container';
@@ -21,15 +22,6 @@ export const metadata = {
 };
 
 const projects = [
-  {
-    title: 'Stedin',
-    slug: 'stedin',
-    description:
-      'Stedin is a Dutch energy company that provides electricity and gas to more than 2 million customers in the Netherlands. Project via iO Consultancy',
-    image: Amdax1,
-    role: 'Frontend Developer & Project Consultant',
-    link: 'https://www.stedin.net/',
-  },
   {
     title: 'Amdax',
     slug: 'amdax',
@@ -49,11 +41,20 @@ const projects = [
     link: 'https://getsafeword.app/',
   },
   {
+    title: 'Stedin',
+    slug: 'stedin',
+    description:
+      'Working and consulting for one of the Netherlands biggest energy companies, providing electricity and gas to more than 2 million customers. Project via iO Consultancy',
+    image: Stedin1,
+    role: 'Frontend Developer & Project Consultant',
+    link: 'https://www.stedin.net/',
+  },
+  {
     title: 'GIF the Aux',
     slug: 'giftheaux',
     description:
       'Unleash the music madness! Match the GIF with the beats and get ready for a singing and laughing frenzy.',
-    image: Gta2,
+    image: Gta1,
     role: 'Frontend Developer & Co-Creator',
     link: 'https://giftheaux.com/',
   },
@@ -107,7 +108,7 @@ async function Work() {
                   >
                     {title}
                   </Heading>
-                  <span className="text-white font-sathosi tracking-wide">{role}</span>
+                  <span className="mt-2 text-white font-sathosi tracking-wide">{role}</span>
                   <p className="m-0 my-8 text-white font-sathosi tracking-wide">{description}</p>
                   {link && (
                     <Button
