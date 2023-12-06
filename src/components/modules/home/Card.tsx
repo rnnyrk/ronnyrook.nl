@@ -9,7 +9,7 @@ export function Card() {
     <Link
       href="/cv"
       className={cn(
-        'absolute left-8 bottom-8 z-20 py-8 px-12 rounded-lg cursor-pointer no-underline',
+        'absolute left-8 right-8 md:right-auto bottom-8 z-20 py-8 px-6 md:py-8 md:px-12 rounded-lg cursor-pointer no-underline',
         'group bg-rnny-dark-tint/10 hover:bg-rnny-dark-tint/5 dark:bg-rnny-light-tint/5 dark:hover:bg-rnny-light-tint/10',
         'hover:-translate-y-1 transition-all duration-500',
       )}
@@ -24,7 +24,7 @@ export function Card() {
             loading="eager"
           />
         </figure>
-        <div className="mt-2 md:mt-0 md:ml-4">
+        <div className="ml-4 mt-2 md:mt-0 md:ml-4">
           <Heading
             className={cn(
               'text-black group-hover:text-black dark:text-white dark:group-hover:text-white',
