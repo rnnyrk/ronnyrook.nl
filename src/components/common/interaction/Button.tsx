@@ -33,13 +33,16 @@ export const Button = ({
 
   if (type === 'link' && 'href' in otherProps && otherProps.href) {
     const href = otherProps.href;
-    const isExternal = /^[a-zA-Z]+:\/\//.test(href);
+    const isOutsideLink = /^[a-zA-Z]+:\/\//.test(href);
+    const isExternal = isOutsideLink || otherProps.isBlank;
 
     return (
       <Link
         href={href}
         className={classes}
         target={isExternal ? '_blank' : '_self'}
+        rel={isExternal ? '"noopener noreferrer"' : ''}
+        download={otherProps.isDownload}
       >
         {children}
       </Link>
@@ -90,6 +93,8 @@ type ButtonBaseProps = ButtonAnimationProps & {
 type ButtonLinkProps = ButtonBaseProps & {
   href?: string;
   type: 'link';
+  isDownload?: boolean;
+  isBlank?: boolean;
 };
 
 type ButtonProps = ButtonBaseProps & {
