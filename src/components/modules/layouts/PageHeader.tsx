@@ -32,7 +32,8 @@ export const PageHeader = ({ backUrl, className, title, summary }: PageHeaderPro
             {title === 'Work' && (
               <p className="text-xl leading-8 font-sathosi tracking-wide">
                 If you're looking for all the work I've done, check out{' '}
-                <Link href="/cv">my resume</Link>.
+                <Link href="/cv">my resume</Link>. Want to read more about my interests? See{' '}
+                <Link href="/blog">my blog</Link>.
               </p>
             )}
           </>

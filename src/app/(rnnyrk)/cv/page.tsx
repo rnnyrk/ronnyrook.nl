@@ -1,3 +1,4 @@
+import { Button } from 'common/interaction/Button';
 import { Container } from 'common/layout/Container';
 import { Experience } from 'common/layout/Experience';
 import PageAnimation from 'modules/layouts/PageAnimation';
@@ -51,6 +52,20 @@ function Cv() {
             description="Full stack intern and employee. Mainly working with Javascript/jQuery and PHP"
           />
         </Container>
+
+        <div className="flex flex-col items-center mt-4">
+          <p className="mb-4 px-8 md:px-0 font-sathosi tracking-wide text-center text-sm">
+            Want to read more about my experience, education, skills and achievements?
+          </p>
+          <Button
+            type="link"
+            href="/resume-ronny-rook.pdf"
+            isBlank
+            isDownload
+          >
+            Download my full CV
+          </Button>
+        </div>
       </section>
     </PageAnimation>
   );
