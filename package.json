@@ -11,7 +11,7 @@
     "lint": "next lint",
     "prettier": "prettier --write '**/*.{js,ts,tsx}'",
     "typecheck": "tsc --noEmit",
-    "test": "npx concurrently 'bun run lint' 'bun run typecheck'"
+    "test": "npx concurrently 'pnpm run lint' 'pnpm run typecheck'"
   },
   "dependencies": {
     "@notionhq/client": "2.2.14",
