@@ -77,7 +77,6 @@
     "@typescript-eslint/object-curly-spacing": 0
   },
   "extends": [
-    "react-app",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
