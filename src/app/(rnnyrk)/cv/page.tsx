@@ -23,21 +23,21 @@ function Cv() {
       <section className="py-20 md:py-40 bg-white dark:bg-rnny-dark-tint">
         <Container className="px-8 max-w-6xl">
           <Experience
+            title="Ronny Rook / Just Right Webdesign"
+            date="April 2012 - present"
+            description="Freelance web development. Full stack development. Focusing on React, React Native, NodeJS and Python."
+          />
+
+          <Experience
             title="iO Digital Consultancy"
-            date="July 2023 - present"
-            description="Senior Frontend Developer and Consultant for external clients like Stedin"
+            date="July 2023 - January 2023"
+            description="Senior Frontend Developer and Consultant for external clients such as Stedin"
           />
 
           <Experience
             title="Label A"
             date="March 2016 - June 2023"
             description="Creating digital products for clients as Amdax, Alicia Insurances, Fastis, Jobner, Nationale Nederlanden, Porsche Nederland"
-          />
-
-          <Experience
-            title="Just Right Webdesign"
-            date="April 2012 - present"
-            description="Consulting for and creating digital products"
           />
 
           <Experience
