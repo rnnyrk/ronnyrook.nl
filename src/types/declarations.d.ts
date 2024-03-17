@@ -1,7 +1,6 @@
 // REQUIRED TO TURN THIS FILE INTO A MODULE -- DO NOT REMOVE
 export {};
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // global variables
 declare global {
   declare const __DEV__: boolean;

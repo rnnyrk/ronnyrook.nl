@@ -1,11 +1,9 @@
 import './global.css';
 
-import type * as i from 'types';
 import localFont from 'next/font/local';
 import { Analytics } from '@vercel/analytics/react';
 
 import { cn } from 'utils';
-import { Footer } from 'modules/layouts/Footer';
 import { Menu } from 'modules/layouts/Menu';
 import { PageWrapper } from 'modules/layouts/PageWrapper';
 
@@ -86,7 +84,7 @@ export const metadata = {
   },
 };
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <html lang="en">
       <head />
@@ -106,8 +104,8 @@ const Layout = ({ children }: Props) => {
   );
 };
 
-type Props = i.NextPageProps<{
+type LayoutProps = {
   children: React.ReactNode;
-}>;
+};
 
 export default Layout;

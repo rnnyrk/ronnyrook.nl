@@ -1,8 +1,6 @@
-import type * as i from 'types';
-
 import { Footer } from 'modules/layouts/Footer';
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       {children}
@@ -11,8 +9,8 @@ const Layout = ({ children }: Props) => {
   );
 };
 
-type Props = i.NextPageProps<{
+type LayoutProps = {
   children: React.ReactNode;
-}>;
+};
 
 export default Layout;
