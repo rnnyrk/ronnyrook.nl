@@ -90,7 +90,7 @@ export const Skills = () => {
   useEffect(() => {
     if (timeout) clearTimeout(timeout);
 
-    let newCycle = currentCycle === 1 ? 0 : 1;
+    const newCycle = currentCycle === 1 ? 0 : 1;
 
     timeout = setTimeout(() => {
       setCurrentCycle(newCycle);
