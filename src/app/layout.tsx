@@ -1,5 +1,6 @@
 import './global.css';
 
+import { Viewport } from 'next';
 import localFont from 'next/font/local';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -23,6 +24,13 @@ const sathosi = localFont({
 });
 
 const SITE_URL = process.env.SITE_URL || 'http://localhost:3000';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
